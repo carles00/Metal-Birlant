@@ -7,77 +7,37 @@ using UnityEngine;
 
 public class Controller2D : MonoBehaviour
 {
-    public LayerMask colliderMask;
+    [Range(1f, 10f)][SerializeField] private float jumpForce;
+    [Range(0, .3f)] [SerializeField] private float acceleration;
+    [SerializeField] private LayerMask colliderMask;
 
-    const float inset = .02f;
+    private Rigidbody2D rigidBody;
+    private Vector3 velocity = Vector3.zero;
 
-    BoxCollider2D boxCollider;
-    Rigidbody2D rigidBody;
-
-    RayOrigins rayOrigins;
+    
 
     bool grounded;
 
     // Start is called before the first frame update
     void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
         rigidBody = GetComponent<Rigidbody2D>();
     }
-    // Update is called once per frame
-    public void Move(Vector3 velocity)
-    {
-        setBounds();
-        groundCollision();
-    }
 
-    void groundCollision()
+    private void FixedUpdate()
     {
-        float rayLength = .2f;
         
-        RaycastHit2D hitA = Physics2D.Raycast(rayOrigins.bottomLeft, Vector2.down, rayLength, colliderMask);
-        RaycastHit2D hitB = Physics2D.Raycast(rayOrigins.bottomLeft, Vector2.up, rayLength, colliderMask);
-
-        grounded = false;
-        if (hitA || hitB)
-        {
-            grounded = true;
-        }
-
-        Color color = Color.green;
-        if (grounded)
-        {
-            color = Color.red;
-        }
-   
-        Debug.DrawRay(rayOrigins.bottomLeft, Vector2.down * rayLength, color);
-        Debug.DrawRay(rayOrigins.bottomRight, Vector2.down * rayLength, color);
-
-              
     }
 
-    void setBounds()
+    public void Move(float move, bool crouch, bool jump)
     {
-        Bounds bounds = boxCollider.bounds;
-        bounds.Expand(inset * -2);
+
+        Vector3 targetVelocity = new Vector2(move * 10f, rigidBody.velocity.y);
+        rigidBody.velocity = Vector3.SmoothDamp(rigidBody.velocity, targetVelocity, ref velocity, acceleration);
+
         
-        rayOrigins.topLeft = new Vector2 (bounds.min.x, bounds.max.y);
-        rayOrigins.topRight = new Vector2(bounds.max.x, bounds.max.y);
-        rayOrigins.bottomLeft = new Vector2(bounds.min.x, bounds.min.y);
-        rayOrigins.bottomRight = new Vector2(bounds.max.x, bounds.min.y);
-
-        rayOrigins.xSize = bounds.max.x - bounds.min.x;
-        rayOrigins.ySize = bounds.max.y - bounds.min.y;
-
-       
-    }
-
-    
-
-    struct RayOrigins{
-        public Vector2 topLeft, topRight;
-        public Vector2 bottomLeft, bottomRight;
-        public float xSize, ySize;
-
+        if(grounded && jump) {
+            rigidBody.AddForce(new Vector2(0f, jumpForce*100));
+        }
     }
 }

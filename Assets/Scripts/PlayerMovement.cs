@@ -9,16 +9,22 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     Controller2D controller;
-    // Start is called before the first frame update
+
+    public float runSpeed = 40f;
+    float move;
+    bool crouch = false;
+    bool jump = false;
+
+  
     void Start()
     {
         controller = gameObject.GetComponent<Controller2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+ 
+    private void FixedUpdate()
     {
-        controller.Move(new Vector3(0,0,0));
+        controller.Move(move * Time.fixedDeltaTime, crouch, jump);
     }
 
     public void onJump(InputAction.CallbackContext context)
@@ -27,7 +33,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void onMove(InputAction.CallbackContext context)
-    { 
+    {
+
+        move = context.ReadValue<Single>() * runSpeed;
         
     }
 }
