@@ -5,7 +5,7 @@
 @subtitle Universitat Pompeu Fabra
 @subtitle @today{}
 @author Wasym Atieh      - 229156
-@author Leonardo Barros  - ?
+@author Leonardo Barros  - 218336
 @author Carles Gallardo  - 218915
 @author Mario Valenzuela - 217326
 @page
