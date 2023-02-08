@@ -1,0 +1,20 @@
+@c Section 1: Planteamiento técnico
+@node Planteamiento técnico
+@section Planteamiento técnico
+
+@menu
+* Planteamiento de la DEMO:: ...
+* Planteamiento Técnico del Desarrollo:: ...
+@end menu
+
+@c Subsection 1: Planteamiento de la DEMO
+@node Planteamiento de la DEMO
+@subsection Planteamiento de la DEMO
+
+(...)
+
+@c Subsection 2: Planteamiento Técnico del Desarrollo
+@node Planteamiento Técnico del Desarrollo
+@subsection Planteamiento Técnico del Desarrollo
+
+(...)

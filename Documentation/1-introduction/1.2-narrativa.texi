@@ -1,0 +1,34 @@
+@c Section 2: Narrativa
+@node Narrativa
+@section Narrativa
+
+@menu
+* Sinopsis narrativa:: ...
+* Tema y tono:: ...
+* Género narrativo y Recursos de género:: ...
+* Personajes:: ...
+@end menu
+
+@c Subsection 1: Sinopsis narrativa
+@node Sinopsis narrativa
+@subsection Sinopsis narrativa
+
+(...)
+
+@c Subsection 2: Tema y tono
+@node Tema y tono
+@subsection Tema y tono
+
+(...)
+
+@c Subsection 3: Género narrativo y Recursos de género
+@node Género narrativo y Recursos de género
+@subsection Género narrativo y Recursos de género
+
+(...)
+
+@c Subsection 4: Personajes
+@node Personajes
+@subsection Personajes
+
+(...)

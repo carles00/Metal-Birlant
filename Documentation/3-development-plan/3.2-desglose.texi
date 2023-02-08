@@ -1,0 +1,27 @@
+@c Section 2: Desglose
+@node Desglose
+@section Desglose
+
+@menu
+* Diseño:: ...
+* Motor:: ...
+* Recursos audioviuales o assets:: ...
+@end menu
+
+@c Subsection 1: Diseño
+@node Diseño
+@subsection Diseño
+
+(...)
+
+@c Subsection 2: Motor
+@node Motor
+@subsection Motor
+
+(...)
+
+@c Subsection 3: Recursos audioviuales o assets
+@node Recursos audioviuales o assets
+@subsection Recursos audioviuales o assets
+
+(...)

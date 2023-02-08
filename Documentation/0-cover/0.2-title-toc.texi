@@ -1,0 +1,24 @@
+@c Title Page
+@titlepage
+@title Metal Birlant Design Document
+@subtitle Narrariva y Videojuegos
+@subtitle Universitat Pompeu Fabra
+@subtitle @today{}
+@author Wasym Atieh      - 229156
+@author Leonardo Barros  - ?
+@author Carles Gallardo  - 218915
+@author Mario Valenzuela - 217326
+@page
+@vskip 0pt plus 1fill
+@insertcopying
+@end titlepage
+
+@c Home node
+@ifnottex
+@node Top
+@top Home
+This is the root of the GDD of Metal Birlant. Welcome!
+@end ifnottex
+
+@c Table of contents
+@contents

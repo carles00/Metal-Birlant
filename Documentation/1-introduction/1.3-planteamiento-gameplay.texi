@@ -1,0 +1,5 @@
+@c Section 3: Planteamiento del Gameplay
+@node Planteamiento del Gameplay
+@section Planteamiento del Gameplay
+
+(...)

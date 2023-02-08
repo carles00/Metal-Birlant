@@ -1,0 +1,28 @@
+@c Section 1: Resumen
+@node Resumen
+@section Resumen
+
+@menu
+* Concepto del juego:: ...
+* Rasgos distintivos:: ...
+* Género/Referentes:: ...
+@end menu
+
+@c Subsection 1: Concepto del juego
+@node Concepto del juego
+@subsection Concepto del juego
+
+(...)
+
+@c Subsection 2: Rasgos distintivos
+@node Rasgos distintivos
+@subsection Rasgos distintivos
+
+(...)
+
+@c Subsection 3: Género/Referentes
+@node Género/Referentes
+@subsection Género/Referentes
+
+(...)
+

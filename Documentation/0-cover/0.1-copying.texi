@@ -1,0 +1,5 @@
+@setfilename metal-birlant-dd.info
+@settitle Metal Birlant Design Document
+@copying
+This is the copyright license @copyright{}.
+@end copying
