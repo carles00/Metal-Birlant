@@ -1,0 +1,54 @@
+\input texinfo
+@c Metal Birlant Design Document
+@include 0-cover/0.1-copying.texi
+@include 0-cover/0.2-title-toc.texi
+
+@c Chapter 1: Introducción
+@node Introducción
+@chapter Introducción
+
+@menu
+* Resumen:: ...
+* Narrativa:: ...
+* Planteamiento del Gameplay:: ...
+@end menu
+
+@include 1-introduction/1.1-resumen.texi
+@include 1-introduction/1.2-narrativa.texi
+@include 1-introduction/1.3-planteamiento-gameplay.texi
+
+@c Chapter 2: Diseño Funcional
+@node Diseño Funcional
+@chapter Diseño Funcional
+
+@menu
+* Mecánicas y Reglas de Juego:: ...
+* Control y Diseño de Interfaz:: ...
+* Diseño de Flujo o Gameplay Loop:: ...
+* Elementos de Juego y Comportamientos:: ...
+* Desarrollo Ludonarrativo:: ...
+* Diseño de Unidades de Gameplay:: ...
+@end menu
+
+@include 2-functional-design/2.1-mecanicas-reglas-juego.texi
+@include 2-functional-design/2.2-control-diseno-interfaz.texi
+@include 2-functional-design/2.3-diseno-flujo-gameplay-loop.texi
+@include 2-functional-design/2.4-elementos-juego-comportamientos.texi
+@include 2-functional-design/2.5-desarrollo-ludonarrativo.texi
+@include 2-functional-design/2.6-diseno-unidades-gameplay.texi
+
+@c Chapter 3: Plan de Desarrollo
+@node Plan de Desarrollo
+@chapter Plan de Desarrollo
+
+@menu
+* Planteamiento técnico:: ...
+* Desglose:: ...
+* Planificación:: ...
+@end menu
+
+@include 3-development-plan/3.1-planteamiento-tecnico.texi
+@include 3-development-plan/3.2-desglose.texi
+@include 3-development-plan/3.3-planificacion.texi
+
+@bye

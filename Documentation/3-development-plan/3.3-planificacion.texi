@@ -1,0 +1,5 @@
+@c Section 3: Planificación
+@node Planificación
+@section Planificación
+
+(...)
