@@ -2,4 +2,5 @@
 @node Planteamiento del Gameplay
 @section Planteamiento del Gameplay
 
-(...)
+Nuestro objetivo es lograr que el jugador juegue contra sí mismo. Para lograrlo planteamos un gameplay por turnos donde el jugador controlará a los dos personajes a la vez. En el turno del futuro, el jugador deberá intentar que el presente no llegue al tesoro mediante el uso de trampas. Durante el turno del presente, el jugador, deberá lograr robar el tesoro que protege el futuro. 
+Para conseguir que el jugador busque jugar contra el mismo introduciremos un sistema económico balanceado de tal manera que complicarse el juego sea incentivado, además, tematicamente el sistema económico lo relacionamos con la empresa que el protagonista tiene en la historia.
