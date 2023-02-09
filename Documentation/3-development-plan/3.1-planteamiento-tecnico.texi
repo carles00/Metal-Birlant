@@ -11,7 +11,20 @@
 @node Planteamiento de la DEMO
 @subsection Planteamiento de la DEMO
 
-(...)
+Debido a la notable falta de tiempo para la producción del producto final, se procederá a detallar una demostración generada a partir del diseño original aplicándole un corte vertical, realizando ciertos compromisos, el cual pasará a explicarse a continuación.
+
+Con la finalidad de transmitir el propósito comunicativo original, se deberán mantener los pilares fundamentales del diseño presentado en el @b{capítulo 1} y construido durante el @b{capítulo 2}. Se contemplará una pequeña muestra de todas las mecánicas más importantes planteadas en el diseño, principalmente:
+
+@itemize @bullet
+@item
+@b{Turno del futuro:} Sistema de colocación de trampas en el mapa (1-2 de cada tipo [2-3 tipos según la profundidad en el mapa]).
+@item
+@b{Turno del presente:} Plataformeo vertical + compra de habilidades (1-2 para la DEMO).
+@item
+@b{Gesión del dinero:} Sistema de dinero basado en gastos y ganancias por cada ronda.
+@item
+@b{Rondas:} Sistema de rondas continuo hasta que no quede más dinero.
+@end itemize
 
 @c Subsection 2: Planteamiento Técnico del Desarrollo
 @node Planteamiento Técnico del Desarrollo
