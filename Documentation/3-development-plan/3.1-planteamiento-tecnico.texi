@@ -30,12 +30,10 @@ Con la finalidad de transmitir el propósito comunicativo original, se deberán 
 @node Planteamiento Técnico del Desarrollo
 @subsection Planteamiento Técnico del Desarrollo
 
-Para desarrollar el juego vamos a usar como motor Unity. Unity es uno de los motores más populares y uno de los mejores para crear juegos 2D. Algunos de los juegos que se han creado con Unity 
-incliyen Hollow Knight o Cuphead entre muchos otros. También cuenta con una gran cantidad de tutoriales e información que nos ayudarán en nuestro desarrollo. 
-Además tiene integrado una store de assets con una gran cantidad de diseños que podemo usar en la Demo para ahorrar tiempo en la creación de assets.
+Para desarrollar el juego vamos a usar como motor @b{Unity}. @b{Unity} es uno de los motores más populares y uno de los mejores para crear juegos 2D. Algunos de los juegos que se han creado con @b{Unity} 
+incluyen @i{Hollow Knight} o @i{Cuphead} entre muchos otros. También cuenta con una gran cantidad de tutoriales e información que nos ayudarán en nuestro desarrollo. 
+Además tiene integrado una @i{store} de @i{assets} con una gran cantidad de diseños que podemos usar en la DEMO para ahorrar tiempo en la creación de @i{assets}.
 
-Para poder trabajar en paralelo utilizaremos Git. Diferentes partes del juego serán implementadas en diferentes branches para al final juntar todo en la Demo final.
+Para poder trabajar en paralelo utilizaremos @b{Git}. Diferentes partes del juego serán implementadas en diferentes branches para al final juntar todo en la Demo final.
 
-Finalmente haremos uso de Trello para asignar tareas entre nosotros y tener un control de lo que hay que hacer, lo que se está haciendo y quien lo está haciendo.
-
-
+Finalmente haremos uso de @b{Trello} para asignar tareas entre nosotros y tener un control de lo que hay que hacer, lo que se está haciendo y quien lo está haciendo.
