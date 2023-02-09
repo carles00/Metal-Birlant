@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
 
     public float runSpeed = 40f;
     float move;
-    bool crouch = false;
     bool jump = false;
 
   
@@ -24,12 +23,13 @@ public class PlayerMovement : MonoBehaviour
  
     private void FixedUpdate()
     {
-        controller.Move(move * Time.fixedDeltaTime, crouch, jump);
+        controller.Move(move * Time.fixedDeltaTime, jump);
+        jump = false;
     }
 
     public void onJump(InputAction.CallbackContext context)
     {
-        
+        jump = true;
     }
 
     public void onMove(InputAction.CallbackContext context)
@@ -38,4 +38,6 @@ public class PlayerMovement : MonoBehaviour
         move = context.ReadValue<Single>() * runSpeed;
         
     }
+
+
 }
