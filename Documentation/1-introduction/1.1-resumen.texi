@@ -18,15 +18,25 @@
 @node Rasgos distintivos
 @subsection Rasgos distintivos
 
-- Sistema de trampas.
-- Gestión del dinero.
-- Plataformeo vertical descendente.
-- Jugabilidad por turnos contra ti mismo.
-- Sin resultado final binario (victoria/derrota), aguantar el máximo número de rondas que te sea posible.
-- Compra de habilidades que te ayudarán temporalmente.
+La propuesta de @i{Metal Birlant} pretende ofrecer una experiencia divertida, entretenida, interesante y diferente, principalmente mediante ciertas mecánicas jugables que se explicarán a fondo más adelante. Conceptualmente, podemos decir que los rasgos, detalles o características más notables son:
+@itemize @bullet
+@item
+Sistema de colocación de trampas desde el futuro.
+@item
+Compra de habilidades desde el presente.
+@item
+Gestión del dinero del presente y futuro.
+@item
+Plataformeo vertical descendente.
+@item
+Jugabilidad por turnos contra ti mismo.
+@item
+Sin resultado final binario (victoria o derrota), sino que se basa en aguantar el máximo número de rondas que te sea posible.
+@end itemize
 
 @c Subsection 3: Género/Referentes
 @node Género/Referentes
 @subsection Género/Referentes
 
-Podemos considerar a @i{Metal Birlant} como un juego de plataformas vertical descendente a ritmo alto en 2D, de estrategia por turnos y gestión de gastos/recompensas. Principalmente, este juego bebe mucho de la idea de trampas que implementa @i{Ultimate Chicken Horse}, un videojuego multijugador y cooperativo de plataformas desarrollado y distribuido por @i{Clever Endeavour Games}.
+Si tuvieramos que categorizar a @i{Metal Birlant} en un único género, debería ser el de plataformas, ya que es la parte jugable principal.
+No obstante, si queremos hacer una descripción más detallada, podemos considerar a @i{Metal Birlant} como un juego de plataformas vertical descendente a ritmo alto en 2D, de estrategia por turnos y gestión de gastos/recompensas. Principalmente, este juego bebe mucho de la idea de trampas que implementa @i{Ultimate Chicken Horse}, un videojuego multijugador y cooperativo de plataformas desarrollado y distribuido por @i{Clever Endeavour Games} (...).

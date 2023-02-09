@@ -11,7 +11,9 @@
 @node Planteamiento de la DEMO
 @subsection Planteamiento de la DEMO
 
-(...)
+Debido a la notable falta de tiempo para la producción del producto final, se procederá a detallar una demostración generada a partir del diseño original aplicándole un corte vertical, realizando ciertos compromisos, el cual pasará a explicarse a continuación.
+
+Con la finalidad de transmitir el propósito comunicativo original, se deberán mantener los pilares fundamentales del diseño presentado en el @b{capítulo 1} y construido durante el @b{capítulo 2}
 
 @c Subsection 2: Planteamiento Técnico del Desarrollo
 @node Planteamiento Técnico del Desarrollo
