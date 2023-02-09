@@ -18,7 +18,23 @@
 @node Motor
 @subsection Motor
 
-(...)
+Costes de desarrollo de las mecánicas:
+
+@itemize @bullet
+@item
+@b{Sistema de cambio de turnos:} Medio
+@item
+@b{Movimiento del personaje:} Medio
+@item
+@b{Habilidades del personaje:} Bajo
+@item
+@b{Sistema de colocación de trampas:} Alto
+@item
+@b{Mecánicas de las trampas:} Bajo
+@item
+@b{Sistema económico:} Medio
+@end itemize
+
 
 @c Subsection 3: Recursos audioviuales o assets
 @node Recursos audioviuales o assets
