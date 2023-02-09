@@ -1,7 +1,7 @@
 @setfilename metal-birlant-dd.info
 @settitle Metal Birlant Design Document
 @copying
-Metal Birlant PC Videogame; based on the original Metal Birlant original comicbook.
+Metal Birlant PC Videogame; based on the original Metal Birlant comicbook.
 Copyright @copyright{} 2023-2023 Metal Birlant PC Videogame Authors.
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
