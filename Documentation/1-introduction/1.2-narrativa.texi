@@ -13,22 +13,31 @@
 @node Sinopsis narrativa
 @subsection Sinopsis narrativa
 
-(...)
+@i{Metal Birlant} se basa en un planeta-ciudad levantado sobre un agujero negro se produce una anomalía espacio-tiemporal, donde si bajas a plantas inferiores avanzaras en el tiempo hacia el futuro y si subes retrocedes hasta el presente. La economía de este planetoide se basa en el @i{sky gold}, un metal que no tiene más existencias. 
+
+El protagonista, @i{Elon CEO} de @i{T€$la®} , utiliza @i{NFTs} mandándolos al futuro para extraer reservas futuras de este metal. Pero su versión futura no está precisamente contenta con esta acción, dado que le está robando a él mismo, por lo que decide entrar en acción atacando a su versión pasada.
 
 @c Subsection 2: Tema y tono
 @node Tema y tono
 @subsection Tema y tono
 
-(...)
+Comedia/Humor, característica de este tipo/categoría de cómics.
 
 @c Subsection 3: Género narrativo y Recursos de género
 @node Género narrativo y Recursos de género
 @subsection Género narrativo y Recursos de género
 
-(...)
+Relato tipo cómic.
 
 @c Subsection 4: Personajes
 @node Personajes
 @subsection Personajes
 
-(...)
+@itemize @bullet
+@item
+@i{Elon J. D'Oroski} (presente) - Personaje protagonista, CEO de @i{T€$la®}. Le sustrae @i{sky gold} a su versión futura inconsciente de las consecuencias.
+@item
+@i{Elon J. D'Oroski} (futuro) - Personaje antagonista. Víctima de los hurtos de su versión pasada.
+@item
+NFT (nativos forzosamente trabajadores) - Personajes extra.
+@end itemize
