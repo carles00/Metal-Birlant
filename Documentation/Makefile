@@ -8,4 +8,3 @@ clean:
 
 mrproper: clean
 	@rm -f gdd.pdf
-

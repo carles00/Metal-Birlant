@@ -1,0 +1,41 @@
+@c Section 6: Diseño de Unidades de Gameplay
+@node Diseño de Unidades de Gameplay
+@section Diseño de Unidades de Gameplay
+
+@menu
+* Diagramas de diseño de niveles:: ...
+* Mapas de niveles y entornos:: ...
+* Especificación de puzzles:: ...
+* Mapas de secuencia de resolución de fases:: ...
+* Tablas y calendarios de fases:: ...
+@end menu
+
+@c Subsection 1: Diagramas de diseño de niveles
+@node Diagramas de diseño de niveles
+@subsection Diagramas de diseño de niveles
+
+(...)
+
+@c Subsection 2: Mapas de niveles y entornos
+@node Mapas de niveles y entornos
+@subsection Mapas de niveles y entornos
+
+(...)
+
+@c Subsection 3: Especificación de puzzles
+@node Especificación de puzzles
+@subsection Especificación de puzzles
+
+(...)
+
+@c Subsection 4: Mapas de secuencia de resolución de fases
+@node Mapas de secuencia de resolución de fases
+@subsection Mapas de secuencia de resolución de fases
+
+(...)
+
+@c Subsection 5: Tablas y calendarios de fases
+@node Tablas y calendarios de fases
+@subsection Tablas y calendarios de fases
+
+(...)
