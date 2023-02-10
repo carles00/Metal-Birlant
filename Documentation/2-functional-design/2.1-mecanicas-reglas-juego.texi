@@ -1,0 +1,34 @@
+@c Section 1: Mecánicas y Reglas de Juego
+@node Mecánicas y Reglas de Juego
+@section Mecánicas y Reglas de Juego
+
+@menu
+* Descripción del Funcionamiento del Juego:: ...
+* Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego:: ...
+* Tablas de condiciones y resultados:: ...
+* Figuras:: ...
+@end menu
+
+@c Subsection 1: Descripción del Funcionamiento del Juego
+@node Descripción del Funcionamiento del Juego
+@subsection Descripción del Funcionamiento del Juego
+
+(...)
+
+@c Subsection 2: Variables, Stats, Valores, y Estados del Jugador y/o Juego
+@node Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego
+@subsection Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego
+
+(...)
+
+@c Subsection 3: Tablas de condiciones y resultados
+@node Tablas de condiciones y resultados
+@subsection Tablas de condiciones y resultados
+
+(...)
+
+@c Subsection 4: Figuras
+@node Figuras
+@subsection Figuras
+
+(...)

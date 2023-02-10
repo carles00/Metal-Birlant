@@ -1,0 +1,6 @@
+Documentation
+-------------
+Instructions to build the documentation for the project in multiple formats:
+
+1. cd Documentation
+2. make
