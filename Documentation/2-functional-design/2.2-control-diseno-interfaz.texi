@@ -23,6 +23,8 @@ bugs o errores en el sistema de incentivo.
 * Cuando compremos una trampa en el menu, la trampa aparecerá donde estaba el cursor antes de abrir el menu.
 * Para vender una trampa (sin perdidas con relacion a la compra) el cursor tiene que estar encima de la trampa que se quiere vender.
 * Existen unos limites de espacio dentro de cada zona de trampas para evitar errores en el caso de que se compre dos trampas o mas en una misma zona.
+* Existen plataformas que se mueven. El jugador puede pausar el mapa para acceder a una zona de trampas asociado a una de estas plataformas. Al 
+reanudar el mapa el jugador puede comprobar como el obstaculo interactua en movimiento.
 
 Turno del presente:
 * El juego incentiva al jugador a direccionar el personaje hacia abajo con sistemas de recompensas (dinero, vidas) y el limite superior de la 
@@ -43,6 +45,7 @@ Tecla m: Acceder al menu de trampas / Salir del menu de trampas
 Tecla c: Comprar trampa seleccionada. 
 Tecla v: Vender trampa.
 Tecla z: Terminar turno. Ir al turno del presente.
+Tecla p: Pausar el mapa / Reanudar el mapa.
 
 Turno del Presente:
 Flecha izquierda: Mover el personaje a la izquierda.
