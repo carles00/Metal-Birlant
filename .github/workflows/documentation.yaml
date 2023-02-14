@@ -1,0 +1,19 @@
+name: Documentation
+
+on:
+  pull_request:
+    types: [opened, reopened]
+  push:
+    branches:
+      - main
+
+jobs:
+  documentation:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Install needed dependencies
+        run: |
+          apt update && apt install -y texlive texinfo make
+      - name: Build the documentation
+        run: |
+          cd Documentation && make
