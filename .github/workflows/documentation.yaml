@@ -2,10 +2,10 @@ name: Documentation
 
 on:
   pull_request:
-    types: [opened, reopened]
+    types: [opened, synchronize]
+    branches: [main]
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   documentation:
