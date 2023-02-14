@@ -1,0 +1,22 @@
+name: Documentation
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  documentation:
+    runs-on: ubuntu-20.04
+    container: texlive/texlive
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+      - name: Install needed dependencies
+        run: |
+          apt update && apt install -y texinfo
+      - name: Build the documentation
+        run: |
+          cd Documentation && make
