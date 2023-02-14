@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Install needed dependencies
         run: |
-          apt update && apt install -y texlive texinfo make
+          sudo apt update && sudo apt install -y texlive texinfo make
       - name: Build the documentation
         run: |
           cd Documentation && make
