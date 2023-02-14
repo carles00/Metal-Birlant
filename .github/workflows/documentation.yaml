@@ -10,12 +10,13 @@ on:
 jobs:
   documentation:
     runs-on: ubuntu-20.04
+    container: texlive/texlive
     steps:
       - name: Git Checkout
         uses: actions/checkout@v2
       - name: Install needed dependencies
         run: |
-          sudo apt update && sudo apt install -y texlive-full texinfo ghostscript make
+          sudo apt update && sudo apt install -y texinfo
       - name: Build the documentation
         run: |
-          ls -la && cd Documentation && make
+          cd Documentation && make
