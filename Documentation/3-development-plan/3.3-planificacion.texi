@@ -2,4 +2,4 @@
 @node Planificación
 @section Planificación
 
-(...)
+@center @image{img/trello, 13cm,, Trello,}
