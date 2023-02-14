@@ -13,13 +13,28 @@
 @node Descripción del Funcionamiento del Juego
 @subsection Descripción del Funcionamiento del Juego
 
-(...)
+El juego se divide en rondas, cada ronda constará de 2 turnos, el de colocación de trampas y el de bajada.
+
+@b{En el turno del Futuro:}
+
+El jugador tiene una cantidad de dinero con el que puede comprar trampas y colocarlas por el escenario.
+Este dinero es para toda la diración de la partida un vez se acaba, finaliza el juego.
+
+@b{En el turno del Presenre:}
+
+El jugador tiene una canitdad de dinero con la que puede comprar habilidades. Al principio del turno se le quita una cantidad de dinero que irá augmentando en cada ronda. 
+
+Una vez comprado habilidades el jugador empieza la sección de plataformas para llegar al tesoro.
+
+El jugador SOLO gana dinero cuando consigue llegar al tesoro. Una vez ha llegado se le recompensa con una cantidad fija de dinero y el valor de las trampas que ha colocado el futuro. 
+
+Si el presente llega a tener el dinero en negativo el juego finaliza.
 
 @c Subsection 2: Variables, Stats, Valores, y Estados del Jugador y/o Juego
 @node Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego
 @subsection Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego
 
-(...)
+@center @image{img/variables, 13cm,, Variables,}
 
 @c Subsection 3: Tablas de condiciones y resultados
 @node Tablas de condiciones y resultados
