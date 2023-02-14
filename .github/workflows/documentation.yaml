@@ -16,4 +16,4 @@ jobs:
           sudo apt update && sudo apt install -y texlive texinfo make
       - name: Build the documentation
         run: |
-          cd Documentation && make
+          ls -la && cd Documentation && make
