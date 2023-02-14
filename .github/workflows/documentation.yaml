@@ -11,6 +11,8 @@ jobs:
   documentation:
     runs-on: ubuntu-20.04
     steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
       - name: Install needed dependencies
         run: |
           sudo apt update && sudo apt install -y texlive texinfo make
