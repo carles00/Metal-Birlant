@@ -15,20 +15,18 @@
 @subsection Reglas de control del Juego/Personaje
 
 Turno del futuro:
-* Las zonas de trampas son las zonas en que podemos acceder al menu de trampas y colocar una trampa u obstaculo en el mapa.
+* Las zonas de trampas son las zonas en que podemos poner una trampa con el menu de trampas.
 * Las zonas de trampas en cada fase son configuradas de antemano estrategcamente con el intuito de mantener el equilibrio del juego y evitar 
 bugs o errores en el sistema de incentivo.
 * El cursor solo puede moverse hacia cuatro direcciónes (izquierda, derecha, hacia arriba y hacia abajo).
-* El cursor tiene que estar en una zona de trampas para que podamos acceder al menu de trampas.
-* Cuando compremos una trampa en el menu, la trampa aparecerá donde estaba el cursor antes de abrir el menu.
-* Para vender una trampa (sin perdidas con relacion a la compra) el cursor tiene que estar encima de la trampa que se quiere vender.
+* Se puede cancelar la colocacion de una trampa si hacemos click en la trampa con el boton deracho del ratón.
 * Existen unos limites de espacio dentro de cada zona de trampas para evitar errores en el caso de que se compre dos trampas o mas en una misma zona.
-* Existen plataformas que se mueven. El jugador puede pausar el mapa para acceder a una zona de trampas asociado a una de estas plataformas. Al 
-reanudar el mapa el jugador puede comprobar como el obstaculo interactua en movimiento.
+* Existen plataformas que se mueven, aunque en el turno del futuro estaran estáticas. Habran indicadores (flechas y lineas) de como estas plataformas 
+se moverán en el turno del presente.
 
 Turno del presente:
-* El juego incentiva al jugador a direccionar el personaje hacia abajo con sistemas de recompensas (dinero, vidas) y el limite superior de la 
-pantalla es solida (el personaje no lo puede ultrapasar). 
+* El juego incentiva al jugador a direccionar el personaje hacia abajo con el movimiento de la camara. 
+* El limite superior de la pantalla es solida (el personaje no lo puede ultrapasar). 
 * La camara sigue al personaje.
 * El personaje tiene una cantidad de vidas (sistema de corazones) que pierde cuande es golpeado por un obstaculo o trampa.
 * El personaje solo puede caminar por las plataformas (no existen zonas donde se pueda volar o nadar).
@@ -39,29 +37,25 @@ pantalla es solida (el personaje no lo puede ultrapasar).
 @subsection Listado/Tabla de inputs y acciones
 
 Turno del futuro:
-Flechas: Moverse en el mapa con un cursor / Seleccionar categoria de trampas y trampa en el menu de trampas (aun tenemos que ponernos de acuerdo en 
-esto).
-Tecla m: Acceder al menu de trampas / Salir del menu de trampas 
-Tecla c: Comprar trampa seleccionada. 
-Tecla v: Vender trampa.
-Tecla z: Terminar turno. Ir al turno del presente.
-Tecla p: Pausar el mapa / Reanudar el mapa.
+Flechas o ratón: Moverse en el mapa con un cursor / Seleccionar categoria de trampas y trampa en el menu de trampas.
+Tecla C / boton izquierdo del ratón: Seleccionar trampa (en el menu o en el mapa)
+Botón izquierdo del ratón: Seleccionar sitio en el mapa donde se colocara la trampa seleccionada.
+Tecla V: Sacar trampa seleccionada del mapa.
+Tecla Z: Terminar turno. Ir al turno del presente.
 
 Turno del Presente:
-Flecha izquierda: Mover el personaje a la izquierda.
-Flecha derecha: Mover el personaje a la derecha.
-Flechas hacia arriba: El personaje salta.
-Flechas hacia abajo: El personaje se agacha.
+Flecha izquierda / Tecla A: Mover el personaje a la izquierda.
+Flecha derecha / Tecla D: Mover el personaje a la derecha.
+Flechas hacia arriba / Tecla W / Barra espaciadora: El personaje salta.
 
 @c Subsection 3: Diseño de Interfaz/GUI
 @node Diseño de Interfaz/GUI
 @subsection Diseño de Interfaz/GUI
 
-El interfaz o mapa es un campo vertical com plataformas (estaticas y muebles) en ambos turnos (presente y futuro). 
-El fondo del mapa esta de acuerdo con la tematica ludonarrativa del comic. El juego tiene un maximo de 100 fases, donde cada fase representa 10 años 
-del comic (de 3055 a 4055), la tematica cambia a cada 10 fases (lo que serian 100 años en el futuro), donde cada tematica subsecuente es futuristica 
-con relacion a la anterior (plataformas, obstaculos, ropas y ambiente). Al total habrán 10 tematicas de la version mas antigua a la version mas 
-futuristica.
+
+Turno del futuro:
+Turno del Presente:
+@c El interfaz o mapa es un campo vertical con plataformas estaticas (ambos turnos) y móbiles (turno del presente). El fondo del mapa esta de acuerdo con la tematica del comic.
 
 @c Subsection 4: Wireframes de interfaz
 @node @i{Wireframes} de interfaz
@@ -76,8 +70,7 @@ Turno del Futuro:
 1. Cursor aparece en un sitio predeterminado del mapa.
 2. El jugador mueve el cursor hacia las zonas de trampas que desee y posiciona el cursor exactamente donde desea colocar una trampa. 
 3. El jugador accede el menu de trampas, escoje la categoria de la trampa que quiere y selecciona una trampa especifica.
-4. El jugador sigue poniendo trampas hasta cuando quiera (control de dinero) o hasta que no pueda mas (por un limite preestablecido por fase o 
-por falta de dinero).
+4. El jugador sigue poniendo trampas hasta cuando quiera (control de dinero) o hasta que no pueda mas (por un limite preestablecido por fase).
 5. El jugador termina el turno del futuro y el turno del presente empieza.
 
 Turno del presente:

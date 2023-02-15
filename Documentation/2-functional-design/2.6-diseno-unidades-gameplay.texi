@@ -20,7 +20,9 @@
 @node Mapas de niveles y entornos
 @subsection Mapas de niveles y entornos
 
-(...)
+Tematica 1 (Niveles 1 a 10) -> Tematica 2 (Niveles 11 a 20) -> Tematica 3 (Niveles 21 a 30) -> Tematica 4 (Niveles 31 a 40) -> 
+Tematica 5 (Niveles 41 a 50) -> Tematica 6 (Niveles 51 a 60) -> Tematica 7 (Niveles 61 a 70) -> Tematica 8 (Niveles 71 a 80) -> 
+Tematica 9 (Niveles 81 a 90) -> Tematica 10 (Niveles 91 a 100) -> Final
 
 @c Subsection 3: Especificación de puzzles
 @node Especificación de puzzles
@@ -32,7 +34,10 @@
 @node Mapas de secuencia de resolución de fases
 @subsection Mapas de secuencia de resolución de fases
 
-(...)
+El juego tiene un maximo de 100 fases, donde cada fase representa 10 años 
+del comic (de 3055 a 4055), la tematica cambia a cada 10 fases (lo que serian 100 años en el futuro), donde cada tematica subsecuente es futurística 
+con relacion a la anterior (plataformas, obstaculos, ropas y ambiente). Al total habrán 10 tematicas de la version mas antigua a la version mas 
+futuristica.
 
 @c Subsection 5: Tablas y calendarios de fases
 @node Tablas y calendarios de fases
