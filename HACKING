@@ -1,0 +1,22 @@
+How to externally contribute to the project?
+---------------------------------
+1. Fork the repository.
+2. Start adding commits to the project.
+3. Open a PR in draft mode (put a checklist in the description with all tasks to be made).
+4. When wanting to integrate the changes to upstream, mark the PR as ready for review.
+5. Wait for the feedback.
+
+
+How to make a release request?
+------------------------------
+1. Define new version depending on the type of changes made (major, patch, maintenance).
+2. Set this new version in the Makefile.
+3. Update the NEWS & ChangeLog files with information of the new version:
+  - NEWS: Deep explanation of the news that come with this new release in a non-technical way.
+  - ChangeLog: Log (list-like) of all the technical changes been made to the code.
+4. Encapsulate this changes in a commit named "Metal Birlant vX.X.X". If the SUBLEVEL number (or maintenance level) of the version is 0 (usual thing during git development), it can be ommitted and the commit will end up being "Metal Birlant vX.X".
+5. Create a tag for this last commit with this specs:
+  - Name: vX.X.X
+  - Comment: "Metal Birlant vX.X.X" or "Metal Birlant vX.X" (the same as in the commit).
+6. Push the changes (with tags) to your branch's remote (git push --tags).
+7. Create a PR to request merging the release to the main branch.
