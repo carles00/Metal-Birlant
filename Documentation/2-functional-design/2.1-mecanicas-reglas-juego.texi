@@ -39,7 +39,7 @@ El jugador, en el presente, podrá comprar habilidades que tendra disponibles so
 
 @b{Recesiones:}
 
-En cada ronda hay una probabilidad que toque un evento especial llamado del tipo Recesión. Cada recesión hará un efecto en esa ronda que puede ser negativo o positivo. 
+En cada ronda hay una probabilidad que toque un evento especial llamado del tipo Recesión. Cada recesión hará un efecto en esa ronda que es negativo para el jugador y le pone en un aprieto jugable determinado.
 
 @b{Multiplicadores de Trampas:}
 
