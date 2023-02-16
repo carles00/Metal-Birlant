@@ -33,7 +33,11 @@ Si el presente se queda sin dinero al comienzo de una ronda el juego termina.
 @node Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego
 @subsection Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego
 
+@float Table,variables
+@shortcaption{Variables del juego}
+@caption{Variables del juego}
 @center @image{img/variables, 13cm,, Variables,}
+@end float
 
 @c Subsection 4: Figuras
 @node Figuras
