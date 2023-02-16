@@ -1,6 +1,6 @@
-@c Section 4: Elementos de Juego y Comportamientos
-@node Elementos de Juego y Comportamientos
-@section Elementos de Juego y Comportamientos
+@c Section 4: Elementos de Juego y comportamientos
+@node Elementos de juego y comportamientos
+@section Elementos de juego y comportamientos
 
 @menu
 * Personajes:: ...
@@ -14,9 +14,11 @@
 @node Personajes
 @subsection Personajes
 
-(...)
+En este apartado se desglosarán los personajes que aparecen en el videojuego, tanto jugables por el usuario o con otro tipo de rol en la narrativa.
 
 @float Table,characters
+@shortcaption{Tabla de personajes}
+@caption{Tabla de personajes}
 @multitable @columnfractions .2 .2 .25 .4
 @c Column Names
 @headitem Nombre @tab IMG @tab Rol @tab Descripción
@@ -42,44 +44,14 @@
 @node Habilidades
 @subsection Habilidades
 
-(...)
+En cada ronda, cuando se inicia el turno del presente, se dará la oportunidad al jugador de comprar ciertas habilidades, las cuales aportarán diversos atributos que podrían llegar a ayudar al protagonista a superar ciertos obstáculos, mas solo se podrán utilizar durante esa ronda.
 
-@c Subsection 3: Trampas
-@node Trampas
-@subsection Trampas
-
-@menu
-* Categorías de trampas y sus propiedades:: ...
-* Compendio general de trampas:: ...
-@end menu
-
-@c Subsubsection 1: Categorías de trampas y sus propiedades
-@node Categorías de trampas y sus propiedades
-@subsubsection Categorías de trampas y sus propiedades
-
-(...)
-
-@float Table,trap-categories
-@table @samp
-@item Tier 1: (...)
-(...)
-@item Tier 2: (...)
-(...)
-@item Tier 3: (...)
-(...)
-@end table
-@end float
-
-@c Subsubsection 2: Compendio general de trampas
-@node Compendio general de trampas
-@subsubsection Compendio general de trampas
-
-(...)
-
-@float Table,trap-list
-@multitable @columnfractions
+@float Table,skills
+@shortcaption{Tabla de habilidades}
+@caption{Tabla de habilidades}
+@multitable @columnfractions .25 .25 .25 .25
 @c Column Names
-@headitem Nombre @tab IMG @tab Categoría @tab Disponibilidad
+@headitem Nombre @tab IMG @tab Disponibilidad @tab Precio
 @c Row 1
 @item (...)
 @tab (...)
@@ -97,6 +69,75 @@
 @tab (...)
 @c Row 4
 @item (...)
+@tab (...)
+@tab (...)
+@tab (...)
+@end multitable
+@end float
+
+@c Subsection 3: Trampas
+@node Trampas
+@subsection Trampas
+
+El sistema de trampas es la mecánica más importante del juego, 
+
+@menu
+* Categorías de trampas y sus propiedades:: ...
+* Compendio general de trampas:: ...
+@end menu
+
+@c Subsubsection 1: Categorías de trampas y sus propiedades
+@node Categorías de trampas y sus propiedades
+@subsubsection Categorías de trampas y sus propiedades
+
+(...)
+
+@float Table,trap-categories
+@shortcaption{Categorías de las trampas}
+@caption{Categorías de las trampas}
+@table @samp
+@item Tier 1: DOGE
+(...)
+@item Tier 2: Ethereum
+(...)
+@item Tier 3: Bitcoin
+(...)
+@end table
+@end float
+
+@c Subsubsection 2: Compendio general de trampas
+@node Compendio general de trampas
+@subsubsection Compendio general de trampas
+
+(...)
+
+@float Table,trap-list
+@shortcaption{Tabla de trampas con @i{stats}}
+@caption{Tabla de trampas con @i{stats}}
+@multitable @columnfractions .2 .2 .2 .2 .2
+@c Column Names
+@headitem Nombre @tab IMG @tab Categoría @tab Disponibilidad @tab Valor
+@c Row 1
+@item Sierra cortadora
+@tab @image{img/traps/tier-1/spinning-saw,2cm,,Sierra cortadora,}
+@tab DOGE
+@tab R1
+@tab 200
+@c Row 2
+@item (...)
+@tab (...)
+@tab (...)
+@tab (...)
+@tab (...)
+@c Row 3
+@item (...)
+@tab (...)
+@tab (...)
+@tab (...)
+@tab (...)
+@c Row 4
+@item (...)
+@tab (...)
 @tab (...)
 @tab (...)
 @tab (...)

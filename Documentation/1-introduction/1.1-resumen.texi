@@ -46,11 +46,13 @@ Principalmente, este juego bebe mucho de la idea de trampas que implementa @i{Ul
 @page
 
 @float Figure,uch
+@shortcaption{Ultimate Chicken Horse @i{screenshot}}
+@caption{Ultimate Chicken Horse @i{screenshot}}
 @center @image{img/uch,10cm,,Ultimate Chicken Horse,}
-@center @i{Ultimate Chicken Horse}
 @end float
 
 @float Figure,downwell
+@shortcaption{Downwell @i{screenshot}}
+@caption{Downwell @i{screenshot}}
 @center @image{img/downwell,10cm,,Downwell,}
-@center @i{Downwell}
 @end float
