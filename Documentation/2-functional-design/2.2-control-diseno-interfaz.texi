@@ -14,28 +14,112 @@
 @node Reglas de control del Juego/Personaje
 @subsection Reglas de control del Juego/Personaje
 
-(...)
+Turno del futuro:
+@itemize @bullet
+@item
+Las zonas de trampas son las zonas en que podemos poner una trampa con el menu de trampas.
+@item
+Las zonas de trampas en cada fase son configuradas de antemano estrategcamente con el intuito de mantener el equilibrio del juego y evitar 
+bugs o errores en el sistema de incentivo.
+@item
+El cursor solo puede moverse hacia cuatro direcciónes (izquierda, derecha, hacia arriba y hacia abajo).
+@item
+Se puede cancelar la colocacion de una trampa si hacemos click en la trampa con el boton deracho del ratón.
+@item
+Existen unos limites de espacio dentro de cada zona de trampas para evitar errores en el caso de que se compre dos trampas o mas en una misma zona.
+@item
+Existen plataformas que se mueven, aunque en el turno del futuro estaran estáticas. Habran indicadores (flechas y lineas) de como estas plataformas 
+se moverán en el turno del presente.
+@end itemize
+
+Turno del presente:
+@itemize @bullet
+@item
+El juego incentiva al jugador a direccionar el personaje hacia abajo con el movimiento de la camara. 
+@item
+El limite superior de la pantalla es solida (el personaje no lo puede ultrapasar). 
+@item
+La camara sigue al personaje.
+@item
+El personaje tiene una cantidad de vidas (sistema de corazones) que pierde cuande es golpeado por un obstaculo o trampa.
+@item
+El personaje solo puede caminar por las plataformas (no existen zonas donde se pueda volar o nadar).
+@item
+Si el personaje no esta encima de una plataforma, esta cayendo.
+@end itemize
 
 @c Subsection 2: Listado/Tabla de inputs y acciones
 @node Listado/Tabla de inputs y acciones
 @subsection Listado/Tabla de inputs y acciones
 
-(...)
+Turno del futuro:
+@itemize @bullet
+@item
+Flechas o ratón: Moverse en el mapa con un cursor / Seleccionar categoria de trampas y trampa en el menu de trampas.
+@item
+Tecla C / boton izquierdo del ratón: Seleccionar trampa (en el menu o en el mapa).
+@item
+Botón izquierdo del ratón: Seleccionar sitio en el mapa donde se colocara la trampa seleccionada.
+@item
+Tecla V: Sacar trampa seleccionada del mapa.
+@item
+Tecla Z: Terminar turno. Ir al turno del presente.
+@end itemize
+
+Turno del Presente:
+@itemize @bullet
+@item
+Flecha izquierda / Tecla A: Mover el personaje a la izquierda.
+@item
+Flecha derecha / Tecla D: Mover el personaje a la derecha.
+@item
+Flechas hacia arriba / Tecla W / Barra espaciadora: El personaje salta.
+@end itemize
 
 @c Subsection 3: Diseño de Interfaz/GUI
 @node Diseño de Interfaz/GUI
 @subsection Diseño de Interfaz/GUI
 
-(...)
+Turno del futuro:
+El interfaz del turno del futuro es una simulacion de una pantalla de una sala de camaras,
+donde a la derecha tendremos el menu de trampas y a la izquierda el mapa (mismo del turno del 
+presente, pero con indicaciónes) adonde pondremos las trampas.
+
+Turno de presente:
+El interfaz o mapa es un campo vertical con plataformas estaticas (ambos turnos) y móbiles 
+(turno del presente). El fondo del mapa esta de acuerdo con la tematica del comic y no cambia 
+conforme el jugador avanza de nivel.
 
 @c Subsection 4: Wireframes de interfaz
 @node @i{Wireframes} de interfaz
 @subsection @i{Wireframes} de interfaz
 
-(...)
 
 @c Subsection 5: Diagramas de contextos/flujo
 @node Diagramas de contextos/flujo
 @subsection Diagramas de contextos/flujo
 
-(...)
+Turno del Futuro:
+@enumerate
+@item
+El mapa del juego aparece (a la izquierda de la pantalla) con zonas de trampas visibles y el menu de trampas (a la derecha de la pantalla).
+@item
+El jugador selecciona la trampa en el menu de trampas, que desea colocar en el mapa.
+@item
+El jugador hace click en el mapa en el sitio que quiere poner la trampa seleccionada.
+@item
+El jugador sigue poniendo trampas hasta cuando quiera (control de dinero) o hasta que no pueda mas (por un limite preestablecido por fase).
+@item
+El jugador termina el turno del futuro y el turno del presente empieza.
+@end enumerate
+
+Turno del presente:
+@enumerate
+@item
+El personaje aparece en alguna parte de la zona superior del mapa (dependiendo de la fase) encima de una plataforma.
+@item
+El jugador mueve el personaje por las plataformas con la intencion de ir bajando en el mapa encuanto se esquiva/evita los obstaculos y 
+recoge monedas y corazones.
+@item
+El jugador llega en una plataforma al limite inferior del mapa, donde recoge una cantidad mayor de dinero y el turno termina.
+@end enumerate

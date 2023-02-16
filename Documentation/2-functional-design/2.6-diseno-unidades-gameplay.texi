@@ -38,4 +38,6 @@
 @node Tablas y calendarios de fases
 @subsection Tablas y calendarios de fases
 
-(...)
+Aparecera en cada ronda un contador que simbolizaria el año en que el personaje principal
+se encuentra (primer año es el 3055) y aumenta conforme el personaje baja en el mapa. El primer 
+año en el contador aumenta (cantidad a decidir) conforme el jugador pase de rondas.
