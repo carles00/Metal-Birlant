@@ -52,10 +52,15 @@ Flechas hacia arriba / Tecla W / Barra espaciadora: El personaje salta.
 @node Diseño de Interfaz/GUI
 @subsection Diseño de Interfaz/GUI
 
-
 Turno del futuro:
-Turno del Presente:
-@c El interfaz o mapa es un campo vertical con plataformas estaticas (ambos turnos) y móbiles (turno del presente). El fondo del mapa esta de acuerdo con la tematica del comic.
+El interfaz del turno del futuro es una simulacion de una pantalla de una sala de camaras,
+donde a la derecha tendremos el menu de trampas y a la izquierda el mapa (mismo del turno del 
+presente, pero con indicaciónes) adonde pondremos las trampas.
+
+Turno de presente:
+El interfaz o mapa es un campo vertical con plataformas estaticas (ambos turnos) y móbiles 
+(turno del presente). El fondo del mapa esta de acuerdo con la tematica del comic y no cambia 
+conforme el jugador avanza de nivel.
 
 @c Subsection 4: Wireframes de interfaz
 @node @i{Wireframes} de interfaz
@@ -67,9 +72,9 @@ Turno del Presente:
 @subsection Diagramas de contextos/flujo
 
 Turno del Futuro:
-1. Cursor aparece en un sitio predeterminado del mapa.
-2. El jugador mueve el cursor hacia las zonas de trampas que desee y posiciona el cursor exactamente donde desea colocar una trampa. 
-3. El jugador accede el menu de trampas, escoje la categoria de la trampa que quiere y selecciona una trampa especifica.
+1. El mapa del juego aparece (a la izquierda de la pantalla) con zonas de trampas visibles y el menu de trampas (a la derecha de la pantalla).
+2. El jugador selecciona la trampa en el menu de trampas, que desea colocar en el mapa.
+3. El jugador hace click en el mapa en el sitio que quiere poner la trampa seleccionada.
 4. El jugador sigue poniendo trampas hasta cuando quiera (control de dinero) o hasta que no pueda mas (por un limite preestablecido por fase).
 5. El jugador termina el turno del futuro y el turno del presente empieza.
 
