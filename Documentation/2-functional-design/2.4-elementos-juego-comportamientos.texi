@@ -1,12 +1,12 @@
-@c Section 4: Elementos de Juego y comportamientos
-@node Elementos de juego y comportamientos
-@section Elementos de juego y comportamientos
+@c Section 4: Elementos de Juego
+@node Elementos de juego
+@section Elementos de juego
 
 @menu
 * Personajes:: ...
 * Habilidades:: ...
 * Trampas:: ...
-* Diagramas de flujo y autómatas de comportamiento de los elementos/agentes:: ...
+* Recesiones:: ...
 * Ilustraciones:: ...
 @end menu
 
@@ -33,7 +33,7 @@ En este apartado se desglosarán los personajes que aparecen en el videojuego, t
 @tab Jugable durante la colocación de trampas.
 @tab Personaje protagonista en su versión futura (+50 años).
 @c Row 3
-@item Blockchainy
+@item Model D
 @tab (...)
 @tab Montura, usable como habilidad.
 @tab (...)
@@ -41,7 +41,7 @@ En este apartado se desglosarán los personajes que aparecen en el videojuego, t
 @end float
 
 @c Subsection 2: Habilidades
-@node Habilidades
+@node Habilidades y comportamientos
 @subsection Habilidades
 
 En cada ronda, cuando se inicia el turno del presente, se dará la oportunidad al jugador de comprar ciertas habilidades, las cuales aportarán diversos atributos que podrían llegar a ayudar al protagonista a superar ciertos obstáculos, mas solo se podrán utilizar durante esa ronda.
@@ -53,26 +53,48 @@ En cada ronda, cuando se inicia el turno del presente, se dará la oportunidad a
 @c Column Names
 @headitem Nombre @tab IMG @tab Disponibilidad @tab Precio
 @c Row 1
-@item (...)
+@item Stonks
 @tab (...)
-@tab (...)
-@tab (...)
+@tab R5
+@tab 5000
 @c Row 2
-@item (...)
+@item Dash
 @tab (...)
-@tab (...)
-@tab (...)
+@tab R10
+@tab 10000
 @c Row 3
-@item (...)
+@item 51-percent attack
 @tab (...)
-@tab (...)
-@tab (...)
+@tab R15
+@tab 15000
 @c Row 4
-@item (...)
+@item Criptobro
 @tab (...)
+@tab R20
+@tab 20000
+@c Row 5
+@item Autopilot
 @tab (...)
-@tab (...)
+@tab R25
+@tab 25000
 @end multitable
+@end float
+
+@float Table,skills-descriptions
+@shortcaption{Descripciones de las habilidades}
+@caption{Descripciones de las habilidades}
+@table @samp
+@item Stonks
+(...)
+@item Dash
+(...)
+@item 
+(...)
+@item 
+(...)
+@item 
+(...)
+@end table
 @end float
 
 @c Subsection 3: Trampas
@@ -97,7 +119,7 @@ El sistema de trampas es la mecánica más importante del juego,
 @caption{Categorías de las trampas}
 @table @samp
 @item Tier 1: DOGE
-(...)
+Categoría
 @item Tier 2: Ethereum
 (...)
 @item Tier 3: Bitcoin
@@ -124,11 +146,11 @@ El sistema de trampas es la mecánica más importante del juego,
 @tab R1
 @tab 200
 @c Row 2
-@item (...)
-@tab (...)
-@tab (...)
-@tab (...)
-@tab (...)
+@item Ballesta
+@tab @image{img/traps/tier-1/crossbow,1.5cm,,Ballesta,}
+@tab DOGE
+@tab R1
+@tab 150
 @c Row 3
 @item (...)
 @tab (...)
@@ -144,11 +166,12 @@ El sistema de trampas es la mecánica más importante del juego,
 @end multitable
 @end float
 
-@c Subsection 4: Diagramas de flujo y autómatas de comportamiento de los elementos/agentes
-@node Diagramas de flujo y autómatas de comportamiento de los elementos/agentes
-@subsection Diagramas de flujo y autómatas de comportamiento de los elementos/agentes
+@c Subsection 4: Recesiones
+@node Recesiones
+@subsection Recesiones
 
-(...)
+1. La Gran Depresion (sin dinero en el presente)
+2 ...
 
 @c Subsection 5: Ilustraciones
 @node Ilustraciones
