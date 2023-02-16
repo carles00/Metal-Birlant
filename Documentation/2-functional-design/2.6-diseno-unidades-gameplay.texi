@@ -20,7 +20,7 @@
 @node Mapas de niveles y entornos
 @subsection Mapas de niveles y entornos
 
-(...)
+@center @image{img/mapa, 13cm,, Mapa,}
 
 @c Subsection 3: Especificación de puzzles
 @node Especificación de puzzles
