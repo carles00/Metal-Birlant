@@ -1,0 +1,55 @@
+@c Section 1: Mecánicas y Reglas de Juego
+@node Mecánicas y Reglas de Juego
+@section Mecánicas y Reglas de Juego
+
+@menu
+* Descripción del Funcionamiento del Juego:: ...
+* Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego:: ...
+* Tablas de condiciones y resultados:: ...
+* Figuras:: ...
+@end menu
+
+@c Subsection 1: Descripción del Funcionamiento del Juego
+@node Descripción del Funcionamiento del Juego
+@subsection Descripción del Funcionamiento del Juego
+
+El juego se divide en rondas, cada ronda constará de 2 turnos, el de colocación de trampas y el de bajada.
+
+@b{Movimiento:}
+
+El movimiento del jugador será en 2D y dispondrá de un salto simple.
+
+@b{En el turno del Futuro:}
+
+El jugador tiene dinero infinito con el que puede comprar trampas y colocarlas por el escenario. 
+
+@b{En el turno del Presente:}
+
+El jugador tiene una canitdad de dinero con la que puede comprar habilidades. Al principio del turno se le quita una cantidad de dinero que irá augmentando en cada ronda. 
+
+Una vez compradas las habilidades el jugador empieza la sección de plataformas para llegar al tesoro.
+
+El jugador SOLO gana dinero cuando consigue llegar al tesoro. Una vez ha llegado se le recompensa con una cantidad fija de dinero y el valor de las trampas que ha colocado en el futuro. 
+
+Si el presente se queda sin dinero al comienzo de una ronda el juego termina.
+
+@b{Habilidades:}
+
+El jugador, en el presente, podrá comprar habilidades que tendra disponibles solamente en esa ronda.
+
+@b{Recesiones:}
+
+En cada ronda hay una probabilidad que toque un evento especial llamado del tipo Recesión. Cada recesión hará un efecto en esa ronda que puede ser negativo o positivo. 
+
+@b{Multiplicadores de Trampas:}
+
+El mapa está dividido en diferentes edades y dependiendo de donde coloquemos las trampas tendran mejors o peores stats.
+
+Tambíen habran algunos hot-spots donde, si ponemos una trampa, esa trampa de volverá más potente y por tanto dará más beneficio
+
+@c Subsection 2: Variables, Stats, Valores, y Estados del Jugador y/o Juego
+@node Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego
+@subsection Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego
+
+@center @image{img/variables, 13cm,, Variables,}
+
