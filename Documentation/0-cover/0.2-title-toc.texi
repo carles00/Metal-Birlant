@@ -22,3 +22,11 @@ This is the root of the GDD of Metal Birlant. Welcome!
 
 @c Table of contents
 @contents
+
+@node List of Figures
+@unnumbered List of Figures
+@listoffloats Figure
+
+@node List of Tables
+@unnumbered List of Tables
+@listoffloats Table
