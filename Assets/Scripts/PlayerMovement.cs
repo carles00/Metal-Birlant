@@ -11,25 +11,22 @@ public class PlayerMovement : MonoBehaviour
 {
     
     [SerializeField] private float runSpeed = 40f;
-    [Range(1f, 10f)][SerializeField] private float jumpForce;
+    [Range(1f, 50f)][SerializeField] private float jumpForce;
     [Range(0, .3f)] [SerializeField] private float acceleration;
     [SerializeField] private LayerMask colliderMask;
     [SerializeField] private Transform groundCheck;
 
     private Rigidbody2D rigidBody;
-    private BoxCollider2D boxCollider;
-    private Vector3 velocity = Vector3.zero;
 
     bool grounded;
     float move;
     bool jump = false;
-    bool isJumping = false;
-    float jumpAcceleration = 10f;
+    bool endJump = false;
+    Vector3 refVel = Vector3.zero;
   
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<BoxCollider2D>();
     }
 
  
@@ -38,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
         checkGround();
 
         movement();
-        Debug.Log(isJumping);
     }
 
     private void movement(){
@@ -47,10 +43,14 @@ public class PlayerMovement : MonoBehaviour
             rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             jump = false;
         }
-        else if(isJumping && !jump)
+        if(endJump)
         {
-            rigidBody.AddForce(Vector2.up * jumpAcceleration, ForceMode2D.Force);
+            var opposite = -rigidBody.velocity;
+            rigidBody.AddForce(opposite * Time.fixedDeltaTime, ForceMode2D.Impulse);
+            endJump = false;
         }
+
+        transform.Translate(Vector3.right * move * runSpeed * Time.fixedDeltaTime);
     }
 
     private void checkGround(){
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         
         grounded = Physics2D.Raycast(groundCheck.position, Vector2.down, .2f, colliderMask);
         Color rayColor = grounded ? Color.red : Color.green;
-        Debug.DrawRay(groundCheck.position, Vector2.down * .2f, rayColor);
+        Debug.DrawRay(groundCheck.position, Vector2.down * .2f, rayColor,.2f);
 
     }
 
@@ -67,23 +67,15 @@ public class PlayerMovement : MonoBehaviour
         if (context.started)
         {
             jump = true;
-            isJumping = true;
         }
-        if (context.canceled)
+        if (context.canceled || context.performed)
         {
-            isJumping = false;
+            endJump = true;
         }
-        if (context.performed)
-        {
-            isJumping = false;
-        }
-        
     }
 
     public void onMove(InputAction.CallbackContext context)
     {
-
-        move = context.ReadValue<Single>() * runSpeed;
-        
+        move = context.ReadValue<Single>();
     }
 }
