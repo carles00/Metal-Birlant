@@ -1,0 +1,224 @@
+@c Section 4: Elementos de Juego
+@node Elementos de juego
+@section Elementos de juego
+
+@menu
+* Personajes:: ...
+* Habilidades:: ...
+* Trampas:: ...
+* Recesiones:: ...
+@end menu
+
+@c Subsection 1: Personajes
+@node Personajes
+@subsection Personajes
+
+En este apartado se desglosarán los personajes que aparecen en el videojuego, tanto jugables por el usuario o con otro tipo de rol en la narrativa.
+
+@float Table,characters
+@shortcaption{Tabla de personajes}
+@caption{Tabla de personajes}
+@multitable @columnfractions .2 .2 .25 .4
+@c Column Names
+@headitem Nombre @tab IMG @tab Rol @tab Descripción
+@c Row 1
+@item @i{Elon J. D'Oroski} (presente)
+@tab (...)
+@tab Jugable durante el descenso.
+@tab Personaje protagonista en el presente.
+@c Row 2
+@item @i{Elon J. D'Oroski} (futuro)
+@tab (...)
+@tab Jugable durante la colocación de trampas.
+@tab Personaje protagonista en su versión futura (+50 años).
+@c Row 3
+@item Model D
+@tab (...)
+@tab Montura, utilizable como habilidad.
+@tab Animal que puede ser llamado mediante la habilidad @i{Autopilot}.
+@end multitable
+@end float
+
+@c Subsection 2: Habilidades
+@node Habilidades y comportamientos
+@subsection Habilidades
+
+En cada ronda, cuando se inicia el turno del presente, se dará la oportunidad al jugador de comprar ciertas habilidades, las cuales aportarán diversos atributos que podrían llegar a ayudar al protagonista a superar ciertos obstáculos, mas solo se podrán utilizar durante esa ronda.
+
+@float Table,skills
+@shortcaption{Tabla de habilidades}
+@caption{Tabla de habilidades}
+@multitable @columnfractions .25 .25 .25 .25
+@c Column Names
+@headitem Nombre @tab IMG @tab Disponibilidad @tab Precio
+@c Row 1
+@item Stonks
+@tab @image{img/skills/stonks,1cm,,Stonks,}
+@tab R5
+@tab 5000
+@c Row 2
+@item Dash
+@tab @image{img/skills/dash,1cm,,Dash,}
+@tab R10
+@tab 10000
+@c Row 3
+@item 51-Percent Attack
+@tab @image{img/skills/51-percent-attack,1cm,,51-Percent Attack,}
+@tab R15
+@tab 15000
+@c Row 4
+@item Cryptobro
+@tab @image{img/skills/cryptobro,1cm,,Cryptobro,}
+@tab R20
+@tab 20000
+@c Row 5
+@item Autopilot
+@tab @image{img/skills/autopilot,1cm,,Autopilot,}
+@tab R25
+@tab 25000
+@end multitable
+@end float
+
+@float Table,skills-descriptions
+@shortcaption{Descripciones de las habilidades}
+@caption{Descripciones de las habilidades}
+@table @samp
+@item Stonks
+¿Te dijeron que no podías aspirar a llegar tan alto? ¡Se equivocaban! Haz un doble salto y consigue sortear más fácilmente algunas trampas, o llegar a ciertas plataformas.
+@item Dash
+Reúne y conjura el poder del @i{sky gold} en ti mismo para proyectarte hacia delante. Irás a tanta velocidad que ni las superficies te ofrecerán resistencia.
+@item 51-Percent Attack
+Lo has logrado, has conseguido la mayoría de poder de cómputo en la red. Gracias a esta habilidad causarás interferencias y deshabilitarás las trampas cercanas por 20s.
+@item Criptobro
+El mercado es tan volátil... Pero, ¿quién no quiere un poco de emoción en la vida? Con esta habilidad podrás triplicar los beneficios obtenidos al final de la ronda, si es que consigues llegar al futuro: solo tendrás una vida.
+@item Autopilot
+Nunca viene mal tener un poco de compañia, ¿no? ¡Y que mejor que montar en dragón! Llama a @i{Model D} y destruye todo a tu paso. Esta habilidad te hará invulnerable por 20s.
+@end table
+@end float
+
+@c Subsection 3: Trampas
+@node Trampas
+@subsection Trampas
+
+El sistema de trampas es la mecánica más importante del juego, y su parte más esencial. Las trampas se dividen en 3 categorías, cada una más moderna, sofisticada y difícil de sortear que la anterior.
+
+@menu
+* Categorías de trampas y sus propiedades:: ...
+* Compendio general de trampas:: ...
+@end menu
+
+@c Subsubsection 1: Categorías de trampas y sus propiedades
+@node Categorías de trampas y sus propiedades
+@subsubsection Categorías de trampas y sus propiedades
+
+(...)
+
+@float Table,trap-categories
+@shortcaption{Categorías de las trampas}
+@caption{Categorías de las trampas}
+@table @samp
+@item Tier 1: DOGE
+Categoría ...
+@item Tier 2: Ethereum
+Categoría ...
+@item Tier 3: Bitcoin
+Categoría ...
+@end table
+@end float
+
+@c Subsubsection 2: Compendio general de trampas
+@node Compendio general de trampas
+@subsubsection Compendio general de trampas
+
+Estas son todas las trampas disponibles durante el juego, con sus datos y estadísticas.
+
+@float Table,trap-list
+@shortcaption{Tabla de trampas con @i{stats}}
+@caption{Tabla de trampas con @i{stats}}
+@multitable @columnfractions .2 .2 .2 .2 .2
+@c Column Names
+@headitem Nombre @tab IMG @tab Categoría @tab Disponibilidad @tab Valor
+@c Tier 1: DOGE
+@c Row 1
+@item Sierra cortadora
+@tab @image{img/traps/tier-1/spinning-saw,2cm,,Sierra cortadora,}
+@tab DOGE
+@tab R1
+@tab 200
+@c Row 2
+@item Ballesta
+@tab @image{img/traps/tier-1/crossbow,1.5cm,,Ballesta,}
+@tab DOGE
+@tab R1
+@tab 150
+@c Row 3
+@item Cañón
+@tab @image{img/traps/tier-1/cannon,1.5cm,,Cañón,}
+@tab DOGE
+@tab R3
+@tab 225
+@c Row 4
+@item Mortero
+@tab @image{img/traps/tier-1/mortar,1.5cm,,Mortero,}
+@tab DOGE
+@tab R3
+@tab 300
+@c Row 5
+@item Torre bombardera
+@tab @image{img/traps/tier-1/bomb-tower,1.5cm,,Torre bombardera,}
+@tab DOGE
+@tab R4
+@tab 375
+@c Tier 2: Ethereum
+@c Row 6
+@item Torre Tesla
+@tab @image{img/traps/tier-2/tesla-tower,1.5cm,,Torre Tesla,}
+@tab Ethereum
+@tab R3
+@tab 700
+@c Row 7
+@item Torreta de electrochoque
+@tab @image{img/traps/tier-2/taser-turret,1.5cm,,Torreta de electrochoque,}
+@tab Ethereum
+@tab R4
+@tab 800
+@c Row 8
+@item Pistola Láser
+@tab @image{img/traps/tier-2/laser-gun,1.5cm,,Pistola Láser,}
+@tab Ethereum
+@tab R4
+@tab 950
+@c Tier 3: Bitcoin
+@c Row 9
+@item Torre de rayos infernales
+@tab @image{img/traps/tier-3/infernal-tower,1.5cm,,Torre de rayos infernales,}
+@tab Bitcoin
+@tab R7
+@tab 1100
+@c Row 10
+@item Agujero Negro
+@tab @image{img/traps/tier-3/dark-hole,1.5cm,,Agujero Negro,}
+@tab Bitcoin
+@tab R11
+@tab 1500
+@end multitable
+@end float
+
+@c Subsection 4: Recesiones
+@node Recesiones
+@subsection Recesiones
+
+Las @b{recesiones} son eventos de ronda aleatorios, los cuales afectan de manera directa y negativa al jugador (en el turno del presente). Puede aparecer una de las 3 recesiones en la ronda con una probabilidad
+
+@float Table,recession
+@shortcaption{Recesiones y sus efectos}
+@caption{Recesiones y sus efectos}
+@table @samp
+@item La Gran Depresión
+Todo se ha devaluado de la noche a la mañana; tus ahorros ya no sirven para nada, por lo que deberás superar esta ronda para seguir con tu aventura.
+@item Inversión Masiva
+¡Oh, no! Todos están "inviertiendo" tanto en el mercado que tus controles se han "invertido"... ¿Lograrás llegar al futuro en está condición?
+@item Período Criogénico
+Ha llegado de nuevo una glaciación, el hielo continental de los casquetes polares y los glaciares ha sufrido una considerable expansión. Todas las superficies están resbaladizas y es imposible caminar con precisión.
+@end table
+@end float

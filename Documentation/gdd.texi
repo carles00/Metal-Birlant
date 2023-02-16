@@ -33,7 +33,7 @@
 @include 2-functional-design/2.1-mecanicas-reglas-juego.texi
 @include 2-functional-design/2.2-control-diseno-interfaz.texi
 @include 2-functional-design/2.3-diseno-flujo-gameplay-loop.texi
-@include 2-functional-design/2.4-elementos-juego-comportamientos.texi
+@include 2-functional-design/2.4-elementos-juego.texi
 @include 2-functional-design/2.5-desarrollo-ludonarrativo.texi
 @include 2-functional-design/2.6-diseno-unidades-gameplay.texi
 
