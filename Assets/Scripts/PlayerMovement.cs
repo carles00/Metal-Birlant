@@ -4,27 +4,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Controller2D))]
+[RequireComponent(typeof(BoxCollider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
 
 public class PlayerMovement : MonoBehaviour
 {
-    Controller2D controller;
+    
+    [SerializeField] private float runSpeed = 40f;
+    [Range(1f, 10f)][SerializeField] private float jumpForce;
+    [Range(0, .3f)] [SerializeField] private float acceleration;
+    [SerializeField] private LayerMask colliderMask;
 
-    public float runSpeed = 40f;
+    private Rigidbody2D rigidBody;
+    private BoxCollider2D collider;
+    private Vector3 velocity = Vector3.zero;
+
+    bool grounded;
     float move;
     bool jump = false;
-
   
     void Start()
     {
-        controller = gameObject.GetComponent<Controller2D>();
+        rigidBody = GetComponent<Rigidbody2D>();
+        collider = GetComponent<BoxCollider2D>();
     }
 
  
     private void FixedUpdate()
-    {
-        controller.Move(move * Time.fixedDeltaTime, jump);
-        jump = false;
+    {   
+
+    }
+
+    private void movement(){
+
+    }
+
+    private bool isGrounded(){
+
+        return false;
     }
 
     public void onJump(InputAction.CallbackContext context)
