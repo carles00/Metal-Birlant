@@ -10,21 +10,7 @@
 * Tablas y calendarios de fases:: ...
 @end menu
 
-@c Subsection 1: Mapas de secuencia de resolución de fases
-@node Tablas de secuencia de resolución de fases
-@subsection Tablas de secuencia de resolución de fases 
-
-Conforme pasan los niveles se desbloquean trampas y habilidades y el limite de trampas por 
-nivel aumenta. A los 30-35 niveles, ya deberia estar todo desbloqueado.
-
-Tabla de habilidades:
-(...)
-Tabla de obstaculos:
-(...)
-Limite de trampas por cada nivel:
-(...)
-
-@c Subsection 5: Tablas y calendarios de fases
+@c Subsection 1: Tablas y calendarios de fases
 @node Tablas y calendarios de fases
 @subsection Tablas y calendarios de fases
 

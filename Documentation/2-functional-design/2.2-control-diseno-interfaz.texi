@@ -15,38 +15,66 @@
 @subsection Reglas de control del Juego/Personaje
 
 Turno del futuro:
-* Las zonas de trampas son las zonas en que podemos poner una trampa con el menu de trampas.
-* Las zonas de trampas en cada fase son configuradas de antemano estrategcamente con el intuito de mantener el equilibrio del juego y evitar 
+@itemize @bullet
+@item
+Las zonas de trampas son las zonas en que podemos poner una trampa con el menu de trampas.
+@item
+Las zonas de trampas en cada fase son configuradas de antemano estrategcamente con el intuito de mantener el equilibrio del juego y evitar 
 bugs o errores en el sistema de incentivo.
-* El cursor solo puede moverse hacia cuatro direcciónes (izquierda, derecha, hacia arriba y hacia abajo).
-* Se puede cancelar la colocacion de una trampa si hacemos click en la trampa con el boton deracho del ratón.
-* Existen unos limites de espacio dentro de cada zona de trampas para evitar errores en el caso de que se compre dos trampas o mas en una misma zona.
-* Existen plataformas que se mueven, aunque en el turno del futuro estaran estáticas. Habran indicadores (flechas y lineas) de como estas plataformas 
+@item
+El cursor solo puede moverse hacia cuatro direcciónes (izquierda, derecha, hacia arriba y hacia abajo).
+@item
+Se puede cancelar la colocacion de una trampa si hacemos click en la trampa con el boton deracho del ratón.
+@item
+Existen unos limites de espacio dentro de cada zona de trampas para evitar errores en el caso de que se compre dos trampas o mas en una misma zona.
+@item
+Existen plataformas que se mueven, aunque en el turno del futuro estaran estáticas. Habran indicadores (flechas y lineas) de como estas plataformas 
 se moverán en el turno del presente.
+@end itemize
 
 Turno del presente:
-* El juego incentiva al jugador a direccionar el personaje hacia abajo con el movimiento de la camara. 
-* El limite superior de la pantalla es solida (el personaje no lo puede ultrapasar). 
-* La camara sigue al personaje.
-* El personaje tiene una cantidad de vidas (sistema de corazones) que pierde cuande es golpeado por un obstaculo o trampa.
-* El personaje solo puede caminar por las plataformas (no existen zonas donde se pueda volar o nadar).
-* Si el personaje no esta encima de una plataforma, esta cayendo.
+@itemize @bullet
+@item
+El juego incentiva al jugador a direccionar el personaje hacia abajo con el movimiento de la camara. 
+@item
+El limite superior de la pantalla es solida (el personaje no lo puede ultrapasar). 
+@item
+La camara sigue al personaje.
+@item
+El personaje tiene una cantidad de vidas (sistema de corazones) que pierde cuande es golpeado por un obstaculo o trampa.
+@item
+El personaje solo puede caminar por las plataformas (no existen zonas donde se pueda volar o nadar).
+@item
+Si el personaje no esta encima de una plataforma, esta cayendo.
+@end itemize
 
 @c Subsection 2: Listado/Tabla de inputs y acciones
 @node Listado/Tabla de inputs y acciones
 @subsection Listado/Tabla de inputs y acciones
 
 Turno del futuro:
+@itemize @bullet
+@item
 Flechas o ratón: Moverse en el mapa con un cursor / Seleccionar categoria de trampas y trampa en el menu de trampas.
-Tecla C / boton izquierdo del ratón: Seleccionar trampa (en el menu o en el mapa)
+@item
+Tecla C / boton izquierdo del ratón: Seleccionar trampa (en el menu o en el mapa).
+@item
 Botón izquierdo del ratón: Seleccionar sitio en el mapa donde se colocara la trampa seleccionada.
+@item
 Tecla V: Sacar trampa seleccionada del mapa.
+@item
 Tecla Z: Terminar turno. Ir al turno del presente.
+@end itemize
 
 Turno del Presente:
+@itemize @bullet
+@item
 Flecha izquierda / Tecla A: Mover el personaje a la izquierda.
+@item
 Flecha derecha / Tecla D: Mover el personaje a la derecha.
+@item
 Flechas hacia arriba / Tecla W / Barra espaciadora: El personaje salta.
+@end itemize
 
 @c Subsection 3: Diseño de Interfaz/GUI
 @node Diseño de Interfaz/GUI
@@ -72,14 +100,26 @@ conforme el jugador avanza de nivel.
 @subsection Diagramas de contextos/flujo
 
 Turno del Futuro:
-1. El mapa del juego aparece (a la izquierda de la pantalla) con zonas de trampas visibles y el menu de trampas (a la derecha de la pantalla).
-2. El jugador selecciona la trampa en el menu de trampas, que desea colocar en el mapa.
-3. El jugador hace click en el mapa en el sitio que quiere poner la trampa seleccionada.
-4. El jugador sigue poniendo trampas hasta cuando quiera (control de dinero) o hasta que no pueda mas (por un limite preestablecido por fase).
-5. El jugador termina el turno del futuro y el turno del presente empieza.
+@enumerate
+@item
+El mapa del juego aparece (a la izquierda de la pantalla) con zonas de trampas visibles y el menu de trampas (a la derecha de la pantalla).
+@item
+El jugador selecciona la trampa en el menu de trampas, que desea colocar en el mapa.
+@item
+El jugador hace click en el mapa en el sitio que quiere poner la trampa seleccionada.
+@item
+El jugador sigue poniendo trampas hasta cuando quiera (control de dinero) o hasta que no pueda mas (por un limite preestablecido por fase).
+@item
+El jugador termina el turno del futuro y el turno del presente empieza.
+@end enumerate
 
 Turno del presente:
-1. El personaje aparece en alguna parte de la zona superior del mapa (dependiendo de la fase) encima de una plataforma.
-2. El jugador mueve el personaje por las plataformas con la intencion de ir bajando en el mapa encuanto se esquiva/evita los obstaculos y 
+@enumerate
+@item
+El personaje aparece en alguna parte de la zona superior del mapa (dependiendo de la fase) encima de una plataforma.
+@item
+El jugador mueve el personaje por las plataformas con la intencion de ir bajando en el mapa encuanto se esquiva/evita los obstaculos y 
 recoge monedas y corazones.
-3. El jugador llega en una plataforma al limite inferior del mapa, donde recoge una cantidad mayor de dinero y el turno termina.
+@item
+El jugador llega en una plataforma al limite inferior del mapa, donde recoge una cantidad mayor de dinero y el turno termina.
+@end enumerate
