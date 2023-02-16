@@ -43,5 +43,14 @@ No obstante, si queremos hacer una descripción más detallada y precisa, podemo
 
 Principalmente, este juego bebe mucho de la idea de trampas que implementa @i{Ultimate Chicken Horse}, un videojuego multijugador y cooperativo de plataformas desarrollado y distribuido por @i{Clever Endeavour Games}, y del concepto de plataformas vertical descendente en 2D que encontramos en juegos como @i{Downwell}, un videojuego de plataformas @i{shooter} @i{roguelike} desarrollado por @i{Moppin} y producido por @i{Devolver Digital}.
 
+@page
+
+@float Figure,uch
 @center @image{img/uch,10cm,,Ultimate Chicken Horse,}
+@center @i{Ultimate Chicken Horse}
+@end float
+
+@float Figure,downwell
 @center @image{img/downwell,10cm,,Downwell,}
+@center @i{Downwell}
+@end float

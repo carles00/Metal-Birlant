@@ -3,45 +3,113 @@
 @section Elementos de Juego y Comportamientos
 
 @menu
-* Personajes@comma{} agentes@comma{} ítems@comma{} u otros elementos del Gameworld:: ...
-* Listados y descripciones de elementos:: ...
-* Taxonomías y categorías:: ...
-* Tablas con estadísticas y valores:: ...
+* Personajes:: ...
+* Habilidades:: ...
+* Trampas:: ...
 * Diagramas de flujo y autómatas de comportamiento de los elementos/agentes:: ...
 * Ilustraciones:: ...
 @end menu
 
-@c Subsection 1: Personajes, agentes, ítems, u otros elementos del Gameworld
-@node Personajes@comma{} agentes@comma{} ítems@comma{} u otros elementos del Gameworld
-@subsection Personajes@comma{} agentes@comma{} ítems@comma{} u otros elementos del Gameworld
+@c Subsection 1: Personajes
+@node Personajes
+@subsection Personajes
 
 (...)
 
-@c Subsection 2: Listados y descripciones de elementos
-@node Listados y descripciones de elementos
-@subsection Listados y descripciones de elementos
+@float Table,characters
+@multitable @columnfractions .2 .2 .25 .4
+@c Column Names
+@headitem Nombre @tab IMG @tab Rol @tab Descripción
+@c Row 1
+@item @i{Elon J. D'Oroski} (presente)
+@tab (...)
+@tab Jugable durante el descenso.
+@tab Personaje protagonista en el presente.
+@c Row 2
+@item @i{Elon J. D'Oroski} (futuro)
+@tab (...)
+@tab Jugable durante la colocación de trampas.
+@tab Personaje protagonista en su versión futura (+50 años).
+@c Row 3
+@item Blockchainy
+@tab (...)
+@tab Montura, usable como habilidad.
+@tab (...)
+@end multitable
+@end float
+
+@c Subsection 2: Habilidades
+@node Habilidades
+@subsection Habilidades
 
 (...)
 
-@c Subsection 3: Taxonomías y categorías
-@node Taxonomías y categorías
-@subsection Taxonomías y categorías
+@c Subsection 3: Trampas
+@node Trampas
+@subsection Trampas
+
+@menu
+* Categorías de trampas y sus propiedades:: ...
+* Compendio general de trampas:: ...
+@end menu
+
+@c Subsubsection 1: Categorías de trampas y sus propiedades
+@node Categorías de trampas y sus propiedades
+@subsubsection Categorías de trampas y sus propiedades
 
 (...)
 
-@c Subsection 4: Tablas con estadísticas y valores
-@node Tablas con estadísticas y valores
-@subsection Tablas con estadísticas y valores
+@float Table,trap-categories
+@table @samp
+@item Tier 1: (...)
+(...)
+@item Tier 2: (...)
+(...)
+@item Tier 3: (...)
+(...)
+@end table
+@end float
+
+@c Subsubsection 2: Compendio general de trampas
+@node Compendio general de trampas
+@subsubsection Compendio general de trampas
 
 (...)
 
-@c Subsection 5: Diagramas de flujo y autómatas de comportamiento de los elementos/agentes
+@float Table,trap-list
+@multitable @columnfractions
+@c Column Names
+@headitem Nombre @tab IMG @tab Categoría @tab Disponibilidad
+@c Row 1
+@item (...)
+@tab (...)
+@tab (...)
+@tab (...)
+@c Row 2
+@item (...)
+@tab (...)
+@tab (...)
+@tab (...)
+@c Row 3
+@item (...)
+@tab (...)
+@tab (...)
+@tab (...)
+@c Row 4
+@item (...)
+@tab (...)
+@tab (...)
+@tab (...)
+@end multitable
+@end float
+
+@c Subsection 4: Diagramas de flujo y autómatas de comportamiento de los elementos/agentes
 @node Diagramas de flujo y autómatas de comportamiento de los elementos/agentes
 @subsection Diagramas de flujo y autómatas de comportamiento de los elementos/agentes
 
 (...)
 
-@c Subsection 6: Ilustraciones
+@c Subsection 5: Ilustraciones
 @node Ilustraciones
 @subsection Ilustraciones
 
