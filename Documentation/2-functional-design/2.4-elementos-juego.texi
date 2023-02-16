@@ -23,24 +23,24 @@ En este apartado se desglosarán los personajes que aparecen en el videojuego, t
 @headitem Nombre @tab IMG @tab Rol @tab Descripción
 @c Row 1
 @item @i{Elon J. D'Oroski} (presente)
-@tab (...)
+@tab @image{img/characters/present,1.5cm,,Elon J. D'Oroski (presente),}
 @tab Jugable durante el descenso.
 @tab Personaje protagonista en el presente.
 @c Row 2
 @item @i{Elon J. D'Oroski} (futuro)
-@tab (...)
+@tab @image{img/characters/future,2cm,,Elon J. D'Oroski (futuro),}
 @tab Jugable durante la colocación de trampas.
 @tab Personaje protagonista en su versión futura (+50 años).
 @c Row 3
 @item Model D
-@tab (...)
+@tab @image{img/characters/model-d,2.5cm,,Model D,}
 @tab Montura, utilizable como habilidad.
 @tab Animal que puede ser llamado mediante la habilidad @i{Autopilot}.
 @end multitable
 @end float
 
 @c Subsection 2: Habilidades
-@node Habilidades y comportamientos
+@node Habilidades
 @subsection Habilidades
 
 En cada ronda, cuando se inicia el turno del presente, se dará la oportunidad al jugador de comprar ciertas habilidades, las cuales aportarán diversos atributos que podrían llegar a ayudar al protagonista a superar ciertos obstáculos, mas solo se podrán utilizar durante esa ronda.
