@@ -19,7 +19,7 @@ El juego se divide en rondas, cada ronda constará de 2 turnos, el de colocació
 
 El jugador tiene dinero infinito con el que puede comprar trampas y colocarlas por el escenario. 
 
-@b{En el turno del Presenre:}
+@b{En el turno del Presente:}
 
 El jugador tiene una canitdad de dinero con la que puede comprar habilidades. Al principio del turno se le quita una cantidad de dinero que irá augmentando en cada ronda. 
 
