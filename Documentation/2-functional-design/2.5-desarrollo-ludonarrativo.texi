@@ -3,11 +3,97 @@
 @section Desarrollo Ludonarrativo
 
 @menu
-* Diagramas de flujo y autómatas:: ...
+* Guión:: ...
 @end menu
 
-@c Subsection 1: Diagramas de flujo y autómatas
-@node Diagramas de flujo y autómatas
-@subsection Diagramas de flujo y autómatas
+@c Subsection 1: Guión
+@node Guión
+@subsection Guión
 
-@center @image{img/flowchart,,, Flowchart,}
+En el apartado de narrativa de nuestro videojuego implementando MetalBirlant aplicamos un pequeño diálogo entre diversos personajes para poder expandir el humor tan clásico de este universo:
+
+DELIRIU$$ - SALA DE REUNIONES AÑO 3076
+
+Un gran grupo de personajes famosos bien trajeados se encuentran reunidos discutiendo sobre eventos pasados, presentes y futuros. Entre estos podemos destacar a ELOY DUSK como cabecilla del debate.
+
+ELOY
+Entonces, alguna pregunta más o podemos dar por finalizada la reunión?
+
+ESTEBAN ENPARO levanta la mano.
+
+ELOY
+Esteban por el amor de dios… ¡¿Que es esta vez?!
+
+ESTEBAN
+Cuando has mencionado a ELON me he acordado que justo era este el año del conejo entonces me he despistado.
+
+ELOY (desquiciado)
+¿Cuánto llevas sin escuchar?...
+
+ESTEBAN
+¿En qué año estabamos esta vez?
+
+ELOY (derrotado)
+Pero no decias que este era el añ… Desde el principio…
+
+Eloy recurre a contar todo el fiasco de Elon de nuevo desde el comienzo. El principio del futuro, el comienzo del pasado. El presente, año 3055.
+
+Elon, dando vueltas por la oficina hablando con la única persona que le tolera y escucha, el mismo.
+
+ELON
+¿Qué voy a hacer? ¿Cómo pudieron esos simios incompetentes caerse otra vez? Es la segunda vez en esta década. ¿Sin mano de obra a un precio sumamente reducido como podré llevar a cabo mi brillante plan?
+
+ELON (a sí mismo)
+Pero Elon eres muy listo, seguro que se te ocurrirá algo.
+
+ELON (...)
+Lo sé, pero si la tecnología de Amazonias todavía no ha llegado al presente, los empleados inferiores han acabado en plazas aún más inferiores y JOE se ha ido de vacaciones adelantadas solo queda una persona que pueda actuar. Y ese sería…
+
+Elon se señala a sí mismo. 
+
+ELON
+Vale vale ya voy, no hace falta usar el dedito acusador. Si unos monos inútiles lo consiguieron hacer durante décadas supongo que no hay nada que esta mente brillante no pueda abordar.
+
+Comienza el tutorial del presente. Una vez consigue llegar a la cripta y regresar empieza nos desplazamos al ELON futuro.
+
+ELON del futuro se encuentra alabando la más reciente solución de sus problemas con CHAD GPT, una máquina de su propia creación.
+
+ELON (futuro)
+Ese plan de deshacernos de esos sucios primates fue brillante Chad.
+
+CHAD
+Por supuesto señor. La debilidad de los primates es el Internet. La debilidad de estos primates es Twitter. NFTs no pueden soportar las mentes inferiores de los usuarios de esta plataforma. 
+
+ELON (futuro)
+Y ahora por fin podré descansar, sin preocuparme de que nadie en el resto de este planetoide infernal pueda llegar a expropiarme de mis @b{INCALCULABLES} riquezas.
+
+Mientras Elon termina de hablar se da cuenta de que de sus riquezas @b{INFINITAS} faltan unos pocos lingotes de Sky Gold.
+
+ELON (futuro)
+CHAAAAAAAAAAAAD!!!
+
+CHAD 
+¿Si señor?
+
+ELON (futuro)
+Alguien ha inferido con mi tranquilidad y mi Sky Gold, las dos cosas que más odio que perturben!! ¡¿Quién ha sido?!
+
+CHAD
+Usted mismo señor.
+
+ELON (futuro)
+He estado aquí todo el rato pedazo de chatarra!
+
+CHAD
+Usted mismo “del pasado” señor.
+
+ELON (futuro)
+Otra vez esa infeliz rata incordiante?! Es hora de meter cartas en el asunto.
+
+CHAD
+Inferir de forma agresiva con su pasado puede causar una inestabilidad en el espacio-tiempo, infringiendo así la ley espacio-temporal oficial.
+
+ELON (futuro)
+Inferir en mi forma agresiva de cómo solucionar los problemas puede causar que te instale Windows Vista, tráeme las trampas!!
+
+Comienza el tutorial del futuro. FIN DE DIALOGO
