@@ -1,11 +1,33 @@
+##################
+# === MACROS === #
+##################
+VERSION := 0
+PATCHLEVEL := 1
+SUBLEVEL := 0
+EXTRAVERSION :=
+
+COVER := $(shell find . -type f -name "cover.ps")
 SRC := $(shell find . -type f -iname "*.texi")
+OUT := metal-birlant-gdd-v${VERSION}.${PATCHLEVEL}.${SUBLEVEL}${EXTRAVERSION}.pdf
+
+
+########################
+# === FILE TARGETS === #
+########################
+${OUT}: ${COVER} gdd.pdf
+	@gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=$@ $^
 
 gdd.pdf: ${SRC}
-	@texi2pdf --tidy gdd.texi
+	@texi2pdf -V --tidy gdd.texi
+
+
+#########################
+# === PHONY TARGETS === #
+#########################
+.PHONY: clean mrproper
 
 clean:
 	@rm -rf gdd.t2d/
 
 mrproper: clean
 	@rm -f gdd.pdf
-

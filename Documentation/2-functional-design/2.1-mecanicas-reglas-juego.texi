@@ -51,5 +51,8 @@ Tambíen habran algunos hot-spots donde, si ponemos una trampa, esa trampa de vo
 @node Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego
 @subsection Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego
 
+@float Table,variables
+@shortcaption{Variables del juego}
+@caption{Variables del juego}
 @center @image{img/variables, 13cm,, Variables,}
-
+@end float

@@ -1,0 +1,41 @@
+@c Section 5: Desarrollo Ludonarrativo
+@node Desarrollo Ludonarrativo
+@section Desarrollo Ludonarrativo
+
+@menu
+* Diagramas de flujo y autómatas:: ...
+* Decisiones y Narrativa arbórea:: ...
+* Árboles de puzzles:: ...
+* Árboles de diálogo:: ...
+* Tablas de variables@comma{} condiciones@comma{} estados y resultados sobre el flujo narrativo:: ...
+@end menu
+
+@c Subsection 1: Diagramas de flujo y autómatas
+@node Diagramas de flujo y autómatas
+@subsection Diagramas de flujo y autómatas
+
+(...)
+
+@c Subsection 2: Decisiones y Narrativa arbórea
+@node Decisiones y Narrativa arbórea
+@subsection Decisiones y Narrativa arbórea
+
+(...)
+
+@c Subsection 3: Árboles de puzzles
+@node Árboles de puzzles
+@subsection Árboles de puzzles
+
+(...)
+
+@c Subsection 4: Árboles de diálogo
+@node Árboles de diálogo
+@subsection Árboles de diálogo
+
+(...)
+
+@c Subsection 5: Tablas de variables, condiciones, estados y resultados sobre el flujo narrativo
+@node Tablas de variables@comma{} condiciones@comma{} estados y resultados sobre el flujo narrativo
+@subsection Tablas de variables@comma{} condiciones@comma{} estados y resultados sobre el flujo narrativo
+
+(...)

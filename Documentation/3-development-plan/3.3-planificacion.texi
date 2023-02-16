@@ -2,4 +2,14 @@
 @node Planificación
 @section Planificación
 
-(...)
+Para repartirnos el trabajo utilizaremos Trello con 5 columnas:
+
+@itemize @bullet
+@item @b{Tasks:} Tareas a completar.
+@item @b{Proxima Entrega:} Tareas a completar antes de la proxima entrega.
+@item @b{In Progress:} Tareas que se estan empezadas.
+@item @b{Review:} Tareas para revisar.
+@item @b{Done:} Tareas acabadas.
+@end itemize
+
+@center @image{img/trello, 13cm,, Trello,}

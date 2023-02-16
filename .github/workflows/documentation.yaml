@@ -1,0 +1,28 @@
+name: Documentation
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  documentation:
+    runs-on: ubuntu-20.04
+    container: texlive/texlive
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v3
+      - name: Install GNU Texinfo support
+        run: |
+          apt update && apt install -y texinfo
+      - name: Build the documentation
+        run: |
+          cd Documentation && make
+      - name: Archive Documentation Manual
+        uses: actions/upload-artifact@v3
+        with:
+          name: Metal Birlant GDD (preview)
+          path: Documentation/metal-birlant-gdd-*.pdf
+          retention-days: 7

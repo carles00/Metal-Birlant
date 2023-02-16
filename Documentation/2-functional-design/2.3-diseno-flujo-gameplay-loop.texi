@@ -1,0 +1,20 @@
+@c Section 3: Diseño de Flujo o Gameplay Loop
+@node Diseño de Flujo o Gameplay Loop
+@section Diseño de Flujo o Gameplay Loop
+
+@menu
+* Descripción/fases del bucle interactivo/jugable:: ...
+* Diagramas de flujo de acciones/fases:: ...
+@end menu
+
+@c Subsection 1: Descripción/fases del bucle interactivo/jugable
+@node Descripción/fases del bucle interactivo/jugable
+@subsection Descripción/fases del bucle interactivo/jugable
+
+(...)
+
+@c Subsection 2: Diagramas de flujo de acciones/fases
+@node Descripción/fases del bucle interactivo/jugable
+@subsection Diagramas de flujo de acciones/fases
+
+(...)

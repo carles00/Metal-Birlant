@@ -12,7 +12,7 @@
 @node Concepto del juego
 @subsection Concepto del juego
 
-@i{Metal Birlant} es un juego de plataformas 2D y estrategia temporal por turnos, donde el mayor enemigo no es nadie más que tú mismo. Coloca trampas, obtén habilidades, gestiona el dinero e intenta robar y proteger el tesoro de forma simultánea. ¿Cuanto lograrás aguantar?
+@i{Metal Birlant} es un juego de plataformas 2D y estrategia temporal por turnos, donde el mayor enemigo no es nadie más que tú mismo. Coloca trampas, obtén habilidades, gestiona el dinero e intenta robar y proteger el tesoro de forma simultánea. ¿Cuánto lograrás aguantar?
 
 @c Subsection 2: Rasgos distintivos
 @node Rasgos distintivos
@@ -42,3 +42,6 @@ Si tuvieramos que categorizar a @i{Metal Birlant} en un único género, debería
 No obstante, si queremos hacer una descripción más detallada y precisa, podemos considerar a @i{Metal Birlant} como un juego de plataformas vertical descendente a ritmo alto en 2D, de estrategia por turnos y gestión de gastos/recompensas.
 
 Principalmente, este juego bebe mucho de la idea de trampas que implementa @i{Ultimate Chicken Horse}, un videojuego multijugador y cooperativo de plataformas desarrollado y distribuido por @i{Clever Endeavour Games}, y del concepto de plataformas vertical descendente en 2D que encontramos en juegos como @i{Downwell}, un videojuego de plataformas @i{shooter} @i{roguelike} desarrollado por @i{Moppin} y producido por @i{Devolver Digital}.
+
+@center @image{img/uch,10cm,,Ultimate Chicken Horse,}
+@center @image{img/downwell,10cm,,Downwell,}

@@ -1,0 +1,41 @@
+@c Section 2: Control y Diseño de Interfaz
+@node Control y Diseño de Interfaz
+@section Control y Diseño de Interfaz
+
+@menu
+* Reglas de control del Juego/Personaje:: ...
+* Listado/Tabla de inputs y acciones:: ...
+* Diseño de Interfaz/GUI:: ...
+* @i{Wireframes} de interfaz:: ...
+* Diagramas de contextos/flujo:: ...
+@end menu
+
+@c Subsection 1: Reglas de control del Juego/Personaje
+@node Reglas de control del Juego/Personaje
+@subsection Reglas de control del Juego/Personaje
+
+(...)
+
+@c Subsection 2: Listado/Tabla de inputs y acciones
+@node Listado/Tabla de inputs y acciones
+@subsection Listado/Tabla de inputs y acciones
+
+(...)
+
+@c Subsection 3: Diseño de Interfaz/GUI
+@node Diseño de Interfaz/GUI
+@subsection Diseño de Interfaz/GUI
+
+(...)
+
+@c Subsection 4: Wireframes de interfaz
+@node @i{Wireframes} de interfaz
+@subsection @i{Wireframes} de interfaz
+
+(...)
+
+@c Subsection 5: Diagramas de contextos/flujo
+@node Diagramas de contextos/flujo
+@subsection Diagramas de contextos/flujo
+
+(...)
