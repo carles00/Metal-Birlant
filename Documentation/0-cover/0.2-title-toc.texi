@@ -4,7 +4,7 @@
 @subtitle Narrariva y Videojuegos
 @subtitle Universitat Pompeu Fabra
 @subtitle @today{}
-@subtitle v0.1.0
+@subtitle v0.2.0
 @author Wasym Atieh      - 229156
 @author Leonardo Barros  - 218336
 @author Carles Gallardo  - 218915

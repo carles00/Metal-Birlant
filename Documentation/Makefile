@@ -2,7 +2,7 @@
 # === MACROS === #
 ##################
 VERSION := 0
-PATCHLEVEL := 1
+PATCHLEVEL := 2
 SUBLEVEL := 0
 EXTRAVERSION :=
 
