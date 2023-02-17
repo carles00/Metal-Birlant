@@ -1,4 +1,4 @@
-@c Section 4: Elementos de Juego
+@c Section 2.4: Elementos de Juego
 @node Elementos de juego
 @section Elementos de juego
 
@@ -7,9 +7,10 @@
 * Habilidades:: ...
 * Trampas:: ...
 * Recesiones:: ...
+* Multiplicadores:: ...
 @end menu
 
-@c Subsection 1: Personajes
+@c Subsection 2.4.1: Personajes
 @node Personajes
 @subsection Personajes
 
@@ -23,7 +24,7 @@ En este apartado se desglosarán los personajes que aparecen en el videojuego, t
 @headitem Nombre @tab IMG @tab Rol @tab Descripción
 @c Row 1
 @item @i{Elon J. D'Oroski} (presente)
-@tab @image{img/characters/present,1.5cm,,Elon J. D'Oroski (presente),}
+@tab @image{img/characters/present,1.25cm,,Elon J. D'Oroski (presente),}
 @tab Jugable durante el descenso.
 @tab Personaje protagonista en el presente.
 @c Row 2
@@ -39,7 +40,9 @@ En este apartado se desglosarán los personajes que aparecen en el videojuego, t
 @end multitable
 @end float
 
-@c Subsection 2: Habilidades
+@page
+
+@c Subsection 2.4.2: Habilidades
 @node Habilidades
 @subsection Habilidades
 
@@ -90,55 +93,58 @@ Reúne y conjura el poder del @i{sky gold} en ti mismo para proyectarte hacia de
 @item 51-Percent Attack
 Lo has logrado, has conseguido la mayoría de poder de cómputo en la red. Gracias a esta habilidad causarás interferencias y deshabilitarás las trampas cercanas por 20s.
 @item Criptobro
-El mercado es tan volátil... Pero, ¿quién no quiere un poco de emoción en la vida? Con esta habilidad podrás triplicar los beneficios obtenidos al final de la ronda, si es que consigues llegar al futuro: solo tendrás una vida.
+El mercado es tan volátil... Pero, ¿quién no quiere un poco de emoción en la vida? Con esta habilidad pasiva podrás triplicar los beneficios obtenidos al final de la ronda, si es que consigues llegar al futuro: solo tendrás una vida.
 @item Autopilot
 Nunca viene mal tener un poco de compañia, ¿no? ¡Y que mejor que montar en dragón! Llama a @i{Model D} y destruye todo a tu paso. Esta habilidad te hará invulnerable por 20s.
 @end table
 @end float
 
-@c Subsection 3: Trampas
+@page
+
+@c Subsection 2.4.3: Trampas
 @node Trampas
 @subsection Trampas
 
-El sistema de trampas es la mecánica más importante del juego, y su parte más esencial. Las trampas se dividen en 3 categorías, cada una más moderna, sofisticada y difícil de sortear que la anterior.
-
 @menu
 * Categorías de trampas y sus propiedades:: ...
-* Compendio general de trampas:: ...
+* Compendio de trampas de @i{tier I}:: ...
+* Compendio de trampas de @i{tier II}:: ...
+* Compendio de trampas de @i{tier III}:: ...
 @end menu
 
-@c Subsubsection 1: Categorías de trampas y sus propiedades
+@c Subsubsection 2.4.3.1: Categorías de trampas y sus propiedades
 @node Categorías de trampas y sus propiedades
 @subsubsection Categorías de trampas y sus propiedades
 
-(...)
+El sistema de trampas es la mecánica más importante del juego, y su parte más esencial. Las trampas se dividen en 3 categorías, cada una más moderna, sofisticada y difícil de sortear que la anterior.
 
 @float Table,trap-categories
 @shortcaption{Categorías de las trampas}
 @caption{Categorías de las trampas}
 @table @samp
-@item Tier 1: DOGE
-Categoría ...
-@item Tier 2: Ethereum
-Categoría ...
-@item Tier 3: Bitcoin
-Categoría ...
+@item @i{Tier I}: DOGE
+(...)
+@item @i{Tier II}: Ethereum
+(...)
+@item @i{Tier III}: Bitcoin
+(...)
 @end table
 @end float
 
-@c Subsubsection 2: Compendio general de trampas
-@node Compendio general de trampas
-@subsubsection Compendio general de trampas
+@page
 
-Estas son todas las trampas disponibles durante el juego, con sus datos y estadísticas.
+@c Subsubsection 2.4.3.2: Compendio de trampas de tier I
+@node Compendio de trampas de @i{tier I}
+@subsubsection Compendio de trampas de @i{tier I}
 
-@float Table,trap-list
-@shortcaption{Tabla de trampas con @i{stats}}
-@caption{Tabla de trampas con @i{stats}}
+Estas son todas las trampas de @b{@i{tier I (DOGE)}} disponibles durante el juego, con sus datos y estadísticas.
+
+@float Table,trap-list-1
+@shortcaption{Tabla de trampas con @i{stats} (I)}
+@caption{Tabla de trampas con @i{stats} (I)}
 @multitable @columnfractions .2 .2 .2 .2 .2
 @c Column Names
 @headitem Nombre @tab IMG @tab Categoría @tab Disponibilidad @tab Valor
-@c Tier 1: DOGE
 @c Row 1
 @item Sierra cortadora
 @tab @image{img/traps/tier-1/spinning-saw,2cm,,Sierra cortadora,}
@@ -169,33 +175,65 @@ Estas son todas las trampas disponibles durante el juego, con sus datos y estad�
 @tab DOGE
 @tab R4
 @tab 375
-@c Tier 2: Ethereum
-@c Row 6
+@end multitable
+@end float
+
+@page
+
+@c Subsubsection 2.4.3.3: Compendio de trampas de tier II
+@node Compendio de trampas de @i{tier II}
+@subsubsection Compendio de trampas de @i{tier II}
+
+Estas son todas las trampas de @b{@i{tier II (Ethereum)}} disponibles durante el juego, con sus datos y estadísticas.
+
+@float Table,trap-list-2
+@shortcaption{Tabla de trampas con @i{stats} (II)}
+@caption{Tabla de trampas con @i{stats} (II)}
+@multitable @columnfractions .2 .2 .2 .2 .2
+@c Column Names
+@headitem Nombre @tab IMG @tab Categoría @tab Disponibilidad @tab Valor
+@c Row 1
 @item Torre Tesla
 @tab @image{img/traps/tier-2/tesla-tower,1.5cm,,Torre Tesla,}
 @tab Ethereum
 @tab R3
 @tab 700
-@c Row 7
+@c Row 2
 @item Torreta de electrochoque
 @tab @image{img/traps/tier-2/taser-turret,1.5cm,,Torreta de electrochoque,}
 @tab Ethereum
 @tab R4
 @tab 800
-@c Row 8
+@c Row 3
 @item Pistola Láser
 @tab @image{img/traps/tier-2/laser-gun,1.5cm,,Pistola Láser,}
 @tab Ethereum
 @tab R4
 @tab 950
-@c Tier 3: Bitcoin
-@c Row 9
+@end multitable
+@end float
+
+@page
+
+@c Subsubsection 2.4.3.4: Compendio de trampas de tier III
+@node Compendio de trampas de @i{tier III}
+@subsubsection Compendio de trampas de @i{tier III}
+
+Estas son todas las trampas de @b{@i{tier III (Bitcoin)}} disponibles durante el juego, con sus datos y estadísticas.
+
+@float Table,trap-list-3
+@shortcaption{Tabla de trampas con @i{stats} (III)}
+@caption{Tabla de trampas con @i{stats} (III)}
+@multitable @columnfractions .2 .2 .2 .2 .2
+@c Column Names
+@headitem Nombre @tab IMG @tab Categoría @tab Disponibilidad @tab Valor
+@c Row 1
 @item Torre de rayos infernales
-@tab @image{img/traps/tier-3/infernal-tower,1.5cm,,Torre de rayos infernales,}
+@tab @image{img/traps/tier-3/infernal-tower,1.4cm,,Torre de rayos infernales,}
 @tab Bitcoin
 @tab R7
 @tab 1100
-@c Row 10
+@c Row 2
 @item Agujero Negro
 @tab @image{img/traps/tier-3/dark-hole,1.5cm,,Agujero Negro,}
 @tab Bitcoin
@@ -204,7 +242,9 @@ Estas son todas las trampas disponibles durante el juego, con sus datos y estad�
 @end multitable
 @end float
 
-@c Subsection 4: Recesiones
+@page
+
+@c Subsection 2.4.4: Recesiones
 @node Recesiones
 @subsection Recesiones
 
@@ -222,3 +262,11 @@ Todo se ha devaluado de la noche a la mañana; tus ahorros ya no sirven para nad
 Ha llegado de nuevo una glaciación, el hielo continental de los casquetes polares y los glaciares ha sufrido una considerable expansión. Todas las superficies están resbaladizas y es imposible caminar con precisión.
 @end table
 @end float
+
+@c Subsection 2.4.5: Multiplicadores
+@node Multiplicadores
+@subsection Multiplicadores
+
+(...)
+
+@page

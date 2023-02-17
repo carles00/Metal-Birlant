@@ -27,7 +27,7 @@ gdd.pdf: ${SRC}
 .PHONY: clean mrproper
 
 clean:
-	@rm -rf gdd.t2d/
+	@rm -rf gdd.t2d/ gdd.pdf
 
 mrproper: clean
-	@rm -f gdd.pdf
+	@rm -f metal-birlant-gdd-*.pdf

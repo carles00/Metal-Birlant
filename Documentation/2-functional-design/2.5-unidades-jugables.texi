@@ -1,0 +1,26 @@
+@c Section 2.5: Diseño de unidades jugables
+@node Diseño de unidades jugables
+@section Diseño de unidades jugables
+
+@menu
+* Mapa y entorno:: ...
+* Rondas y turnos:: ...
+@end menu
+
+@c Subsection 2.5.1: Mapa y entorno
+@node Mapa y entorno
+@subsection Mapa y entorno
+
+@float Figure,map-draft
+@shortcaption{Esbozo del mapa}
+@caption{Esbozo del mapa}
+@center @image{img/mapa,10cm,,Mapa,}
+@end float
+
+@c Subsection 2.5.2: Rondas y turnos
+@node Rondas y turnos
+@subsection Rondas y turnos
+
+Aparecerá en cada ronda un contador que simbolizaría el año en que el personaje principal
+se encuentra (el primer año es el 3055) y aumenta conforme el personaje baja en el mapa. El primer 
+año en el contador aumenta (cantidad a decidir) conforme el jugador pase de rondas.
