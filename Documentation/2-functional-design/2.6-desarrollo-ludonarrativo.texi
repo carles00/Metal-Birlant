@@ -1,14 +1,6 @@
-@c Section 5: Desarrollo Ludonarrativo
-@node Desarrollo Ludonarrativo
-@section Desarrollo Ludonarrativo
-
-@menu
-* Guión:: ...
-@end menu
-
-@c Subsection 1: Guión
-@node Guión
-@subsection Guión
+@c Section 2.6: Desarrollo ludonarrativo
+@node Desarrollo ludonarrativo
+@section Desarrollo ludonarrativo
 
 En el apartado de narrativa de nuestro videojuego implementando MetalBirlant aplicamos un pequeño diálogo entre diversos personajes para poder expandir el humor tan clásico de este universo:
 

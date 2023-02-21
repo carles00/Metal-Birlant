@@ -1,15 +1,15 @@
-@c Section 2: Narrativa
+@c Section 1.2: Narrativa
 @node Narrativa
 @section Narrativa
 
 @menu
 * Sinopsis narrativa:: ...
 * Tema y tono:: ...
-* Género narrativo y Recursos de género:: ...
+* Género narrativo y recursos de género:: ...
 * Personajes:: ...
 @end menu
 
-@c Subsection 1: Sinopsis narrativa
+@c Subsection 1.2.1: Sinopsis narrativa
 @node Sinopsis narrativa
 @subsection Sinopsis narrativa
 
@@ -17,19 +17,19 @@
 
 El protagonista, @i{Elon CEO} de @i{T€$la®} , utiliza @i{NFTs} mandándolos al futuro para extraer reservas futuras de este metal. Pero su versión futura no está precisamente contenta con esta acción, dado que le está robando a él mismo, por lo que decide entrar en acción atacando a su versión pasada.
 
-@c Subsection 2: Tema y tono
+@c Subsection 1.2.2: Tema y tono
 @node Tema y tono
 @subsection Tema y tono
 
 Comedia/Humor, característica de este tipo/categoría de cómics.
 
-@c Subsection 3: Género narrativo y Recursos de género
-@node Género narrativo y Recursos de género
-@subsection Género narrativo y Recursos de género
+@c Subsection 1.2.3: Género narrativo y recursos de género
+@node Género narrativo y recursos de género
+@subsection Género narrativo y recursos de género
 
 Relato tipo cómic.
 
-@c Subsection 4: Personajes
+@c Subsection 1.2.4: Personajes
 @node Personajes
 @subsection Personajes
 
