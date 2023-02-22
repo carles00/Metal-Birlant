@@ -15,8 +15,10 @@ public class PlayerMovement : MonoBehaviour
     [Range(0, .3f)] [SerializeField] private float acceleration;
     [SerializeField] private LayerMask colliderMask;
     [SerializeField] private Transform groundCheck;
+    [SerializeField] private Animator animator;
 
     private Rigidbody2D rigidBody;
+    private SpriteRenderer sprite;
 
     bool grounded;
     float move;
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
  
@@ -35,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
         checkGround();
 
         movement();
+
+        flipSprite();
     }
 
     private void movement(){
@@ -60,6 +65,18 @@ public class PlayerMovement : MonoBehaviour
         Color rayColor = grounded ? Color.red : Color.green;
         Debug.DrawRay(groundCheck.position, Vector2.down * .2f, rayColor,.2f);
 
+    }
+
+    private void flipSprite()
+    {
+        if(move < 0)
+        {
+            sprite.flipX = true;
+        }else if(move > 0)
+        {
+            sprite.flipX = false;
+        }
+        animator.SetFloat("Speed",Mathf.Abs(move));
     }
 
     public void onJump(InputAction.CallbackContext context)
