@@ -1,8 +1,10 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
@@ -11,20 +13,30 @@ public class PlayerMovement : MonoBehaviour
 {
     
     [SerializeField] private float runSpeed = 40f;
-    [Range(1f, 50f)][SerializeField] private float jumpForce;
-    [Range(0, .3f)] [SerializeField] private float acceleration;
+
     [SerializeField] private LayerMask colliderMask;
-    [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform groundCheckLeft,groundCheckRight;
     [SerializeField] private Animator animator;
+
+    [Header("Jumping")]
+    [SerializeField] private float jumpForce = 20f;
+    [SerializeField] private float jumpMultiplier = 0.1f;
+    [SerializeField] private float jumpTime = 1.0f;
+    [SerializeField] private float jumpTimeCounter = 0.0f;
+    [SerializeField] private float coyoteTime = .2f;
+    [SerializeField] private float coyoteTimeCounter = 0.0f;
+    [SerializeField] private float jumpBufferTime = .2f;
+    [SerializeField] private float jumpBufferCounter = 0.0f;
+    [SerializeField] private bool jump = false;
+    [SerializeField] private bool playerIsJumping = false;
+    [SerializeField] private bool jumpPressedLastFrame = false;
 
     private Rigidbody2D rigidBody;
     private SpriteRenderer sprite;
 
-    bool grounded;
-    float move;
-    bool jump = false;
-    bool endJump = false;
-    Vector3 refVel = Vector3.zero;
+    private bool grounded;
+    private float move;
+    
   
     void Start()
     {
@@ -43,27 +55,91 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void movement(){
-        if(jump && grounded)
-        {
-            rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            jump = false;
-        }
-        if(endJump)
-        {
-            var opposite = -rigidBody.velocity;
-            rigidBody.AddForce(opposite * Time.fixedDeltaTime, ForceMode2D.Impulse);
-            endJump = false;
-        }
+        float calculatedJump = calculateJump();
 
+        rigidBody.AddForce(Vector2.up * calculatedJump, ForceMode2D.Force);
+           
         transform.Translate(Vector3.right * move * runSpeed * Time.fixedDeltaTime);
     }
 
-    private void checkGround(){
+    private float calculateJump()
+    {
+        float calculatedJump = 0;
 
-        
-        grounded = Physics2D.Raycast(groundCheck.position, Vector2.down, .2f, colliderMask);
+        setJumpTime();
+        setJumpBuffer();
+        setCoyoteTime();
+
+        if(jumpBufferCounter > 0.0f && !playerIsJumping && coyoteTimeCounter > 0.0f)
+        {
+            calculatedJump = jumpForce;
+            playerIsJumping = true;
+            jumpBufferCounter = 0.0f;
+            coyoteTimeCounter = 0.0f;
+        }
+        else if(jump && playerIsJumping && !grounded && jumpTimeCounter > 0.0f)
+        {
+            calculatedJump = jumpForce * jumpMultiplier;
+        }
+        else if(playerIsJumping && grounded)
+        {
+            playerIsJumping = false;
+        }
+
+        return calculatedJump;
+    }
+
+    private void setJumpTime()
+    {
+        if(playerIsJumping && !grounded)
+        {
+            jumpTimeCounter -= Time.fixedDeltaTime;
+        }
+        else
+        {
+            jumpTimeCounter = jumpTime;
+        }
+    }
+
+    private void setCoyoteTime()
+    {
+        if(grounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.fixedDeltaTime;
+        }
+    }
+
+    private void setJumpBuffer()
+    {
+        if (!jumpPressedLastFrame && jump)
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else if(jumpBufferCounter > 0.0f)
+        {
+            jumpBufferCounter -= Time.fixedDeltaTime;
+        }
+        jumpPressedLastFrame = jump;
+    }
+
+    private void checkGround(){
+        bool groundedA = Physics2D.Raycast(groundCheckLeft.position, Vector2.down, .1f, colliderMask);
+        bool groundedB = Physics2D.Raycast(groundCheckRight.position, Vector2.down, .1f, colliderMask);
+        if(groundedA || groundedB)
+        {
+            grounded = true;
+        }
+        else
+        {
+            grounded = false;
+        }
         Color rayColor = grounded ? Color.red : Color.green;
-        Debug.DrawRay(groundCheck.position, Vector2.down * .2f, rayColor,.2f);
+        Debug.DrawRay(groundCheckLeft.position, Vector2.down * .1f, rayColor,.2f);
+        Debug.DrawRay(groundCheckRight.position, Vector2.down * .1f, rayColor, .2f);
 
     }
 
@@ -85,9 +161,9 @@ public class PlayerMovement : MonoBehaviour
         {
             jump = true;
         }
-        if (context.canceled || context.performed)
+        if (context.performed || context.canceled)
         {
-            endJump = true;
+            jump = false;
         }
     }
 

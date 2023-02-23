@@ -246,12 +246,43 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9222401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.82, y: -4.6, z: 0}
-  m_LocalScale: {x: 11.77, y: 1, z: 1}
+  m_LocalPosition: {x: 6.9225, y: -1.02, z: 0}
+  m_LocalScale: {x: 4.285457, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &162855172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 162855173}
+  m_Layer: 7
+  m_Name: Ground Check Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &162855173
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162855172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.254, y: -0.436, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1655247520}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &456779255
 GameObject:
@@ -269,7 +300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &456779256
 Transform:
   m_ObjectHideFlags: 0
@@ -278,7 +309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456779255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.94, y: 0.0484, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.88176, y: 2.7932684, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -399,7 +430,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -443,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 1655247520}
-  offset: -2.5
+  offset: 0
 --- !u!1 &681985848
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +555,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.945096, y: 0}
+  m_Offset: {x: 0.00027632713, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -535,7 +566,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.890192, y: 2.890192}
+  m_Size: {x: 2.9638143, y: 2.890192}
   m_EdgeRadius: 0
 --- !u!4 &1358083428
 Transform:
@@ -545,7 +576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358083426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.32, y: -2.66, z: 0.15892135}
+  m_LocalPosition: {x: 7.58, y: 0.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -565,8 +596,8 @@ GameObject:
   - component: {fileID: 1655247519}
   - component: {fileID: 1655247521}
   - component: {fileID: 1655247515}
-  - component: {fileID: 1655247522}
   - component: {fileID: 1655247523}
+  - component: {fileID: 1655247522}
   - component: {fileID: 1655247525}
   - component: {fileID: 1655247524}
   m_Layer: 7
@@ -588,14 +619,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f0124dbbaa215488c6416242b4bb53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 10
-  jumpForce: 12.5
-  acceleration: 0.206
+  runSpeed: 5
   colliderMask:
     serializedVersion: 2
     m_Bits: 256
-  groundCheck: {fileID: 1819234262}
+  groundCheckLeft: {fileID: 1819234262}
+  groundCheckRight: {fileID: 162855173}
   animator: {fileID: 1655247525}
+  jumpForce: 12.5
+  jumpMultiplier: 0.1
+  jumpTime: 0
+  jumpTimeCounter: 0
+  coyoteTime: 0.2
+  coyoteTimeCounter: 0
+  jumpBufferTime: 0.2
+  jumpBufferCounter: 0
+  jump: 0
+  playerIsJumping: 0
+  jumpPressedLastFrame: 0
 --- !u!61 &1655247519
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -628,7 +669,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.00746119}
+  m_Offset: {x: 0.008974373, y: 0.009808838}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -639,7 +680,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5138481, y: 1.0110152}
+  m_Size: {x: 0.4899165, y: 0.988371}
   m_EdgeRadius: 0
 --- !u!4 &1655247520
 Transform:
@@ -654,6 +695,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1819234262}
+  - {fileID: 162855173}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -798,6 +840,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f06aa63bb83d854f8ab433d84f14bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  treasureEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1655247524
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -993,8 +1038,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782561813}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.77, y: 1, z: 1}
+  m_LocalPosition: {x: -2.4541, y: 0, z: 0}
+  m_LocalScale: {x: 6.8619103, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1010,7 +1055,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1819234262}
   m_Layer: 7
-  m_Name: Ground Check
+  m_Name: Ground Check Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1024,7 +1069,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819234261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.436, z: 0}
+  m_LocalPosition: {x: -0.228, y: -0.436, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
