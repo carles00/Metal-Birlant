@@ -792,6 +792,7 @@ GameObject:
   - component: {fileID: 1655247522}
   - component: {fileID: 1655247525}
   - component: {fileID: 1655247524}
+  - component: {fileID: 1655247526}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -1015,6 +1016,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f84f09ac-d158-492e-b98a-30ebea766775
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1655247526}
+        m_TargetAssemblyTypeName: Dash, Assembly-CSharp
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 75619377-dc35-48e3-83fb-9d60604aceeb
+    m_ActionName: Player/Dash[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1107,6 +1124,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1655247526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655247514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c67e9c87726c344aa1eab3d545817d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TR: {fileID: 0}
+  rigidBody: {fileID: 1655247521}
+  DashingPower: 12
+  DashingTime: 0.2
+  DashingCooldown: 1
+  spriteRenderer: {fileID: 1655247524}
 --- !u!1 &1819234261
 GameObject:
   m_ObjectHideFlags: 0
