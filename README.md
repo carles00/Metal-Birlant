@@ -9,3 +9,12 @@
 [//]: # (README Body)
 
 A PC videogame adaptation of the original Metal Birlant comicbook.
+
+* Controles: 
+*   Flechas / WASD 
+*   Dash: LeftShift
+
+
+* La escena se encuentra en el directorio Scenes/MainScene
+
+* Las fisicas del juego no funcionan correctamente en el modo preview de Unity
