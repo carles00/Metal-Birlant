@@ -10,12 +10,12 @@
 
 A PC videogame adaptation of the original Metal Birlant comicbook.
 
-* Controles: 
-**   Flechas / WASD 
-**   Dash: LeftShift
+- Controles: 
+  - Flechas / WASD 
+  - Dash: LeftShift
 
-* Abrir Metal Birlant como proyecto de Unity
+- Abrir Metal Birlant como proyecto de Unity
 
-* La escena se encuentra en el directorio Scenes/MainScene
+- La escena se encuentra en el directorio Scenes/MainScene
 
-* Las fisicas del juego no funcionan correctamente en el modo preview de Unity
+- Las fisicas del juego no funcionan correctamente en el modo preview de Unity
