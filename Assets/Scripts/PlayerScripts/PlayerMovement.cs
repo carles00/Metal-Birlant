@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool grounded;
     private float move;
-    
   
     void Start()
     {
