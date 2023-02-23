@@ -4,6 +4,7 @@
 @subtitle Narrariva y Videojuegos
 @subtitle Universitat Pompeu Fabra
 @subtitle @today{}
+@subtitle v0.2.0
 @author Wasym Atieh      - 229156
 @author Leonardo Barros  - 218336
 @author Carles Gallardo  - 218915
@@ -22,3 +23,11 @@ This is the root of the GDD of Metal Birlant. Welcome!
 
 @c Table of contents
 @contents
+
+@node List of Figures
+@unnumbered List of Figures
+@listoffloats Figure
+
+@node List of Tables
+@unnumbered List of Tables
+@listoffloats Table

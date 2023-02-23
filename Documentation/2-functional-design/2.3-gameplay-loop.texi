@@ -1,0 +1,11 @@
+@c Section 2.3: Bucle jugable o gameplay loop
+@node Bucle jugable o @i{gameplay loop}
+@section Bucle jugable o @i{gameplay loop}
+
+@float Figure,gamplay-loop-flowchart
+@shortcaption{Diagrama de flujo del @i{gameplay loop}}
+@caption{Diagrama de flujo del @i{gameplay loop}}
+@center @image{img/flowchart,12.4cm,,Gameplay Loop flowchart,}
+@end float
+
+@page

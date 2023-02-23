@@ -1,41 +1,141 @@
-@c Section 2: Control y Diseño de Interfaz
-@node Control y Diseño de Interfaz
-@section Control y Diseño de Interfaz
+@c Section 2.2: Control y diseño de interfaz
+@node Control y diseño de interfaz
+@section Control y diseño de interfaz
 
 @menu
-* Reglas de control del Juego/Personaje:: ...
-* Listado/Tabla de inputs y acciones:: ...
-* Diseño de Interfaz/GUI:: ...
+* Reglas de control del juego y personaje:: ...
+* @i{Inputs} y acciones:: ...
+* Diseño de interfaz o @i{GUI}:: ...
 * @i{Wireframes} de interfaz:: ...
-* Diagramas de contextos/flujo:: ...
+* Fujo de aparición de elementos en la interfaz:: ...
 @end menu
 
-@c Subsection 1: Reglas de control del Juego/Personaje
-@node Reglas de control del Juego/Personaje
-@subsection Reglas de control del Juego/Personaje
+@c Subsection 2.2.1: Reglas de control del juego y personaje
+@node Reglas de control del juego y personaje
+@subsection Reglas de control del juego y personaje
 
-(...)
+@b{Turno del futuro}:
+@itemize @bullet
+@item
+El mapa está dividido en 3 zonas, cada una se corresponde a una categoría de trampas. Si queremos aspirar a obtener el 100% del valor de la trampa, la deberemos colocar en su zona. El jugador tiene libertad para colocar una trampa en otra zona, mas solo recuperará una porción de la inversión en beneficios.
+@item
+Las zonas de trampas son constantes y han sido definidas estratégicamente con el objetivo de mantener el equilibrio del juego su economía.
+@item
+El personaje jugable solo podrá orientarse según la cruceta de control básica de 4 direcciones (izquierda, derecha, arriba y abajo).
+@item
+Se puede cancelar la colocación de una trampa si hacemos click en la trampa con el boton derecho del ratón.
+@item
+Existen unos limites de espacio dentro de cada zona de trampas, e.g. un caso en el que se compren dos o más trampas en una misma zona. Dichos límites son crecientes según el número de ronda en el que nos encontremos.
+@item
+Existen plataformas que se mueven, aunque en el turno del futuro (fase de compra) se mantendrán estáticas. Habrán indicadores (flechas y guias) de como estas plataformas se moverán en el turno del presente.
+@end itemize
 
-@c Subsection 2: Listado/Tabla de inputs y acciones
-@node Listado/Tabla de inputs y acciones
-@subsection Listado/Tabla de inputs y acciones
+@b{Turno del presente}:
+@itemize @bullet
+@item
+El juego incentiva al jugador a descender hacia el futuro con el movimiento de la cámara.
+@item
+El limite superior de la pantalla es fijo, por lo que el personaje no lo puede sobrepasar.
+@item
+La cámara sigue al personaje en todo momento.
+@item
+El personaje tiene una vida máxima fija y basada en un sistema de corazones, los cuales puede ir perdiendo cuando es golpeado por un obstáculo ofensivo o trampa.
+@item
+El personaje solo puede caminar por las plataformas (no existen zonas donde se pueda volar o nadar).
+@item
+Si el personaje no está encima de una plataforma, está cayendo.
+@end itemize
 
-(...)
+@c Subsection 2.2.2: Inputs y acciones
+@node @i{Inputs} y acciones
+@subsection @i{Inputs} y acciones
 
-@c Subsection 3: Diseño de Interfaz/GUI
-@node Diseño de Interfaz/GUI
-@subsection Diseño de Interfaz/GUI
+@float Table,inputs-future
+@shortcaption{Controles del futuro}
+@caption{Controles del futuro}
+@b{Turno del futuro}:
+@table @samp
+@item Flechas o ratón
+Moverse en el mapa con un cursor / Seleccionar categoria de trampas y trampa en el menu de trampas.
+@item Tecla C / botón izquierdo del ratón
+Seleccionar trampa (en el menú o en el mapa).
+@item Botón izquierdo del ratón
+Seleccionar sitio en el mapa donde se colocará la trampa seleccionada.
+@item Tecla V
+Sacar trampa seleccionada del mapa.
+@item Tecla Z
+Terminar turno. Ir al turno del presente.
+@end table
+@end float
 
-(...)
+@sp 2
 
-@c Subsection 4: Wireframes de interfaz
+@float Table,inputs-present
+@shortcaption{Controles del presente}
+@caption{Controles del presente}
+@b{Turno del presente}:
+@table @samp
+@item Flecha izquierda / Tecla A
+Mover el personaje a la izquierda.
+@item Flecha derecha / Tecla D
+Mover el personaje a la derecha.
+@item Flecha arriba / Tecla W / Barra espaciadora
+El personaje salta.
+@item Tecla Q
+Utilizar habilidad activa equipada en el @b{primer} espacio de inventario.
+@item Tecla W
+Utilizar habilidad activa equipada en el @b{segundo} espacio de inventario.
+@item Tecla E
+Utilizar habilidad activa equipada en el @b{tercer} espacio de inventario.
+@item Tecla R
+Utilizar habilidad activa equipada en el @b{cuarto} y último espacio de inventario.
+@end table
+@end float
+
+@c Subsection 2.2.3: Diseño de interfaz o GUI
+@node Diseño de interfaz o @i{GUI}
+@subsection Diseño de interfaz o @i{GUI}
+
+@b{Turno del futuro:}
+El interfaz del turno del futuro es una simulacion de una pantalla de una sala de camaras,
+donde a la derecha tendremos el menu de trampas y a la izquierda el mapa (mismo del turno del 
+presente, pero con indicaciones) adonde pondremos las trampas.
+
+@b{Turno del presente:}
+El interfaz o mapa es un campo vertical con plataformas móviles. La imagen de fondo del mapa se relaciona con la zona del mapa. No cambia entre rondas.
+
+@c Subsection 2.2.4: Wireframes de interfaz
 @node @i{Wireframes} de interfaz
 @subsection @i{Wireframes} de interfaz
 
 (...)
 
-@c Subsection 5: Diagramas de contextos/flujo
-@node Diagramas de contextos/flujo
-@subsection Diagramas de contextos/flujo
+@c Subsection 2.2.5: Fujo de aparición de elementos en la interfaz
+@node Fujo de aparición de elementos en la interfaz
+@subsection Fujo de aparición de elementos en la interfaz
 
-(...)
+@b{Turno del futuro:}
+@enumerate
+@item
+El mapa del juego aparece (a la izquierda de la pantalla) con zonas de trampas visibles y el menu de trampas (a la derecha de la pantalla).
+@item
+El jugador selecciona la trampa en el menu de trampas, que desea colocar en el mapa.
+@item
+El jugador hace click en el mapa en el sitio que quiere poner la trampa seleccionada.
+@item
+El jugador sigue poniendo trampas hasta cuando quiera (control de dinero) o hasta que no pueda mas (por un limite preestablecido por fase).
+@item
+El jugador termina el turno del futuro y el turno del presente empieza.
+@end enumerate
+
+@b{Turno del presente:}
+@enumerate
+@item
+El personaje aparece en alguna parte de la zona superior del mapa (dependiendo de la fase) encima de una plataforma.
+@item
+El jugador mueve el personaje por las plataformas con la intención de ir bajando por el mapa, esquivando y sorteando los obstáculos y trampas.
+@item
+El jugador llega en una plataforma al límite inferior del mapa, donde recoge los beneficios obtenidos en lingotes de @i{sky gold} (mientras se muestra el resumen de la ronda) y la ronda termina.
+@end enumerate
+
+@page

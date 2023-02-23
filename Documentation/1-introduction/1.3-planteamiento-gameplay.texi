@@ -1,6 +1,6 @@
-@c Section 3: Planteamiento del Gameplay
-@node Planteamiento del Gameplay
-@section Planteamiento del Gameplay
+@c Section 1.3: Planteamiento del gameplay
+@node Planteamiento del @i{gameplay}
+@section Planteamiento del @i{gameplay}
 
 Nuestro objetivo es lograr que el jugador juegue contra sí mismo. Para lograrlo planteamos un gameplay por turnos donde el jugador controlará a los dos personajes a la vez. En el turno del futuro, el jugador deberá intentar que el presente no llegue al tesoro mediante el uso de trampas.
 

@@ -1,4 +1,4 @@
-@c Section 2: Desglose
+@c Section 3.2: Desglose
 @node Desglose
 @section Desglose
 
@@ -8,7 +8,7 @@
 * Recursos audioviuales o assets:: ...
 @end menu
 
-@c Subsection 1: Diseño
+@c Subsection 3.2.1: Diseño
 @node Diseño
 @subsection Diseño
 
@@ -39,7 +39,7 @@ Costes de desarrollo del diseño:
 @b{Diseño de turno del antagonista:} Alto
 @end itemize
 
-@c Subsection 2: Motor
+@c Subsection 3.2.2: Motor
 @node Motor
 @subsection Motor
 
@@ -61,7 +61,7 @@ Costes de desarrollo de las mecánicas:
 @end itemize
 
 
-@c Subsection 3: Recursos audiovisuales o assets
+@c Subsection 3.2.3: Recursos audiovisuales o assets
 @node Recursos audioviuales o assets
 @subsection Recursos audioviuales o assets
 

@@ -1,55 +1,51 @@
-@c Section 1: Mecánicas y Reglas de Juego
-@node Mecánicas y Reglas de Juego
-@section Mecánicas y Reglas de Juego
+@c Section 2.1: Mecánicas y reglas de juego
+@node Mecánicas y reglas de juego
+@section Mecánicas y reglas de juego
 
 @menu
-* Descripción del Funcionamiento del Juego:: ...
-* Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego:: ...
-* Tablas de condiciones y resultados:: ...
-* Figuras:: ...
+* Descripción del funcionamiento del juego:: ...
+* Variables y estados:: ...
 @end menu
 
-@c Subsection 1: Descripción del Funcionamiento del Juego
-@node Descripción del Funcionamiento del Juego
-@subsection Descripción del Funcionamiento del Juego
+@c Subsection 2.1.1: Descripción del funcionamiento del juego
+@node Descripción del funcionamiento del juego
+@subsection Descripción del funcionamiento del juego
 
-El juego se divide en rondas, cada ronda constará de 2 turnos, el de colocación de trampas y el de bajada.
+El juego se divide en rondas, cada ronda constará de 2 turnos, el de colocación de trampas (futuro) y el de bajada (presente).
 
-@b{Movimiento:}
-
+@float Table,game-behaviour
+@shortcaption{Mecánicas}
+@caption{Mecánicas}
+@table @samp
+@item Movimiento
 El movimiento del jugador será en 2D y dispondrá de un salto simple.
 
-@b{En el turno del Futuro:}
+@item Turno del futuro
+El jugador tiene dinero infinito con el que puede comprar trampas y colocarlas por el escenario.
 
-El jugador tiene dinero infinito con el que puede comprar trampas y colocarlas por el escenario. 
+@item Turno del presente
+El jugador tiene una canitdad de dinero con la que puede comprar habilidades. Al principio del turno se le quita una cantidad de dinero que irá augmentando en cada ronda.@*
+Una vez compradas las habilidades el jugador empieza la sección de plataformas para llegar al tesoro.@*
+El jugador @b{SOLO} gana dinero cuando consigue llegar al tesoro. Una vez ha llegado se le recompensa con una cantidad fija de dinero y el valor de las trampas que ha colocado en el futuro.@*
+Si el jugador del presente se queda sin dinero al comienzo de una ronda, el juego termina.
 
-@b{En el turno del Presente:}
+@item Habilidades
+El jugador del presente podrá comprar habilidades que tendrá disponibles únicamente en esa ronda.
 
-El jugador tiene una canitdad de dinero con la que puede comprar habilidades. Al principio del turno se le quita una cantidad de dinero que irá augmentando en cada ronda. 
+@item Recesiones
+En cada ronda hay una probabilidad que suceda un evento especial llamado @b{Recesión}. Cada recesión tendrá un efecto en esa ronda que es negativo para el jugador y le pone en un aprieto jugable determinado.
 
-Una vez compradas las habilidades el jugador empieza la sección de plataformas para llegar al tesoro.
+@item Multiplicadores
+El mapa está dividido en diferentes zonas y, dependiendo de donde coloquemos las trampas, tendrán mejores o peores @i{stats}, y darán mayor o menor beneficio.@*
+También habrán algunos @i{hot-spots} donde, si ponemos una trampa, esa trampa se volverá aún más poderosa y, por tanto, dará aún más beneficio de lo normal.
+@end table
+@end float
 
-El jugador SOLO gana dinero cuando consigue llegar al tesoro. Una vez ha llegado se le recompensa con una cantidad fija de dinero y el valor de las trampas que ha colocado en el futuro. 
+@page
 
-Si el presente se queda sin dinero al comienzo de una ronda el juego termina.
-
-@b{Habilidades:}
-
-El jugador, en el presente, podrá comprar habilidades que tendra disponibles solamente en esa ronda.
-
-@b{Recesiones:}
-
-En cada ronda hay una probabilidad que toque un evento especial llamado del tipo Recesión. Cada recesión hará un efecto en esa ronda que es negativo para el jugador y le pone en un aprieto jugable determinado.
-
-@b{Multiplicadores de Trampas:}
-
-El mapa está dividido en diferentes edades y dependiendo de donde coloquemos las trampas tendran mejors o peores stats.
-
-Tambíen habran algunos hot-spots donde, si ponemos una trampa, esa trampa de volverá más potente y por tanto dará más beneficio
-
-@c Subsection 2: Variables, Stats, Valores, y Estados del Jugador y/o Juego
-@node Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego
-@subsection Variables@comma{} Stats@comma{} Valores@comma{} y Estados del Jugador y/o Juego
+@c Subsection 2.1.2: Variables y estados
+@node Variables y estados
+@subsection Variables y estados
 
 @float Table,variables
 @shortcaption{Variables del juego}

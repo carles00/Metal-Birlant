@@ -1,8 +1,8 @@
-@c Section 3: Planificación
+@c Section 3.3: Planificación
 @node Planificación
 @section Planificación
 
-Para repartirnos el trabajo utilizaremos Trello con 5 columnas:
+Para repartirnos el trabajo utilizamos un tablero o @i{dashboard} en @i{Trello} con 5 columnas:
 
 @itemize @bullet
 @item @b{Tasks:} Tareas a completar.
@@ -12,4 +12,8 @@ Para repartirnos el trabajo utilizaremos Trello con 5 columnas:
 @item @b{Done:} Tareas acabadas.
 @end itemize
 
-@center @image{img/trello, 13cm,, Trello,}
+@float Figure,trello-dashboard
+@shortcaption{Trello @i{dashboard screenshot}}
+@caption{Trello @i{dashboard screenshot}}
+@center @image{img/trello,13cm,,Trello,}
+@end float
