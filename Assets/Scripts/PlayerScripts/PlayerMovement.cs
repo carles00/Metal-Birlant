@@ -31,11 +31,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool playerIsJumping = false;
     [SerializeField] private bool jumpPressedLastFrame = false;
 
+    [Header("Dash")]
+    [SerializeField] private TrailRenderer TR;
+    [SerializeField] private float dashPower;
+    [SerializeField] private float dashTime = 0.2f;
+    [SerializeField] private float dashCooldown = 1f;
+    [SerializeField] private bool canDash = true;
+    [SerializeField] private bool dashing = false;
+
     private Rigidbody2D rigidBody;
     private SpriteRenderer sprite;
 
     private bool grounded;
     private float move;
+    private int facing = 1;
   
     void Start()
     {
@@ -45,29 +54,33 @@ public class PlayerMovement : MonoBehaviour
 
  
     private void FixedUpdate()
-    {   
-        checkGround();
+    {
+        if (!dashing)
+        {
+            CheckGround();
 
-        movement();
+            Movement();
 
-        flipSprite();
+            FlipSprite();
+        }
     }
 
-    private void movement(){
-        float calculatedJump = calculateJump();
+    private void Movement(){
+        
+        float calculatedJump = CalculateJump();
 
         rigidBody.AddForce(Vector2.up * calculatedJump, ForceMode2D.Force);
-           
-        transform.Translate(Vector3.right * move * runSpeed * Time.fixedDeltaTime);
-    }
 
-    private float calculateJump()
+        transform.Translate(Vector3.right * move * runSpeed * Time.fixedDeltaTime);
+        
+    }
+    private float CalculateJump()
     {
         float calculatedJump = 0;
 
-        setJumpTime();
-        setJumpBuffer();
-        setCoyoteTime();
+        SetJumpTime();
+        SetJumpBuffer();
+        SetCoyoteTime();
 
         if(jumpBufferCounter > 0.0f && !playerIsJumping && coyoteTimeCounter > 0.0f)
         {
@@ -88,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
         return calculatedJump;
     }
 
-    private void setJumpTime()
+    private void SetJumpTime()
     {
         if(playerIsJumping && !grounded)
         {
@@ -100,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void setCoyoteTime()
+    private void SetCoyoteTime()
     {
         if(grounded)
         {
@@ -112,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void setJumpBuffer()
+    private void SetJumpBuffer()
     {
         if (!jumpPressedLastFrame && jump)
         {
@@ -125,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
         jumpPressedLastFrame = jump;
     }
 
-    private void checkGround(){
+    private void CheckGround(){
         bool groundedA = Physics2D.Raycast(groundCheckLeft.position, Vector2.down, .1f, colliderMask);
         bool groundedB = Physics2D.Raycast(groundCheckRight.position, Vector2.down, .1f, colliderMask);
         if(groundedA || groundedB)
@@ -142,32 +155,66 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void flipSprite()
+    private void FlipSprite()
     {
         if(move < 0)
         {
+            facing = -1;
             sprite.flipX = true;
         }else if(move > 0)
         {
+            facing = 1;
             sprite.flipX = false;
         }
         animator.SetFloat("Speed",Mathf.Abs(move));
     }
 
-    public void onJump(InputAction.CallbackContext context)
+    public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (!dashing)
         {
-            jump = true;
+            if (context.started)
+            {
+                jump = true;
+            }
+            if (context.performed || context.canceled)
+            {
+                jump = false;
+            }
         }
-        if (context.performed || context.canceled)
+        
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        if (!dashing)
         {
-            jump = false;
+            move = context.ReadValue<Single>();
         }
     }
 
-    public void onMove(InputAction.CallbackContext context)
+    public void OnDash(InputAction.CallbackContext context)
     {
-        move = context.ReadValue<Single>();
+        if (context.performed && canDash)
+        {
+            Debug.Log("DASH!");
+            StartCoroutine(Dash());
+        }
+    }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        dashing = true;
+        float originalGravity = rigidBody.gravityScale;
+        rigidBody.gravityScale = 0;
+        rigidBody.velocity = new Vector2(dashPower * facing, 0f);
+
+        yield return new WaitForSeconds(dashTime);
+        dashing = false;
+        rigidBody.gravityScale = originalGravity;
+        rigidBody.velocity = new Vector2(0f, 0f);
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 }
