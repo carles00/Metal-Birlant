@@ -824,27 +824,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f0124dbbaa215488c6416242b4bb53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 5
   colliderMask:
     serializedVersion: 2
     m_Bits: 256
   groundCheckLeft: {fileID: 1819234262}
   groundCheckRight: {fileID: 162855173}
   animator: {fileID: 1655247525}
-  jumpForce: 400
-  jumpMultiplier: 0.1
-  jumpTime: 0.2
-  jumpTimeCounter: 0
-  coyoteTime: 0.2
-  coyoteTimeCounter: 0
-  jumpBufferTime: 0.2
-  jumpBufferCounter: 0
-  jump: 0
-  playerIsJumping: 0
-  jumpPressedLastFrame: 0
+  runSpeed: 9
+  acceleration: 13
+  deceleration: 16
+  power: 0.96
+  frictionAmount: 0.3
+  jumpForce: 10
+  gravityScale: 1
+  fallGravityMultiplier: 3
+  jumpBufferTime: 0.1
+  coyoteTime: 0.15
+  jumpCutMultiplier: 0.4
+  lastGroundedTime: 0
+  lastJumpTime: 0
+  isJumping: 0
+  jumpImputReleased: 0
   TR: {fileID: 0}
-  dashPower: 24
-  dashTime: 0.3
+  dashPower: 10
+  dashTime: 0.2
   dashCooldown: 1
   canDash: 1
   dashing: 0
@@ -922,11 +925,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_GravityScale: 1
+  m_Material: {fileID: 6200000, guid: 15e31246ac325674aa995be3e5a8a972, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

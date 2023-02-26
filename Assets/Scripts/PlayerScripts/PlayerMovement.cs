@@ -12,24 +12,33 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     
-    [SerializeField] private float runSpeed = 40f;
+    
 
     [SerializeField] private LayerMask colliderMask;
     [SerializeField] private Transform groundCheckLeft,groundCheckRight;
     [SerializeField] private Animator animator;
 
+    [Header("Run")]
+    [SerializeField] private float runSpeed = 9f;
+    [SerializeField] private float acceleration = 13f;
+    [SerializeField] private float deceleration = 16f;
+    [SerializeField] private float power = 0.96f;
+    [SerializeField] private float frictionAmount = 0.2f;
+
     [Header("Jumping")]
-    [SerializeField] private float jumpForce = 20f;
-    [SerializeField] private float jumpMultiplier = 0.1f;
-    [SerializeField] private float jumpTime = 1.0f;
-    [SerializeField] private float jumpTimeCounter = 0.0f;
-    [SerializeField] private float coyoteTime = .2f;
-    [SerializeField] private float coyoteTimeCounter = 0.0f;
-    [SerializeField] private float jumpBufferTime = .2f;
-    [SerializeField] private float jumpBufferCounter = 0.0f;
-    [SerializeField] private bool jump = false;
-    [SerializeField] private bool playerIsJumping = false;
-    [SerializeField] private bool jumpPressedLastFrame = false;
+    [SerializeField] private float jumpForce = 13f;
+    [SerializeField] private float gravityScale = 1.0f;
+    [SerializeField] private float fallGravityMultiplier = 2f;
+    [SerializeField] private float jumpBufferTime = 0.1f;
+    [SerializeField] private float coyoteTime = 0.1f;
+    [SerializeField] private float jumpCutMultiplier = 1.0f;
+    [Space(10)]
+    [SerializeField] private float lastGroundedTime = 0;
+    [SerializeField] private float lastJumpTime = 0;
+    [SerializeField] private bool isJumping = false;
+    [SerializeField] private bool jumpImputReleased = false;
+    
+    
 
     [Header("Dash")]
     [SerializeField] private TrailRenderer TR;
@@ -50,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+
     }
 
  
@@ -67,75 +77,72 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement(){
         
-        float calculatedJump = CalculateJump();
+        SetFallGravity();
 
-        rigidBody.AddForce(Vector2.up * calculatedJump, ForceMode2D.Force);
+        SetTimers();
 
-        transform.Translate(Vector3.right * move * runSpeed * Time.fixedDeltaTime);
+        if(lastGroundedTime> 0 && lastJumpTime > 0 && !isJumping) 
+        {
+            Debug.Log("Jump");
+            Jump();
+        }
+
+        Run();
+
+        ApplyFriction();
         
     }
-    private float CalculateJump()
+
+    private void SetTimers()
     {
-        float calculatedJump = 0;
-
-        SetJumpTime();
-        SetJumpBuffer();
-        SetCoyoteTime();
-
-        if(jumpBufferCounter > 0.0f && !playerIsJumping && coyoteTimeCounter > 0.0f)
-        {
-            calculatedJump = jumpForce;
-            playerIsJumping = true;
-            jumpBufferCounter = 0.0f;
-            coyoteTimeCounter = 0.0f;
-        }
-        else if(jump && playerIsJumping && !grounded && jumpTimeCounter > 0.0f)
-        {
-            calculatedJump = jumpForce * jumpMultiplier;
-        }
-        else if(playerIsJumping && grounded)
-        {
-            playerIsJumping = false;
-        }
-
-        return calculatedJump;
+        lastGroundedTime -= Time.deltaTime;
+        lastJumpTime -= Time.deltaTime;
     }
 
-    private void SetJumpTime()
+    private void Jump()
     {
-        if(playerIsJumping && !grounded)
+        rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        lastGroundedTime = 0;
+        lastJumpTime = 0;
+        isJumping= true;
+        jumpImputReleased = false;
+    }
+
+    private void SetFallGravity()
+    {
+        if(rigidBody.velocity.y < 0)
         {
-            jumpTimeCounter -= Time.fixedDeltaTime;
+            rigidBody.gravityScale = gravityScale * fallGravityMultiplier;
         }
         else
         {
-            jumpTimeCounter = jumpTime;
+            rigidBody.gravityScale = gravityScale;
         }
     }
 
-    private void SetCoyoteTime()
+    private void ApplyFriction()
     {
-        if(grounded)
+        if (grounded && Mathf.Abs(move) < 0.0f)
         {
-            coyoteTimeCounter = coyoteTime;
-        }
-        else
-        {
-            coyoteTimeCounter -= Time.fixedDeltaTime;
+            float amount = Mathf.Min(Mathf.Abs(rigidBody.velocity.x), Mathf.Abs(frictionAmount));
+
+            amount *= Mathf.Sign(rigidBody.velocity.x);
+
+            rigidBody.AddForce(Vector2.right* -amount, ForceMode2D.Impulse);
         }
     }
 
-    private void SetJumpBuffer()
+    private void Run()
     {
-        if (!jumpPressedLastFrame && jump)
-        {
-            jumpBufferCounter = jumpBufferTime;
-        }
-        else if(jumpBufferCounter > 0.0f)
-        {
-            jumpBufferCounter -= Time.fixedDeltaTime;
-        }
-        jumpPressedLastFrame = jump;
+        float targetSpeed = move * runSpeed;
+        
+        float speedDiff = targetSpeed- rigidBody.velocity.x;
+
+        float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : deceleration;
+
+        float movement = Mathf.Pow(Mathf.Abs(speedDiff)*accelRate, power) * Mathf.Sign(speedDiff);
+
+        rigidBody.AddForce(movement * Vector2.right);
     }
 
     private void CheckGround(){
@@ -144,6 +151,8 @@ public class PlayerMovement : MonoBehaviour
         if(groundedA || groundedB)
         {
             grounded = true;
+            isJumping= false;
+            lastGroundedTime = coyoteTime;
         }
         else
         {
@@ -175,12 +184,19 @@ public class PlayerMovement : MonoBehaviour
         {
             if (context.started)
             {
-                jump = true;
+                Debug.Log("Jump");
+                lastJumpTime = jumpBufferTime;
             }
             if (context.performed || context.canceled)
             {
-                jump = false;
+                if(rigidBody.velocity.y > 0 && isJumping) {
+                    rigidBody.AddForce(Vector2.down* rigidBody.velocity.y * (1-jumpCutMultiplier),ForceMode2D.Impulse);
+                }
+                jumpImputReleased = true;
+                lastJumpTime = 0;
             }
+
+            
         }
         
     }
@@ -197,7 +213,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed && canDash)
         {
-            Debug.Log("DASH!");
             StartCoroutine(Dash());
         }
     }
