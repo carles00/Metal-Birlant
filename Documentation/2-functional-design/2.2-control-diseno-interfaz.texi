@@ -76,11 +76,13 @@ Terminar turno. Ir al turno del presente.
 @b{Turno del presente}:
 @table @samp
 @item Flecha izquierda / Tecla A
-Mover el personaje a la izquierda.
+El personaje se mueve a la izquierda.
 @item Flecha derecha / Tecla D
-Mover el personaje a la derecha.
-@item Flecha arriba / Tecla W / Barra espaciadora
-El personaje salta.
+El personaje se mueve a la derecha.
+@item Flecha arriba / Barra espaciadora
+El personaje salta. Si se tiene la habilidad @i{Stonks}, se puede realizar un doble salto si se pulsa el botón de salto al estar en el aire.
+@item Tecla @i{Shift}
+El personaje realiza un dash hacia donde esté mirando, siempre y cuando se haya comprado la habilidad en el inicio de la ronda del presente.
 @item Tecla Q
 Utilizar habilidad activa equipada en el @b{primer} espacio de inventario.
 @item Tecla W
