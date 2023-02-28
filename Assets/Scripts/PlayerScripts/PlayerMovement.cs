@@ -11,9 +11,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
-    
-
     [SerializeField] private LayerMask colliderMask;
     [SerializeField] private Transform groundCheckLeft,groundCheckRight;
     [SerializeField] private Animator animator;
@@ -38,8 +35,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool isJumping = false;
     [SerializeField] private bool jumpImputReleased = false;
     
-    
-
     [Header("Dash")]
     [SerializeField] private TrailRenderer TR;
     [SerializeField] private float dashPower;
@@ -62,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
- 
     private void FixedUpdate()
     {
         if (!dashing)
@@ -75,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    //----------------------------- Movement Calculations --------------------------------//
     private void Movement(){
         
         SetFallGravity();
@@ -82,8 +77,7 @@ public class PlayerMovement : MonoBehaviour
         SetTimers();
 
         if(lastGroundedTime> 0 && lastJumpTime > 0 && !isJumping) 
-        {
-            Debug.Log("Jump");
+        {           
             Jump();
         }
 
@@ -164,6 +158,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    //----------------------------- Animations --------------------------------//
     private void FlipSprite()
     {
         if(move < 0)
@@ -178,13 +173,14 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed",Mathf.Abs(move));
     }
 
+    //----------------------------- Callbacks --------------------------------//
+
     public void OnJump(InputAction.CallbackContext context)
     {
         if (!dashing)
         {
             if (context.started)
             {
-                Debug.Log("Jump");
                 lastJumpTime = jumpBufferTime;
             }
             if (context.performed || context.canceled)
