@@ -188,9 +188,49 @@ Estas son todas las trampas de @b{@i{tier I (DOGE)}} disponibles durante el jueg
 @table @samp
 @item @i{Sierra cortadora}
 @itemize @bullet
-@item (...)
+@item @b{Detalles:}
+(...)
+@item @b{Cadencia:}
+(...)
+@item @b{Alcance:}
+(...)
 @end itemize
-@item (...)
+@item @i{Ballesta}
+@itemize @bullet
+@item @b{Detalles:}
+(...)
+@item @b{Cadencia:}
+(...)
+@item @b{Alcance:}
+(...)
+@end itemize
+@item @i{Cañón}
+@itemize @bullet
+@item @b{Detalles:}
+(...)
+@item @b{Cadencia:}
+(...)
+@item @b{Alcance:}
+(...)
+@end itemize
+@item @i{Mortero}
+@itemize @bullet
+@item @b{Detalles:}
+(...)
+@item @b{Cadencia:}
+(...)
+@item @b{Alcance:}
+(...)
+@end itemize
+@item @i{Torre bombardera}
+@itemize @bullet
+@item @b{Detalles:}
+(...)
+@item @b{Cadencia:}
+(...)
+@item @b{Alcance:}
+(...)
+@end itemize
 @end table
 @end float
 
@@ -311,11 +351,11 @@ Una de las partes más interesantes de la jugabilidad y la estratégia/gestión 
 
 Cada entrada en el resumen tiene la forma:
 
-@center @samp(<Nombre de trampa> x MZ (<MZ>) x MP (<MP>) = <Total>)
+@center @samp{(<Nombre de trampa> x MZ (<MZ>) x MP (<MP>) = <Total>)}
 
 e.g.
 
-@center @samp(Ballesta x MZ (1) x MP (1.5))
+@center @samp{(Ballesta x MZ (1) x MP (1.5))}
 
 Como vemos, hay dos tipos de multiplicadores, cada uno con significado determinado y una recompensa al jugador específica. En general, podemos decir que los multiplicadores se basan de forma exclusiva en la colocación de trampas.
 
