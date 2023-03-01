@@ -85,9 +85,6 @@ public class PlayerMovement : MonoBehaviour
         Run();
 
         ApplyFriction();
-
-        Mathf.Clamp(rigidBody.velocity.y, -maxVerticalSpeed, 10000);
-
     }
 
     private void SetTimers()
