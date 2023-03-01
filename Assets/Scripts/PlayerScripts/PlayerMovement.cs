@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float lastJumpTime = 0;
     [SerializeField] private bool isJumping = false;
     [SerializeField] private bool jumpImputReleased = false;
+    [SerializeField] private float maxVerticalSpeed = 20f;
     
     [Header("Dash")]
     [SerializeField] private TrailRenderer TR;
@@ -84,7 +85,9 @@ public class PlayerMovement : MonoBehaviour
         Run();
 
         ApplyFriction();
-        
+
+        Mathf.Clamp(rigidBody.velocity.y, -maxVerticalSpeed, 10000);
+
     }
 
     private void SetTimers()
@@ -191,10 +194,7 @@ public class PlayerMovement : MonoBehaviour
                 jumpImputReleased = true;
                 lastJumpTime = 0;
             }
-
-            
         }
-        
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -202,6 +202,14 @@ public class PlayerMovement : MonoBehaviour
         if (!dashing)
         {
             move = context.ReadValue<Single>();
+            if(move > 0)
+            {
+                move = 1;
+            }
+            else if(move < 0)
+            {
+                move = - 1;
+            }
         }
     }
 
