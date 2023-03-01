@@ -91,11 +91,11 @@ En cada ronda, cuando se inicia el turno del presente, se dará la oportunidad a
 @item Dash
 Reúne y conjura el poder del @i{sky gold} en ti mismo para proyectarte hacia delante. Irás a tanta velocidad que ni las superficies te ofrecerán resistencia.
 @item 51-Percent Attack
-Lo has logrado, has conseguido la mayoría de poder de cómputo en la red. Gracias a esta habilidad causarás interferencias y deshabilitarás las trampas cercanas por 20s.
+Lo has logrado, has conseguido la mayoría de poder de cómputo en la red. Gracias a esta habilidad causarás interferencias y deshabilitarás las trampas cercanas por 5s.
 @item Criptobro
 El mercado es tan volátil... Pero, ¿quién no quiere un poco de emoción en la vida? Con esta habilidad pasiva podrás triplicar los beneficios obtenidos al final de la ronda, si es que consigues llegar al futuro: solo tendrás una vida.
 @item Autopilot
-Nunca viene mal tener un poco de compañia, ¿no? ¡Y que mejor que montar en dragón! Llama a @i{Model D} y destruye todo a tu paso. Esta habilidad te hará invulnerable por 20s.
+Nunca viene mal tener un poco de compañia, ¿no? ¡Y que mejor que montar en dragón! Llama a @i{Model D} y destruye todo a tu paso. Esta habilidad te hará invulnerable por 5s.
 @end table
 @end float
 
@@ -191,7 +191,7 @@ Estas son todas las trampas de @b{@i{tier I (DOGE)}} disponibles durante el jueg
 @item @b{Detalles:}
 (...)
 @item @b{Cadencia:}
-(...)
+? acciones/s
 @item @b{Alcance:}
 (...)
 @end itemize
@@ -200,7 +200,7 @@ Estas son todas las trampas de @b{@i{tier I (DOGE)}} disponibles durante el jueg
 @item @b{Detalles:}
 (...)
 @item @b{Cadencia:}
-(...)
+? acciones/s
 @item @b{Alcance:}
 (...)
 @end itemize
@@ -209,7 +209,7 @@ Estas son todas las trampas de @b{@i{tier I (DOGE)}} disponibles durante el jueg
 @item @b{Detalles:}
 (...)
 @item @b{Cadencia:}
-(...)
+? acciones/s
 @item @b{Alcance:}
 (...)
 @end itemize
@@ -218,7 +218,7 @@ Estas son todas las trampas de @b{@i{tier I (DOGE)}} disponibles durante el jueg
 @item @b{Detalles:}
 (...)
 @item @b{Cadencia:}
-(...)
+? acciones/s
 @item @b{Alcance:}
 (...)
 @end itemize
@@ -227,7 +227,7 @@ Estas son todas las trampas de @b{@i{tier I (DOGE)}} disponibles durante el jueg
 @item @b{Detalles:}
 (...)
 @item @b{Cadencia:}
-(...)
+? acciones/s
 @item @b{Alcance:}
 (...)
 @end itemize
@@ -277,7 +277,33 @@ Estas son todas las trampas de @b{@i{tier II (Ethereum)}} disponibles durante el
 @shortcaption{Tabla de descripciones de trampas (II)}
 @caption{Tabla de descripciones de trampas (II)}
 @table @samp
+@item @i{Torre Tesla}
+@itemize @bullet
+@item @b{Detalles:}
 (...)
+@item @b{Cadencia:}
+? acciones/s
+@item @b{Alcance:}
+(...)
+@end itemize
+@item @i{Torreta de electrochoque}
+@itemize @bullet
+@item @b{Detalles:}
+(...)
+@item @b{Cadencia:}
+? acciones/s
+@item @b{Alcance:}
+(...)
+@end itemize
+@item @i{Pistola Láser}
+@itemize @bullet
+@item @b{Detalles:}
+(...)
+@item @b{Cadencia:}
+? acciones/s
+@item @b{Alcance:}
+(...)
+@end itemize
 @end table
 @end float
 
@@ -318,7 +344,24 @@ Estas son todas las trampas de @b{@i{tier III (Bitcoin)}} disponibles durante el
 @shortcaption{Tabla de descripciones de trampas (III)}
 @caption{Tabla de descripciones de trampas (III)}
 @table @samp
+@item @i{Torre de rayos infernales}
+@itemize @bullet
+@item @b{Detalles:}
 (...)
+@item @b{Cadencia:}
+? acciones/s
+@item @b{Alcance:}
+(...)
+@end itemize
+@item @i{Agujero Negro}
+@itemize @bullet
+@item @b{Detalles:}
+(...)
+@item @b{Cadencia:}
+? acciones/s
+@item @b{Alcance:}
+(...)
+@end itemize
 @end table
 @end float
 

@@ -79,18 +79,16 @@ Terminar turno. Ir al turno del presente.
 El personaje se mueve a la izquierda.
 @item Flecha derecha / Tecla D
 El personaje se mueve a la derecha.
-@item Flecha arriba / Barra espaciadora
+@item Flecha arriba / W / Barra espaciadora
 El personaje salta. Si se tiene la habilidad @i{Stonks}, se puede realizar un doble salto si se pulsa el botón de salto al estar en el aire.
 @item Tecla @i{Shift}
 El personaje realiza un dash hacia donde esté mirando, siempre y cuando se haya comprado la habilidad en el inicio de la ronda del presente.
 @item Tecla Q
-Utilizar habilidad activa equipada en el @b{primer} espacio de inventario.
-@item Tecla W
-Utilizar habilidad activa equipada en el @b{segundo} espacio de inventario.
+El personaje utiliza la habilidad @b{@i{51-Percent Attack}}, si se tiene comprada y disponible.
 @item Tecla E
-Utilizar habilidad activa equipada en el @b{tercer} espacio de inventario.
-@item Tecla R
-Utilizar habilidad activa equipada en el @b{cuarto} y último espacio de inventario.
+El personaje utiliza la habilidad @b{@i{Autopilot}}, si se tiene comprada y disponible.
+@item Tecla B
+Abrir la tienda al estar en la zona indicada (primera plataforma donde aparece el personaje).
 @end table
 @end float
 
@@ -112,9 +110,9 @@ El interfaz o mapa es un campo vertical con plataformas móviles. La imagen de f
 
 (...)
 
-@c Subsection 2.2.5: Fujo de aparición de elementos en la interfaz
-@node Fujo de aparición de elementos en la interfaz
-@subsection Fujo de aparición de elementos en la interfaz
+@c Subsection 2.2.5: Flujo de aparición de elementos en la interfaz
+@node Flujo de aparición de elementos en la interfaz
+@subsection Flujo de aparición de elementos en la interfaz
 
 @b{Turno del futuro:}
 @enumerate
