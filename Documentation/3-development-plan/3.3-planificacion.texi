@@ -2,6 +2,8 @@
 @node Planificación
 @section Planificación
 
+Mediante el uso de la aplicación de Trello, creamos un tablero Kanban donde nos dividimos el trabajo, optimizando el avance del proyecto y asegurando que la asignación de tarea se entregue a quien más interés tenga.
+
 Para repartirnos el trabajo utilizamos un tablero o @i{dashboard} en @i{Trello} con 5 columnas:
 
 @itemize @bullet
@@ -12,8 +14,18 @@ Para repartirnos el trabajo utilizamos un tablero o @i{dashboard} en @i{Trello} 
 @item @b{Done:} Tareas acabadas.
 @end itemize
 
+En las primeras semanas del desarrollo nos centramos principalmente en la elaboración del GDD sobre todo, con alguna idea de futuro en cuanto al uso del motor se trate.
+
 @float Figure,trello-dashboard
-@shortcaption{Trello @i{dashboard screenshot}}
-@caption{Trello @i{dashboard screenshot}}
-@center @image{img/trello,13cm,,Trello,}
+@shortcaption{Trello @i{dashboard screenshot} 1}
+@caption{Trello @i{dashboard screenshot} 1}
+@center @image{img/trello,13cm,,Trello 1,}
+@end float
+
+En las siguientes semanas, con el gdd prácticamente acabado, empezamos a trabajar en la demo principalmente, con alguna puntualización a corregir del GDD o implementar alguna mecánica o tabla de valores nueva.
+
+@float Figure,trello-dashboard-2
+@shortcaption{Trello @i{dashboard screenshot} 2}
+@caption{Trello @i{dashboard screenshot} 2}
+@center @image{img/trello-2,13cm,,Trello 2,}
 @end float

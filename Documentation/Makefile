@@ -1,10 +1,10 @@
 ##################
 # === MACROS === #
 ##################
-VERSION := 0
-PATCHLEVEL := 2
+VERSION := 1
+PATCHLEVEL := 0
 SUBLEVEL := 0
-EXTRAVERSION :=
+EXTRAVERSION := -rc1
 
 COVER := $(shell find . -type f -name "cover.ps")
 SRC := $(shell find . -type f -iname "*.texi")

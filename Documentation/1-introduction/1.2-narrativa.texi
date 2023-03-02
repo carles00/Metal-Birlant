@@ -35,9 +35,9 @@ Relato tipo cómic.
 
 @itemize @bullet
 @item
-@i{Elon J. D'Oroski} (presente) - Personaje protagonista, CEO de @i{T€$la®}. Le sustrae @i{sky gold} a su versión futura inconsciente de las consecuencias.
+@i{Elon J. D'Oroski} (presente): Personaje protagonista, CEO de @i{T€$la®}. Le sustrae @i{sky gold} a su versión futura inconsciente de las consecuencias.
 @item
-@i{Elon J. D'Oroski} (futuro) - Personaje antagonista. Víctima de los hurtos de su versión pasada.
+@i{Elon J. D'Oroski} (futuro): Personaje antagonista. Víctima de los hurtos de su versión pasada.
 @item
-NFT (nativos forzosamente trabajadores) - Personajes extra.
+@i{NFTs} (@b{N}ativos @b{F}orzosamente @b{T}rabajadores): Personajes extra, dedicados a la herrería y confección de armas y estructuras en madera y metales forjados, como el hierro o el acero.
 @end itemize

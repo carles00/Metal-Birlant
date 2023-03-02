@@ -76,21 +76,23 @@ Terminar turno. Ir al turno del presente.
 @b{Turno del presente}:
 @table @samp
 @item Flecha izquierda / Tecla A
-Mover el personaje a la izquierda.
+El personaje se mueve a la izquierda.
 @item Flecha derecha / Tecla D
-Mover el personaje a la derecha.
-@item Flecha arriba / Tecla W / Barra espaciadora
-El personaje salta.
+El personaje se mueve a la derecha.
+@item Flecha arriba / W / Barra espaciadora
+El personaje salta. Si se tiene la habilidad @i{Stonks}, se puede realizar un doble salto si se pulsa el botón de salto al estar en el aire.
+@item Tecla @i{Shift}
+El personaje realiza un dash hacia donde esté mirando, siempre y cuando se haya comprado la habilidad en el inicio de la ronda del presente.
 @item Tecla Q
-Utilizar habilidad activa equipada en el @b{primer} espacio de inventario.
-@item Tecla W
-Utilizar habilidad activa equipada en el @b{segundo} espacio de inventario.
+El personaje utiliza la habilidad @b{@i{51-Percent Attack}}, si se tiene comprada y disponible.
 @item Tecla E
-Utilizar habilidad activa equipada en el @b{tercer} espacio de inventario.
-@item Tecla R
-Utilizar habilidad activa equipada en el @b{cuarto} y último espacio de inventario.
+El personaje utiliza la habilidad @b{@i{Autopilot}}, si se tiene comprada y disponible.
+@item Tecla B
+Abrir la tienda al estar en la zona indicada (primera plataforma donde aparece el personaje).
 @end table
 @end float
+
+@page
 
 @c Subsection 2.2.3: Diseño de interfaz o GUI
 @node Diseño de interfaz o @i{GUI}
@@ -101,17 +103,33 @@ El interfaz del turno del futuro es una simulacion de una pantalla de una sala d
 donde a la derecha e izquierda tendremos el menu de trampas y en el centro el mapa (mismo del turno del 
 presente, pero con indicaciones) adonde pondremos las trampas.
 
+@float Figure,future-wireframe
+@shortcaption{@i{Wireframe} del turno del futuro}
+@caption{@i{Wireframe} del turno del futuro}
 @center @image{img/future-wireframe,13cm,,future-wireframe,}
+@end float
+
+@page
 
 @b{Turno del presente:}
 El interfaz o mapa es un campo vertical con plataformas móviles. La imagen de fondo del mapa se relaciona con la zona del mapa. No cambia entre rondas.
 El jugador tendrá disponible la información de la vida que le queda, el dinero que tiene y que habilidades tiene disponibles.
 
+@float Figure,present-wireframe
+@shortcaption{@i{Wireframe} del turno del presente}
+@caption{@i{Wireframe} del turno del presente}
 @center @image{img/present-wireframe,13cm,,present-wireframe,}
+@end float
+
+@page
 
 @b{Menú Principal:}
 
+@float Figure,menu-wireframe
+@shortcaption{@i{Wireframe} del menú principal}
+@caption{@i{Wireframe} del menú principal}
 @center @image{img/menu-wireframe,13cm,,menu-wireframe,}
+@end float
 
 @c Subsection 2.2.5: Flujo de aparición de elementos en la interfaz
 @node Flujo de aparición de elementos en la interfaz
