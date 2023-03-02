@@ -50,7 +50,7 @@
 @end menu
 
 @include 3-development-plan/3.1-planteamiento-tecnico.texi
-@include 3-development-plan/3.2-desglose.texi
+@c @include 3-development-plan/3.2-desglose.texi
 @include 3-development-plan/3.3-planificacion.texi
 
 @bye

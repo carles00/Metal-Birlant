@@ -116,7 +116,7 @@ Nunca viene mal tener un poco de compañia, ¿no? ¡Y que mejor que montar en dr
 @node Categorías de trampas y sus propiedades
 @subsubsection Categorías de trampas y sus propiedades
 
-El sistema de trampas es la mecánica más importante del juego, y su parte más esencial. Las trampas se dividen en 3 categorías, cada una más moderna, sofisticada y difícil de sortear que la anterior.
+El sistema de trampas es la mecánica más importante del juego, y su parte más esencial. Las trampas se dividen en 3 categorías, cada una más moderna, sofisticada y difícil de sortear que la anterior. Por cada categoría/zona se podrán poner un máximo de 10 trampas, así que elige con cabeza.
 
 @float Table,trap-categories
 @shortcaption{Categorías de las trampas}
@@ -386,7 +386,7 @@ Ha llegado de nuevo una glaciación, el hielo continental de los casquetes polar
 @node Multiplicadores
 @subsection Multiplicadores
 
-Una de las partes más interesantes de la jugabilidad y la estratégia/gestión del dinero son las recompensas obtenidas por cada ronda finalizada. Al acabar una ronda, se le muestra al usuario un resumen de las ganancias obtenidas.
+Una de las partes más interesantes de la jugabilidad y la estrategia/gestión del dinero son las recompensas obtenidas por cada ronda finalizada. Al acabar una ronda, se le muestra al usuario un resumen de las ganancias obtenidas.
 
 Cada entrada en el resumen tiene la forma:
 
@@ -401,11 +401,28 @@ Como vemos, hay dos tipos de multiplicadores, cada uno con significado determina
 @node Multiplicador de zona (MZ)
 @subsubsection Multiplicador de zona (MZ)
 
-(...)
+Este multiplicador establece una relación o vínculo entre la zona inherente a la categoría de la trampa, y la zona donde se haya colocado dicha trampa; e.g. se compra una ballesta (@i{tier 1}) y se coloca en la segunda zona del mapa (propia de trampas de @i{tier 2}).
+
+Por cada zona de distancia que esté la trampa respecto a su zona original, este multiplicador se dividirá por 2, siendo @samp{1} su valor máximo y @samp{0.25} su valor mínimo.
+
+@itemize
+@item @b{Trampa de @i{tier 1}}
+@samp{x1} (al colocarse en zona 1)@*
+@samp{x0.5} (al colocarse en zona 2)@*
+@samp{x0.25} (al colocarse en zona 3)
+@item @b{Trampa de @i{tier 2}}
+@samp{x0.5} (al colocarse en zona 1)@*
+@samp{x1} (al colocarse en zona 2)@*
+@samp{x0.5} (al colocarse en zona 3)
+@item @b{Trampa de @i{tier 3}}
+@samp{x0.25} (al colocarse en zona 1)@*
+@samp{x0.5} (al colocarse en zona 2)@*
+@samp{x1} (al colocarse en zona 3)
+@end itemize
 
 @node Multiplicador de precisión o @i{hotspot} (MP)
 @subsubsection Multiplicador de precisión o @i{hotspot} (MP)
 
-(...)
+Este segundo multiplicador premia la colocación de trampas en sitios determinados de su zona, los cuales están ocultos para el usuario durante el turno del futuro, aumentando la rejugabilidad y premiando los múltiples intentos de colocación de trampas.
 
 @page

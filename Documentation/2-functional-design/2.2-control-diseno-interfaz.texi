@@ -92,6 +92,8 @@ Abrir la tienda al estar en la zona indicada (primera plataforma donde aparece e
 @end table
 @end float
 
+@page
+
 @c Subsection 2.2.3: Diseño de interfaz o GUI
 @node Diseño de interfaz o @i{GUI}
 @subsection Diseño de interfaz o @i{GUI}
@@ -107,6 +109,8 @@ presente, pero con indicaciones) adonde pondremos las trampas.
 @center @image{img/future-wireframe,13cm,,future-wireframe,}
 @end float
 
+@page
+
 @b{Turno del presente:}
 El interfaz o mapa es un campo vertical con plataformas móviles. La imagen de fondo del mapa se relaciona con la zona del mapa. No cambia entre rondas.
 El jugador tendrá disponible la información de la vida que le queda, el dinero que tiene y que habilidades tiene disponibles.
@@ -116,6 +120,8 @@ El jugador tendrá disponible la información de la vida que le queda, el dinero
 @caption{@i{Wireframe} del turno del presente}
 @center @image{img/present-wireframe,13cm,,present-wireframe,}
 @end float
+
+@page
 
 @b{Menú Principal:}
 

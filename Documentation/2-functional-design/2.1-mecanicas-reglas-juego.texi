@@ -58,6 +58,7 @@ Para más información sobre los @i{multiplicadores} en el turno del presente, v
 @item Número de ronda
 @item Multiplicador de zona
 @item Multiplicador de precisión o @i{hotspot}
+@item Recesión
 @end table
 @end float
 
@@ -65,6 +66,26 @@ Para más información sobre los @i{multiplicadores} en el turno del presente, v
 @shortcaption{Variables del presente}
 @caption{Variables del presente}
 @table @samp
-
+@item Dinero
+@item Vidas
+@item Habilidades
+@item Velocidad
+@item Fuerza del salto
+@item Tiempo de invulnerabilidad
+@item @i{Coyote} time
+@item @i{Cooldown Dash}
 @end table
 @end float
+
+@float Table,future-variables
+@shortcaption{Variables del futuro}
+@caption{Variables del futuro}
+@table @samp
+@item Multiplicador de zona
+@item Multiplicador de precisión o @i{hotspot}
+@item Número máximo de trampas por zona
+@item Trampas disponibles
+@end table
+@end float
+
+@page

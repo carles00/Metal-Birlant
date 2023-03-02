@@ -23,8 +23,9 @@ Donde se implementará el mismo @i{soundtrack} en bucle durante toda la partida,
 @float Figure,ost-system-1
 @shortcaption{OST System 1}
 @caption{OST System 1}
-@center @image{img/ost-music/system-2,10cm,,OST System 1,}
+@center @image{img/ost-music/system-1,10cm,,OST System 1,}
 @end float
+
 @item @b{Música por entorno:}
 El @i{soundtrack} variará dependiendo de la zona o turno en el que estemos, de manera que cuando cambiemos de zona la música cambia dinámicamente y cuando pasemos de turno también se realizará el cambio pero se reducirá el volumen. La música de cada parte será siempre la misma.
 @float Figure,ost-system-2
@@ -32,6 +33,9 @@ El @i{soundtrack} variará dependiendo de la zona o turno en el que estemos, de 
 @caption{OST System 2}
 @center @image{img/ost-music/system-2,10cm,,OST System 2,}
 @end float
+
+@page
+
 @item @b{Música progresiva:}
 A medida que que el jugador avanza, en el momento que baje a la zona siguiente la música seguirá teniendo la misma base pero se le agregara un instrumento/base adicional. Cuando pase de turno se reseteara y se reducirá el volumen (e.g. @i{Wii tanks}).
 @float Figure,ost-system-3
