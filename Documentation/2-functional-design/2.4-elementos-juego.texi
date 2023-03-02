@@ -125,7 +125,7 @@ El sistema de trampas es la mecánica más importante del juego, y su parte más
 @item @i{Tier I}: DOGE
 Estas trampas son las más antiguas y fáciles de sortear, pero mejor no infravalorarlas. Tienen un precio que oscila entre 150 y 400 monedas de @i{sky gold}, y suelen estar fabricadas en madera y acero forjado por los @i{NFTs}, o @b{N}ativos @b{F}orzosamente @b{T}rabajadores. Tienen una cadencia de acción baja (0.5 - 1 acciones/s) y un alcance y rango de activación limitados.
 @item @i{Tier II}: Ethereum
-Estas trampas son una clara evolución respecto a las @i{DOGE}, ya que aprovechan los diseños originales con el añadido de utilizar la electricidad, el magnetismo, y diversas tecnologías mucho más modernas y eficientes. Tienen una cadencia de acción media (1.25 - 1.75 acciones/s) y un alcance y rango de activación generosos.
+Estas trampas son una clara evolución respecto a las @i{DOGE}, ya que aprovechan los diseños originales con el añadido de utilizar la electricidad, el magnetismo, y diversas tecnologías mucho más modernas y eficientes. Tienen una cadencia de acción media (1 - 1.75 acciones/s) y un alcance y rango de activación generosos.
 @item @i{Tier III}: Bitcoin
 La cúspide de la creación terrestre. Tecnología puntera, cara e inaccesible para (casi) cualquiera. Tienen una cadencia de acción alta (2 - @samp{inf} acciones/s) y un alcance y rango de activación altísimos. @i{Recomendamos precaución al usar estas trampas, son altamente experimentales y peligrosas. Utilizar bajo su propia responsabilidad.}
 @end table

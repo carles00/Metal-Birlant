@@ -22,5 +22,4 @@
 @subsection Rondas y turnos
 
 Aparecerá en cada ronda un contador que simbolizaría el año en que el personaje principal
-se encuentra (el primer año es el 3055) y aumenta conforme el personaje baja en el mapa. El primer 
-año en el contador aumenta (cantidad a decidir) conforme el jugador pase de rondas.
+se encuentra (el año inicial es el 3055) y aumenta conforme el personaje baja por el mapa. El año en el contador @b{aumenta en 1} cada vez que el jugador pase de ronda.

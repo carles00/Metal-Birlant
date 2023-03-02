@@ -30,16 +30,16 @@ El jugador @b{SOLO} gana dinero cuando consigue llegar al tesoro. Una vez ha lle
 Si el jugador del presente se queda sin dinero al comienzo de una ronda, el juego termina.
 
 @item Habilidades
-El jugador del presente podrá comprar habilidades que tendrá disponibles únicamente en esa ronda.
+El jugador del presente podrá comprar habilidades que tendrá disponibles únicamente en esa ronda.@*
 Para más información sobre las @i{habilidades} del personaje, ver: @ref{Habilidades,Habilidades,Habilidades}.
 
 @item Recesiones
-En cada ronda hay una probabilidad que suceda un evento especial llamado @b{Recesión}. Cada recesión tendrá un efecto en esa ronda que es negativo para el jugador y le pone en un aprieto jugable determinado.
+En cada ronda hay una probabilidad que suceda un evento especial llamado @b{Recesión}. Cada recesión tendrá un efecto en esa ronda que es negativo para el jugador y le pone en un aprieto jugable determinado.@*
 Para más información sobre las @i{recesiones}, ver: @ref{Recesiones,Recesiones,Recesiones}.
 
 @item Multiplicadores
 El mapa está dividido en diferentes zonas y, dependiendo de donde coloquemos las trampas, tendrán mejores o peores @i{stats}, y darán mayor o menor beneficio.@*
-También habrán algunos @i{hot-spots} donde, si ponemos una trampa, esa trampa se volverá aún más poderosa y, por tanto, dará aún más beneficio de lo normal.
+También habrán algunos @i{hot-spots} donde, si ponemos una trampa, esa trampa se volverá aún más poderosa y, por tanto, dará aún más beneficio de lo normal.@*
 Para más información sobre los @i{multiplicadores} en el turno del presente, ver: @ref{Multiplicadores,Multiplicadores,Multiplicadores}.
 @end table
 @end float
@@ -50,8 +50,21 @@ Para más información sobre los @i{multiplicadores} en el turno del presente, v
 @node Variables y estados
 @subsection Variables y estados
 
-@float Table,variables
-@shortcaption{Variables del juego}
-@caption{Variables del juego}
-@center @image{img/variables, 13cm,, Variables,}
+@float Table,game-state-variables
+@shortcaption{Variables del estado del juego}
+@caption{Variables del estado del juego}
+@table @samp
+@item Turno Actual
+@item Número de ronda
+@item Multiplicador de zona
+@item Multiplicador de precisión o @i{hotspot}
+@end table
+@end float
+
+@float Table,present-variables
+@shortcaption{Variables del presente}
+@caption{Variables del presente}
+@table @samp
+
+@end table
 @end float
