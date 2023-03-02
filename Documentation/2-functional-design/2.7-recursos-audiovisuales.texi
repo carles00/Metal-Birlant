@@ -1,0 +1,61 @@
+@c Section 2.7: Recursos audiovisuales
+@node Recursos audiovisuales
+@section Recursos audiovisuales
+
+@menu
+* Banda sonora:: ...
+* Efectos de sonido:: ...
+@end menu
+
+Pistas de audio implementadas en la banda sonora o efectos de sonidos aplicados a animaciones o efectos.
+
+@c Subsection 2.7.1: Banda sonora
+@node Banda sonora
+@subsection Banda sonora
+
+A lo largo de la ejecución del videojuego tenemos en cuenta varios diseños posibles de implementación, donde tendremos en cuenta la transición del cambio de zona para hacer una modificación de la música de acompañamiento.
+
+Dentro de estos diseños múltiples podemos destacar:
+
+@enumerate
+@item @b{Misma base:}
+Donde se implementará el mismo @i{soundtrack} en bucle durante toda la partida, alternando el volumen en función del turno; si es el turno del presente el volumen estará estándar, si es el del futuro estará reducido.
+@float Figure,ost-system-1
+@shortcaption{OST System 1}
+@caption{OST System 1}
+@center @image{img/ost-music/system-2,10cm,,OST System 1,}
+@end float
+@item @b{Música por entorno:}
+El @i{soundtrack} variará dependiendo de la zona o turno en el que estemos, de manera que cuando cambiemos de zona la música cambia dinámicamente y cuando pasemos de turno también se realizará el cambio pero se reducirá el volumen. La música de cada parte será siempre la misma.
+@float Figure,ost-system-2
+@shortcaption{OST System 2}
+@caption{OST System 2}
+@center @image{img/ost-music/system-2,10cm,,OST System 2,}
+@end float
+@item @b{Música progresiva:}
+A medida que que el jugador avanza, en el momento que baje a la zona siguiente la música seguirá teniendo la misma base pero se le agregara un instrumento/base adicional. Cuando pase de turno se reseteara y se reducirá el volumen (e.g. @i{Wii tanks}).
+@float Figure,ost-system-3
+@shortcaption{OST System 3}
+@caption{OST System 3}
+@center @image{img/ost-music/system-3,10cm,,OST System 3,}
+@end float
+@item @b{Música alternada:}
+La música se mantendrá durante toda la partida con una misma estructura, pero cada turno irá variando entre diferentes variantes de la misma sin cambiar entre zonas. Lo mismo sucederá con el turno del futuro pero reduciendo el volumen.
+@float Figure,ost-system-4
+@shortcaption{OST System 4}
+@caption{OST System 4}
+@center @image{img/ost-music/system-4,10cm,,OST System 4,}
+@end float
+@end enumerate
+
+Todos los diseños tienen cambios que a la larga pueden cambiar mucho la experiencia y emoción que pueda transmitir nuestro juego. Nuestra principal intención es emitir una sensación de acción y movimiento constante en cuanto al turno de trampas para que nuestro jugador sienta, al mismo tiempo que esquiva trampas, la necesidad de seguir avanzando con energía.
+
+Por otro lado, cuando al turno del futuro se refiere, todos los diseños son muy similares, pretendemos bajar el volumen para reducir esta velocidad y adrenalina del turno del presente para que el jugador pueda seguir estando con las ganas de continuar a ver hasta dónde puede llegar pero, al mismo tiempo, pueda pensar con más claridad y estrategia donde colocar las trampas de manera más eficiente.
+
+@c Subsection 2.7.2: Efectos de sonido
+@node Efectos de sonido
+@subsection Efectos de sonido
+
+Siguiendo la temática de cómic que tiene nuestro relato más el uso de un diseño visual pixelado, que posteriormente explicaremos que utilizamos en Unity, llegaremos al uso de sonidos breves que nos ayuden a la inmersión de nuestro juego. Dichos efectos seguirán una estructura retro típica en obras pixeladas y sonidos como onomatopeyas clásicas en comics y tebeos.
+
+Estos sonidos serán implementados tanto en movimientos recurrentes, como saltos y movimientos del personaje, hasta en elementos de entorno, como el caso de las trampas y sus proyectiles al impactar.

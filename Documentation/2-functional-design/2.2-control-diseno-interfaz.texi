@@ -101,17 +101,29 @@ El interfaz del turno del futuro es una simulacion de una pantalla de una sala d
 donde a la derecha e izquierda tendremos el menu de trampas y en el centro el mapa (mismo del turno del 
 presente, pero con indicaciones) adonde pondremos las trampas.
 
+@float Figure,future-wireframe
+@shortcaption{@i{Wireframe} del turno del futuro}
+@caption{@i{Wireframe} del turno del futuro}
 @center @image{img/future-wireframe,13cm,,future-wireframe,}
+@end float
 
 @b{Turno del presente:}
 El interfaz o mapa es un campo vertical con plataformas móviles. La imagen de fondo del mapa se relaciona con la zona del mapa. No cambia entre rondas.
 El jugador tendrá disponible la información de la vida que le queda, el dinero que tiene y que habilidades tiene disponibles.
 
+@float Figure,present-wireframe
+@shortcaption{@i{Wireframe} del turno del presente}
+@caption{@i{Wireframe} del turno del presente}
 @center @image{img/present-wireframe,13cm,,present-wireframe,}
+@end float
 
 @b{Menú Principal:}
 
+@float Figure,menu-wireframe
+@shortcaption{@i{Wireframe} del menú principal}
+@caption{@i{Wireframe} del menú principal}
 @center @image{img/menu-wireframe,13cm,,menu-wireframe,}
+@end float
 
 @c Subsection 2.2.5: Flujo de aparición de elementos en la interfaz
 @node Flujo de aparición de elementos en la interfaz

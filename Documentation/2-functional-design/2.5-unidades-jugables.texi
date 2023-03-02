@@ -17,6 +17,30 @@
 @center @image{img/mapa,10cm,,Mapa,}
 @end float
 
+@page
+
+@float Figure,pixel-map
+@shortcaption{Mapa en @i{pixel art}}
+@caption{Mapa en @i{pixel art}}
+@center @image{img/pixel-map,3cm,,Mapa en @i{pixel art},}
+@end float
+
+@page
+
+Habrá distintos tipos de plataformas con la intención de aumentar la dificultad y mejorar la experiencia del juego. Estas son:
+@itemize @bullet
+@item @b{Plataforma estática:}
+La plataforma no se mueve ni interactúa de forma dinámica con el personaje.
+@item @b{Plataforma de movimiento:}
+La plataforma se mueve en dirección horizontal o vertical haciendo con que el jugador tenga que esperar el momento correcto para poder avanzar.
+@item @b{Plataforma inclinada:}
+La plataforma se inclina cuando el jugador se mueve a una de sus extremidades. Eso hace que el jugador tenga que mantenerse en el centro de la plataforma y que se mueva rápidamente cuando salte a otra plataforma.
+@item @b{Plataforma resbaladiza:}
+Las plataformas son resbaladizas (cuando el jugador deja de presionar un botón de dirección el personaje sigue moviéndose con aceleración descendente hacia la dirección indicada) haciendo con que el jugador tenga más cuidado con el control de movimiento.
+@item @b{Plataforma explosiva:}
+Las plataformas se ponen en tono rojo claro gradualmente y explotan después de 3 segundos, si el personaje no cambia de plataforma, simplemente cae, sin perder vidas. Eso hace que el personaje no pueda esperar en esa plataforma y tenga que moverse rápidamente a otra.
+@end itemize
+
 @c Subsection 2.5.2: Rondas y turnos
 @node Rondas y turnos
 @subsection Rondas y turnos

@@ -28,6 +28,7 @@
 * Elementos de juego:: ...
 * Diseño de unidades jugables:: ...
 * Desarrollo ludonarrativo:: ...
+* Recursos audiovisuales:: ...
 @end menu
 
 @include 2-functional-design/2.1-mecanicas-reglas-juego.texi
@@ -36,6 +37,7 @@
 @include 2-functional-design/2.4-elementos-juego.texi
 @include 2-functional-design/2.5-unidades-jugables.texi
 @include 2-functional-design/2.6-desarrollo-ludonarrativo.texi
+@include 2-functional-design/2.7-recursos-audiovisuales.texi
 
 @c Chapter 3: Plan de Desarrollo
 @node Plan de Desarrollo

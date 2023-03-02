@@ -34,6 +34,10 @@ Para desarrollar el juego vamos a usar como motor @b{Unity}. @b{Unity} es uno de
 incluyen @i{Hollow Knight} o @i{Cuphead} entre muchos otros. También cuenta con una gran cantidad de tutoriales e información que nos ayudarán en nuestro desarrollo. 
 Además tiene integrado una @i{store} de @i{assets} con una gran cantidad de diseños que podemos usar en la DEMO para ahorrar tiempo en la creación de @i{assets}.
 
-Para poder trabajar en paralelo utilizaremos @b{Git}. Diferentes partes del juego serán implementadas en diferentes branches para al final juntar todo en la Demo final.
+Para poder trabajar en paralelo utilizaremos @b{Git}. Diferentes partes del juego serán implementadas en diferentes branches para al final juntar todo en la Demo final. A su vez, implementaremos @i{GNU Texinfo} junto con @i{Git} para crear una documentación formal, consistente y con una estructura definida.
+
+A la hora de editar y crear sprites utilizamos una herramienta online descargable llamada @i{Piskel}, la cual suplirá nuestras necesidades de creación y edición de @i{prefabs} y spritesheets animados.
 
 Finalmente haremos uso de @b{Trello} para asignar tareas entre nosotros y tener un control de lo que hay que hacer, lo que se está haciendo y quien lo está haciendo.
+
+Adicionalmente, hemos implementado aplicaciones online varias para conseguir @i{assets} de todo tipo o para alterar los que ya teníamos. Gracias a este método hemos podido conseguir varios de nuestros sprites empleados y editar los ya existentes con filtros. Al mismo tiempo, también han sido empleadas para el apartado musical de este proyecto, descargando y utilizando edición de audio.
