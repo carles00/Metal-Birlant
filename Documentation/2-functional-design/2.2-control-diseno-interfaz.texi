@@ -98,17 +98,20 @@ Abrir la tienda al estar en la zona indicada (primera plataforma donde aparece e
 
 @b{Turno del futuro:}
 El interfaz del turno del futuro es una simulacion de una pantalla de una sala de camaras,
-donde a la derecha tendremos el menu de trampas y a la izquierda el mapa (mismo del turno del 
+donde a la derecha e izquierda tendremos el menu de trampas y en el centro el mapa (mismo del turno del 
 presente, pero con indicaciones) adonde pondremos las trampas.
+
+@center @image{img/future-wireframe,13cm,,future-wireframe,}
 
 @b{Turno del presente:}
 El interfaz o mapa es un campo vertical con plataformas móviles. La imagen de fondo del mapa se relaciona con la zona del mapa. No cambia entre rondas.
+El jugador tendrá disponible la información de la vida que le queda, el dinero que tiene y que habilidades tiene disponibles.
 
-@c Subsection 2.2.4: Wireframes de interfaz
-@node @i{Wireframes} de interfaz
-@subsection @i{Wireframes} de interfaz
+@center @image{img/present-wireframe,13cm,,present-wireframe,}
 
-(...)
+@b{Menú Principal:}
+
+@center @image{img/menu-wireframe,13cm,,menu-wireframe,}
 
 @c Subsection 2.2.5: Flujo de aparición de elementos en la interfaz
 @node Flujo de aparición de elementos en la interfaz
@@ -117,7 +120,7 @@ El interfaz o mapa es un campo vertical con plataformas móviles. La imagen de f
 @b{Turno del futuro:}
 @enumerate
 @item
-El mapa del juego aparece (a la izquierda de la pantalla) con zonas de trampas visibles y el menu de trampas (a la derecha de la pantalla).
+El mapa del juego aparece (en el centro de la pantalla) con zonas de trampas visibles y el menu de trampas (a la derecha e izquierda de la pantalla).
 @item
 El jugador selecciona la trampa en el menu de trampas, que desea colocar en el mapa.
 @item
@@ -131,7 +134,7 @@ El jugador termina el turno del futuro y el turno del presente empieza.
 @b{Turno del presente:}
 @enumerate
 @item
-El personaje aparece en alguna parte de la zona superior del mapa (dependiendo de la fase) encima de una plataforma.
+El personaje aparece en la parte superior izquierda del mapa.
 @item
 El jugador mueve el personaje por las plataformas con la intención de ir bajando por el mapa, esquivando y sorteando los obstáculos y trampas.
 @item
