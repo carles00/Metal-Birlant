@@ -28,15 +28,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void TreasureReached()
-    {
-        Debug.Log("Treasure from game controller");
-        //Give money to player
-        //Change to future
-
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void TreasureReached()
