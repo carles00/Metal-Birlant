@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &144246545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 144246546}
+  m_Layer: 0
+  m_Name: Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &144246546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144246545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.8, y: -0.96, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &162855172
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +458,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &681985848
 GameObject:
@@ -459,7 +490,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &681985850
 MonoBehaviour:
@@ -473,6 +504,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01a69b5ac76e54240b66c4a55c46ffa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSpawn: {fileID: 144246546}
+  player: {fileID: 1655247514}
+  playerLive: 3
+  money: 0
+  baseMoney: 200
+  roundMultiplier: 1.5
+  round: 0
+  currentTurn: 0
 --- !u!1 &964862475
 GameObject:
   m_ObjectHideFlags: 0
@@ -42094,7 +42133,7 @@ Transform:
   m_Children:
   - {fileID: 456779256}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1359130216
 GameObject:
@@ -42140,7 +42179,7 @@ Transform:
   - {fileID: 964862476}
   - {fileID: 2026430993}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1655247514
 GameObject:
@@ -42153,11 +42192,11 @@ GameObject:
   - component: {fileID: 1655247520}
   - component: {fileID: 1655247519}
   - component: {fileID: 1655247521}
-  - component: {fileID: 1655247515}
-  - component: {fileID: 1655247523}
   - component: {fileID: 1655247522}
   - component: {fileID: 1655247525}
   - component: {fileID: 1655247524}
+  - component: {fileID: 1655247527}
+  - component: {fileID: 1655247526}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -42165,45 +42204,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1655247515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655247514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82f0124dbbaa215488c6416242b4bb53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colliderMask:
-    serializedVersion: 2
-    m_Bits: 256
-  groundCheckLeft: {fileID: 1819234262}
-  groundCheckRight: {fileID: 162855173}
-  animator: {fileID: 1655247525}
-  runSpeed: 7
-  acceleration: 13
-  deceleration: 20
-  power: 0.96
-  frictionAmount: 0.6
-  jumpForce: 12
-  gravityScale: 1
-  fallGravityMultiplier: 3
-  jumpBufferTime: 0.1
-  coyoteTime: 0.15
-  jumpCutMultiplier: 0.4
-  lastGroundedTime: 0
-  lastJumpTime: 0
-  isJumping: 0
-  jumpImputReleased: 0
-  TR: {fileID: 0}
-  dashPower: 10
-  dashTime: 0.2
-  dashCooldown: 1
-  canDash: 1
-  dashing: 0
 --- !u!61 &1655247519
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42236,7 +42236,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.012351036, y: -0.14798981}
+  m_Offset: {x: 0.012351036, y: -0.15252593}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -42247,7 +42247,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4358902, y: 0.6727737}
+  m_Size: {x: 0.4358902, y: 0.68184596}
   m_EdgeRadius: 0
 --- !u!4 &1655247520
 Transform:
@@ -42264,7 +42264,7 @@ Transform:
   - {fileID: 1819234262}
   - {fileID: 162855173}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1655247521
 Rigidbody2D:
@@ -42320,7 +42320,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1655247515}
+      - m_Target: {fileID: 1655247527}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -42336,7 +42336,7 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1655247515}
+      - m_Target: {fileID: 1655247527}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 0
@@ -42392,7 +42392,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1655247515}
+      - m_Target: {fileID: 1655247527}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: OnDash
         m_Mode: 0
@@ -42404,28 +42404,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 75619377-dc35-48e3-83fb-9d60604aceeb
-    m_ActionName: Player/Dash[/Keyboard/leftShift]
+    m_ActionId: 407e3016-8bcb-4a59-9822-86cc2a815b37
+    m_ActionName: Player/Dash[/Keyboard/leftShift,/XInputControllerWindows/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1655247523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655247514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f06aa63bb83d854f8ab433d84f14bd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  treasureEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!212 &1655247524
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -42498,6 +42483,59 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1655247526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655247514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f06aa63bb83d854f8ab433d84f14bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gc: {fileID: 0}
+--- !u!114 &1655247527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655247514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82f0124dbbaa215488c6416242b4bb53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderMask:
+    serializedVersion: 2
+    m_Bits: 256
+  groundCheckLeft: {fileID: 1819234262}
+  groundCheckRight: {fileID: 162855173}
+  animator: {fileID: 1655247525}
+  runSpeed: 6
+  acceleration: 10
+  deceleration: 16
+  power: 0.96
+  frictionAmount: 0.6
+  jumpForce: 12
+  gravityScale: 1
+  fallGravityMultiplier: 3
+  jumpBufferTime: 0.1
+  coyoteTime: 0.1
+  jumpCutMultiplier: -1
+  lastGroundedTime: 0
+  lastJumpTime: 0
+  isJumping: 0
+  jumpImputReleased: 0
+  maxVerticalSpeed: 20
+  TR: {fileID: 0}
+  dashPower: 3
+  dashTime: 0.2
+  dashCooldown: 1
+  canDash: 1
+  dashing: 0
 --- !u!1 &1819234261
 GameObject:
   m_ObjectHideFlags: 0
