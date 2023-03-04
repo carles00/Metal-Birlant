@@ -1,4 +1,4 @@
-@c Section 3.2: Desglose
+@c Subsection 3.2.1: Desglose de elementos finalizados
 @node Desglose
 @section Desglose
 

@@ -11,16 +11,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
+    [SerializeField] private float runSpeed = 40f;
+
     [SerializeField] private LayerMask colliderMask;
     [SerializeField] private Transform groundCheckLeft,groundCheckRight;
     [SerializeField] private Animator animator;
-
-    [Header("Run")]
-    [SerializeField] private float runSpeed = 9f;
-    [SerializeField] private float acceleration = 13f;
-    [SerializeField] private float deceleration = 16f;
-    [SerializeField] private float power = 0.96f;
-    [SerializeField] private float frictionAmount = 0.2f;
 
     [Header("Jumping")]
     [SerializeField] private float jumpForce = 13f;
@@ -49,25 +45,22 @@ public class PlayerMovement : MonoBehaviour
 
     private bool grounded;
     private float move;
-    private int facing = 1;
+    
   
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-
     }
 
+ 
     private void FixedUpdate()
-    {
-        if (!dashing)
-        {
-            CheckGround();
+    {   
+        checkGround();
 
-            Movement();
+        movement();
 
-            FlipSprite();
-        }
+        flipSprite();
     }
 
     //----------------------------- Movement Calculations --------------------------------//
@@ -85,68 +78,79 @@ public class PlayerMovement : MonoBehaviour
         Run();
 
         ApplyFriction();
+        
     }
 
-    private void SetTimers()
+    private float calculateJump()
     {
-        lastGroundedTime -= Time.deltaTime;
-        lastJumpTime -= Time.deltaTime;
-    }
+        float calculatedJump = 0;
 
-    private void Jump()
-    {
-        rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        lastGroundedTime = 0;
-        lastJumpTime = 0;
-        isJumping= true;
-        jumpImputReleased = false;
-    }
+        setJumpTime();
+        setJumpBuffer();
+        setCoyoteTime();
 
-    private void SetFallGravity()
-    {
-        if(rigidBody.velocity.y < 0)
+        if(jumpBufferCounter > 0.0f && !playerIsJumping && coyoteTimeCounter > 0.0f)
         {
-            rigidBody.gravityScale = gravityScale * fallGravityMultiplier;
+            calculatedJump = jumpForce;
+            playerIsJumping = true;
+            jumpBufferCounter = 0.0f;
+            coyoteTimeCounter = 0.0f;
+        }
+        else if(jump && playerIsJumping && !grounded && jumpTimeCounter > 0.0f)
+        {
+            calculatedJump = jumpForce * jumpMultiplier;
+        }
+        else if(playerIsJumping && grounded)
+        {
+            playerIsJumping = false;
+        }
+
+        return calculatedJump;
+    }
+
+    private void setJumpTime()
+    {
+        if(playerIsJumping && !grounded)
+        {
+            jumpTimeCounter -= Time.fixedDeltaTime;
         }
         else
         {
-            rigidBody.gravityScale = gravityScale;
+            jumpTimeCounter = jumpTime;
         }
     }
 
-    private void ApplyFriction()
+    private void setCoyoteTime()
     {
-        if (grounded && Mathf.Abs(move) < 0.0f)
+        if(grounded)
         {
-            float amount = Mathf.Min(Mathf.Abs(rigidBody.velocity.x), Mathf.Abs(frictionAmount));
-
-            amount *= Mathf.Sign(rigidBody.velocity.x);
-
-            rigidBody.AddForce(Vector2.right* -amount, ForceMode2D.Impulse);
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.fixedDeltaTime;
         }
     }
 
-    private void Run()
+    private void setJumpBuffer()
     {
-        float targetSpeed = move * runSpeed;
-        
-        float speedDiff = targetSpeed- rigidBody.velocity.x;
-
-        float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : deceleration;
-
-        float movement = Mathf.Pow(Mathf.Abs(speedDiff)*accelRate, power) * Mathf.Sign(speedDiff);
-
-        rigidBody.AddForce(movement * Vector2.right);
+        if (!jumpPressedLastFrame && jump)
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        else if(jumpBufferCounter > 0.0f)
+        {
+            jumpBufferCounter -= Time.fixedDeltaTime;
+        }
+        jumpPressedLastFrame = jump;
     }
 
-    private void CheckGround(){
+    private void checkGround(){
         bool groundedA = Physics2D.Raycast(groundCheckLeft.position, Vector2.down, .1f, colliderMask);
         bool groundedB = Physics2D.Raycast(groundCheckRight.position, Vector2.down, .1f, colliderMask);
         if(groundedA || groundedB)
         {
             grounded = true;
-            isJumping= false;
-            lastGroundedTime = coyoteTime;
         }
         else
         {
@@ -158,24 +162,19 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    //----------------------------- Animations --------------------------------//
-    private void FlipSprite()
+    private void flipSprite()
     {
         if(move < 0)
         {
-            facing = -1;
             sprite.flipX = true;
         }else if(move > 0)
         {
-            facing = 1;
             sprite.flipX = false;
         }
         animator.SetFloat("Speed",Mathf.Abs(move));
     }
 
-    //----------------------------- Callbacks --------------------------------//
-
-    public void OnJump(InputAction.CallbackContext context)
+    public void onJump(InputAction.CallbackContext context)
     {
         if (!dashing)
         {
@@ -191,7 +190,10 @@ public class PlayerMovement : MonoBehaviour
                 jumpImputReleased = true;
                 lastJumpTime = 0;
             }
+
+            
         }
+        
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -214,23 +216,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.performed && canDash)
         {
-            StartCoroutine(Dash());
+            jump = false;
         }
     }
 
-    private IEnumerator Dash()
+    public void onMove(InputAction.CallbackContext context)
     {
-        canDash = false;
-        dashing = true;
-        float originalGravity = rigidBody.gravityScale;
-        rigidBody.gravityScale = 0;
-        rigidBody.velocity = new Vector2(dashPower * facing, 0f);
-
-        yield return new WaitForSeconds(dashTime);
-        dashing = false;
-        rigidBody.gravityScale = originalGravity;
-        rigidBody.velocity = new Vector2(0f, 0f);
-        yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
+        move = context.ReadValue<Single>();
     }
 }
