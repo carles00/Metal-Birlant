@@ -42518,7 +42518,7 @@ MonoBehaviour:
   acceleration: 10
   deceleration: 16
   power: 0.96
-  frictionAmount: 0.6
+  frictionAmount: 0.9
   jumpForce: 12
   gravityScale: 1
   fallGravityMultiplier: 3
@@ -42531,7 +42531,7 @@ MonoBehaviour:
   jumpImputReleased: 0
   maxVerticalSpeed: 20
   TR: {fileID: 0}
-  dashPower: 3
+  dashPower: 10
   dashTime: 0.2
   dashCooldown: 1
   canDash: 1
