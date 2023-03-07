@@ -15,4 +15,14 @@ public class SceneControl : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void OnPlayerLost()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+
+    public void OnPlayAgain()
+    {
+        SceneManager.LoadScene("PlayScene");
+    }
 }

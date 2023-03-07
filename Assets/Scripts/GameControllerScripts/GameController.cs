@@ -4,7 +4,6 @@ using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -17,8 +16,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private int money = 0;
 
     [Header("Money")]
-    [SerializeField] private int baseMoney = 200;
-    [SerializeField] private float roundMultiplier = 1.5f;
+    [SerializeField] private int baseMoney = 2000;
+    [SerializeField] private int roundMultiplier = 3;
 
     [Header("Rounds")]
     [SerializeField] private int round = 0;
@@ -29,7 +28,7 @@ public class GameController : MonoBehaviour
     private CameraController cameraController;
 
     [Header("Future")]
-    [SerializeField] private GameObject futureInterface;
+    
     [SerializeField] private Transform leftMargin;
     [SerializeField] private Transform rightMargin;
 
@@ -39,20 +38,33 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject selectedTrap = null;
     [SerializeField] private GameObject followingTrap = null;
 
+    [Header("Traps Economy")]
+    [SerializeField] private int crossbowValue = 400;
+    [SerializeField] private int teslaValue = 800;
+    [SerializeField] private int blackHoleValue = 1200;
+    [SerializeField] private int placedMoney = 0;
+
     [Header("Traps Prefabs")]
+    [SerializeField] private GameObject crossbow;
     [SerializeField] private GameObject teslaTower;
+    [SerializeField] private GameObject blackHole;
+    [SerializeField] private string nameOfSelectedTrap = "";
 
     [SerializeField] List<GameObject> placedTraps;
 
     [Header("Interface")]
-    [SerializeField] TextMeshProUGUI availableTraps;
+    [SerializeField] private GameObject futureInterface;
+    [SerializeField] private TextMeshProUGUI availableTraps;
+    [SerializeField] private TextMeshProUGUI moneyFuture;
 
     private PlayerInput input;
+    private SceneControl sceneControl;
     
 
     void Start()
     {
         cameraController = mainCamera.GetComponent<CameraController>();
+        sceneControl = GetComponent<SceneControl>();
         input = GetComponent<PlayerInput>();
         presentPlayer.transform.position = playerSpawn.position;
 
@@ -80,9 +92,22 @@ public class GameController : MonoBehaviour
 
     public void TreasureReached()
     {
-        ChangeToFuture();
         //Give money to player
-        //Change to future
+        CalculateMoney();
+
+        //check if player lost
+        if (money <=0)
+        {
+            sceneControl.OnPlayerLost();
+        }
+
+        ChangeToFuture();
+    }
+
+    private void CalculateMoney()
+    {
+        money += baseMoney + placedMoney;
+        money -= baseMoney * (roundMultiplier * round);
     }
 
     private void ChangeToFuture()
@@ -99,6 +124,10 @@ public class GameController : MonoBehaviour
         availableTraps.text = maxTraps.ToString();
         //Delete Existing Traps
         DestroyTraps();
+
+        placedMoney = 0;
+        moneyFuture.text = placedMoney.ToString();
+
     }
 
     private void ChangeToPresent()
@@ -115,7 +144,7 @@ public class GameController : MonoBehaviour
         
         cameraController.SwitchPlayerFollowing();
         input.SwitchCurrentActionMap("Player");
-
+        Destroy(followingTrap);
         followingTrap = null;
         selectedTrap = null;
     }
@@ -129,6 +158,21 @@ public class GameController : MonoBehaviour
                 placedTraps.Add(Instantiate(selectedTrap, pos, Quaternion.identity));
                 currentNumberOfTraps++;
                 availableTraps.text = (maxTraps - currentNumberOfTraps).ToString();
+                switch (nameOfSelectedTrap)
+                {
+                    case "tesla":
+                        placedMoney += teslaValue;
+                        break;
+                    case "blackHole":
+                        placedMoney += blackHoleValue;
+                        break;
+                    case "crossbow":
+                        placedMoney += crossbowValue;
+                        break;
+                    default:
+                        break;
+                }
+                moneyFuture.text = placedMoney.ToString();
             }
         }
     }
@@ -164,5 +208,19 @@ public class GameController : MonoBehaviour
     {
         selectedTrap = teslaTower;
         followingTrap = Instantiate(selectedTrap, Mouse.current.position.ReadValue(), Quaternion.identity);
+        nameOfSelectedTrap = "tesla";
+    }
+
+    public void OnSelectCrossbow()
+    {
+        selectedTrap = crossbow;
+        followingTrap = Instantiate(selectedTrap, Mouse.current.position.ReadValue(), Quaternion.identity);
+        nameOfSelectedTrap = "crossbow";
+    }
+    public void OnSelectBlackHole()
+    {
+        selectedTrap = blackHole;
+        followingTrap = Instantiate(selectedTrap, Mouse.current.position.ReadValue(), Quaternion.identity);
+        nameOfSelectedTrap = "blackHole";
     }
 }

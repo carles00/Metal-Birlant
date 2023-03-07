@@ -87,6 +87,8 @@ public class PlayerMovement : MonoBehaviour
         ApplyFriction();
 
         Mathf.Clamp(rigidBody.velocity.y, -maxVerticalSpeed, 10000);
+
+        animator.SetFloat("VerticalSpeed", rigidBody.velocity.y);
     }
 
     private void SetTimers()
