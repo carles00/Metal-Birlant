@@ -10,7 +10,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private Transform playerSpawn;
     [SerializeField] private GameObject presentPlayer;
-    [SerializeField] private GameObject futurePlayer;
 
     
     [SerializeField] private int playerLive = 3;
@@ -30,9 +29,18 @@ public class GameController : MonoBehaviour
 
     [Header("Future")]
     [SerializeField] private GameObject futureInterface;
+    [SerializeField] private Transform leftMargin;
+    [SerializeField] private Transform rightMargin;
 
     [Header("Traps")]
-    [SerializeField] private GameObject trap;
+    [SerializeField] private int maxTraps = 20;
+    [SerializeField] private int currentNumberOfTraps = 0;
+    [SerializeField] private GameObject selectedTrap = null;
+    [SerializeField] private GameObject followingTrap = null;
+
+    [Header("Traps Prefabs")]
+    [SerializeField] private GameObject teslaTower;
+    [SerializeField] List<GameObject> placedTraps;
 
     private PlayerInput input;
     
@@ -44,7 +52,6 @@ public class GameController : MonoBehaviour
         presentPlayer.transform.position = playerSpawn.position;
 
         futureInterface.SetActive(false);
-        futurePlayer.SetActive(false);
         Cursor.visible = false;
     }
 
@@ -54,6 +61,13 @@ public class GameController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
+        }
+
+        if (followingTrap)
+        {
+            Vector2 screenPos = Mouse.current.position.ReadValue();
+            Vector3 mousePos = mainCamera.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, mainCamera.transform.position.z));
+            followingTrap.transform.position = new Vector3(-mousePos.x, -mousePos.y + 2 * mainCamera.transform.position.y, 0);
         }
     }
 
@@ -68,12 +82,14 @@ public class GameController : MonoBehaviour
     {
         currentTurn = 1;
         presentPlayer.SetActive(false);
-        futurePlayer.SetActive(true);
         futureInterface.SetActive(true);
         Cursor.visible = true;
 
         cameraController.SwitchPlayerFollowing();
         input.SwitchCurrentActionMap("UI");
+
+        //Delete Existing Traps
+        DestroyTraps();
     }
 
     private void ChangeToPresent()
@@ -82,18 +98,34 @@ public class GameController : MonoBehaviour
         presentPlayer.transform.position = playerSpawn.position;
         
         presentPlayer.SetActive(true);
-        futurePlayer.SetActive(false);
         futureInterface.SetActive(false);
         Cursor.visible = false;
         
         cameraController.SwitchPlayerFollowing();
         input.SwitchCurrentActionMap("Player");
 
+        followingTrap = null;
+        selectedTrap = null;
     }
 
-    private void createTrap(Vector3 pos)
+    private void CreateTrap(Vector3 pos)
     {
-        Instantiate(trap, pos, Quaternion.identity);
+        if (selectedTrap)
+        {
+            if (currentNumberOfTraps < maxTraps)
+            {
+                placedTraps.Add(Instantiate(selectedTrap, pos, Quaternion.identity));
+                currentNumberOfTraps++;
+            }
+        }
+    }
+
+    public void DestroyTraps()
+    {
+        placedTraps.ForEach(trap =>
+        {
+            Destroy(trap);
+        });
     }
 
     public void OnClick(InputAction.CallbackContext ctx)
@@ -102,10 +134,22 @@ public class GameController : MonoBehaviour
         {
             Vector2 screenPos = ctx.ReadValue<Vector2>();
             Vector3 mousePos = mainCamera.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, mainCamera.transform.position.z));
-            Vector3 trapPos = new Vector3(-mousePos.x, -mousePos.y + 2 * mainCamera.transform.position.y, 0);
-            createTrap(trapPos);
+            if (mousePos.x > leftMargin.position.x && mousePos.x < rightMargin.position.x)
+            {
+                Vector3 trapPos = new Vector3(-mousePos.x, -mousePos.y + 2 * mainCamera.transform.position.y, 0);
+                CreateTrap(trapPos);
+            }
         }
     }
 
-   
+    public void OnEndTurnClick()
+    {
+        ChangeToPresent();
+    }
+
+    public void OnSelectTesla()
+    {
+        selectedTrap = teslaTower;
+        followingTrap = Instantiate(selectedTrap, Mouse.current.position.ReadValue(), Quaternion.identity);
+    }
 }
