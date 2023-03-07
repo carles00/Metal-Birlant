@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
 
     [Header("Rounds")]
     [SerializeField] private int round = 0;
-    [SerializeField] private int currentTurn = 0;
+    [SerializeField] private int currentTurn = 0; //0 = pesent | 1 = future
 
     [Header("Camera")]
     [SerializeField] private Camera mainCamera;
@@ -30,6 +30,9 @@ public class GameController : MonoBehaviour
 
     [Header("Future")]
     [SerializeField] private GameObject futureInterface;
+
+    [Header("Traps")]
+    [SerializeField] private GameObject trap;
 
     private PlayerInput input;
     
@@ -63,6 +66,7 @@ public class GameController : MonoBehaviour
 
     private void ChangeToFuture()
     {
+        currentTurn = 1;
         presentPlayer.SetActive(false);
         futurePlayer.SetActive(true);
         futureInterface.SetActive(true);
@@ -74,6 +78,7 @@ public class GameController : MonoBehaviour
 
     private void ChangeToPresent()
     {
+        currentTurn = 0;
         presentPlayer.transform.position = playerSpawn.position;
         
         presentPlayer.SetActive(true);
@@ -85,4 +90,22 @@ public class GameController : MonoBehaviour
         input.SwitchCurrentActionMap("Player");
 
     }
+
+    private void createTrap(Vector3 pos)
+    {
+        Instantiate(trap, pos, Quaternion.identity);
+    }
+
+    public void OnClick(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
+        {
+            Vector2 screenPos = ctx.ReadValue<Vector2>();
+            Vector3 mousePos = mainCamera.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, mainCamera.transform.position.z));
+            Vector3 trapPos = new Vector3(-mousePos.x, -mousePos.y + 2 * mainCamera.transform.position.y, 0);
+            createTrap(trapPos);
+        }
+    }
+
+   
 }

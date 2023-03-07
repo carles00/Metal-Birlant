@@ -68,7 +68,6 @@ public class CameraController : MonoBehaviour
             float value = ctx.ReadValue<Vector2>().y;
             if(Mathf.Abs(value) > 0.1f) {
                 float scrollDirection = Mathf.Sign(value);
-                Debug.Log(scrollDirection);
                 cameraTarget = new Vector3(0,transform.position.y + (scrollDirection * scrollDistance),transform.position.z);
             }
         }
