@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -40,7 +41,11 @@ public class GameController : MonoBehaviour
 
     [Header("Traps Prefabs")]
     [SerializeField] private GameObject teslaTower;
+
     [SerializeField] List<GameObject> placedTraps;
+
+    [Header("Interface")]
+    [SerializeField] TextMeshProUGUI availableTraps;
 
     private PlayerInput input;
     
@@ -53,6 +58,8 @@ public class GameController : MonoBehaviour
 
         futureInterface.SetActive(false);
         Cursor.visible = false;
+
+        availableTraps.text = maxTraps.ToString();
     }
 
     // Update is called once per frame
@@ -81,6 +88,7 @@ public class GameController : MonoBehaviour
     private void ChangeToFuture()
     {
         currentTurn = 1;
+        currentNumberOfTraps = 0;
         presentPlayer.SetActive(false);
         futureInterface.SetActive(true);
         Cursor.visible = true;
@@ -88,6 +96,7 @@ public class GameController : MonoBehaviour
         cameraController.SwitchPlayerFollowing();
         input.SwitchCurrentActionMap("UI");
 
+        availableTraps.text = maxTraps.ToString();
         //Delete Existing Traps
         DestroyTraps();
     }
@@ -95,6 +104,9 @@ public class GameController : MonoBehaviour
     private void ChangeToPresent()
     {
         currentTurn = 0;
+        round++;
+        maxTraps += 10;
+
         presentPlayer.transform.position = playerSpawn.position;
         
         presentPlayer.SetActive(true);
@@ -116,6 +128,7 @@ public class GameController : MonoBehaviour
             {
                 placedTraps.Add(Instantiate(selectedTrap, pos, Quaternion.identity));
                 currentNumberOfTraps++;
+                availableTraps.text = (maxTraps - currentNumberOfTraps).ToString();
             }
         }
     }
