@@ -76,21 +76,23 @@ Terminar turno. Ir al turno del presente.
 @b{Turno del presente}:
 @table @samp
 @item Flecha izquierda / Tecla A
-Mover el personaje a la izquierda.
+El personaje se mueve a la izquierda.
 @item Flecha derecha / Tecla D
-Mover el personaje a la derecha.
-@item Flecha arriba / Tecla W / Barra espaciadora
-El personaje salta.
+El personaje se mueve a la derecha.
+@item Flecha arriba / W / Barra espaciadora
+El personaje salta. Si se tiene la habilidad @i{Stonks}, se puede realizar un doble salto si se pulsa el botón de salto al estar en el aire.
+@item Tecla @i{Shift}
+El personaje realiza un dash hacia donde esté mirando, siempre y cuando se haya comprado la habilidad en el inicio de la ronda del presente.
 @item Tecla Q
-Utilizar habilidad activa equipada en el @b{primer} espacio de inventario.
-@item Tecla W
-Utilizar habilidad activa equipada en el @b{segundo} espacio de inventario.
+El personaje utiliza la habilidad @b{@i{51-Percent Attack}}, si se tiene comprada y disponible.
 @item Tecla E
-Utilizar habilidad activa equipada en el @b{tercer} espacio de inventario.
-@item Tecla R
-Utilizar habilidad activa equipada en el @b{cuarto} y último espacio de inventario.
+El personaje utiliza la habilidad @b{@i{Autopilot}}, si se tiene comprada y disponible.
+@item Tecla B
+Abrir la tienda al estar en la zona indicada (primera plataforma donde aparece el personaje).
 @end table
 @end float
+
+@page
 
 @c Subsection 2.2.3: Diseño de interfaz o GUI
 @node Diseño de interfaz o @i{GUI}
@@ -98,26 +100,45 @@ Utilizar habilidad activa equipada en el @b{cuarto} y último espacio de inventa
 
 @b{Turno del futuro:}
 El interfaz del turno del futuro es una simulacion de una pantalla de una sala de camaras,
-donde a la derecha tendremos el menu de trampas y a la izquierda el mapa (mismo del turno del 
+donde a la derecha e izquierda tendremos el menu de trampas y en el centro el mapa (mismo del turno del 
 presente, pero con indicaciones) adonde pondremos las trampas.
+
+@float Figure,future-wireframe
+@shortcaption{@i{Wireframe} del turno del futuro}
+@caption{@i{Wireframe} del turno del futuro}
+@center @image{img/future-wireframe,13cm,,future-wireframe,}
+@end float
+
+@page
 
 @b{Turno del presente:}
 El interfaz o mapa es un campo vertical con plataformas móviles. La imagen de fondo del mapa se relaciona con la zona del mapa. No cambia entre rondas.
+El jugador tendrá disponible la información de la vida que le queda, el dinero que tiene y que habilidades tiene disponibles.
 
-@c Subsection 2.2.4: Wireframes de interfaz
-@node @i{Wireframes} de interfaz
-@subsection @i{Wireframes} de interfaz
+@float Figure,present-wireframe
+@shortcaption{@i{Wireframe} del turno del presente}
+@caption{@i{Wireframe} del turno del presente}
+@center @image{img/present-wireframe,13cm,,present-wireframe,}
+@end float
 
-(...)
+@page
 
-@c Subsection 2.2.5: Fujo de aparición de elementos en la interfaz
-@node Fujo de aparición de elementos en la interfaz
-@subsection Fujo de aparición de elementos en la interfaz
+@b{Menú Principal:}
+
+@float Figure,menu-wireframe
+@shortcaption{@i{Wireframe} del menú principal}
+@caption{@i{Wireframe} del menú principal}
+@center @image{img/menu-wireframe,13cm,,menu-wireframe,}
+@end float
+
+@c Subsection 2.2.5: Flujo de aparición de elementos en la interfaz
+@node Flujo de aparición de elementos en la interfaz
+@subsection Flujo de aparición de elementos en la interfaz
 
 @b{Turno del futuro:}
 @enumerate
 @item
-El mapa del juego aparece (a la izquierda de la pantalla) con zonas de trampas visibles y el menu de trampas (a la derecha de la pantalla).
+El mapa del juego aparece (en el centro de la pantalla) con zonas de trampas visibles y el menu de trampas (a la derecha e izquierda de la pantalla).
 @item
 El jugador selecciona la trampa en el menu de trampas, que desea colocar en el mapa.
 @item
@@ -131,7 +152,7 @@ El jugador termina el turno del futuro y el turno del presente empieza.
 @b{Turno del presente:}
 @enumerate
 @item
-El personaje aparece en alguna parte de la zona superior del mapa (dependiendo de la fase) encima de una plataforma.
+El personaje aparece en la parte superior izquierda del mapa.
 @item
 El jugador mueve el personaje por las plataformas con la intención de ir bajando por el mapa, esquivando y sorteando los obstáculos y trampas.
 @item

@@ -91,11 +91,11 @@ En cada ronda, cuando se inicia el turno del presente, se dará la oportunidad a
 @item Dash
 Reúne y conjura el poder del @i{sky gold} en ti mismo para proyectarte hacia delante. Irás a tanta velocidad que ni las superficies te ofrecerán resistencia.
 @item 51-Percent Attack
-Lo has logrado, has conseguido la mayoría de poder de cómputo en la red. Gracias a esta habilidad causarás interferencias y deshabilitarás las trampas cercanas por 20s.
+Lo has logrado, has conseguido la mayoría de poder de cómputo en la red. Gracias a esta habilidad causarás interferencias y deshabilitarás las trampas cercanas por 5s.
 @item Criptobro
 El mercado es tan volátil... Pero, ¿quién no quiere un poco de emoción en la vida? Con esta habilidad pasiva podrás triplicar los beneficios obtenidos al final de la ronda, si es que consigues llegar al futuro: solo tendrás una vida.
 @item Autopilot
-Nunca viene mal tener un poco de compañia, ¿no? ¡Y que mejor que montar en dragón! Llama a @i{Model D} y destruye todo a tu paso. Esta habilidad te hará invulnerable por 20s.
+Nunca viene mal tener un poco de compañia, ¿no? ¡Y que mejor que montar en dragón! Llama a @i{Model D} y destruye todo a tu paso. Esta habilidad te hará invulnerable por 5s.
 @end table
 @end float
 
@@ -116,18 +116,18 @@ Nunca viene mal tener un poco de compañia, ¿no? ¡Y que mejor que montar en dr
 @node Categorías de trampas y sus propiedades
 @subsubsection Categorías de trampas y sus propiedades
 
-El sistema de trampas es la mecánica más importante del juego, y su parte más esencial. Las trampas se dividen en 3 categorías, cada una más moderna, sofisticada y difícil de sortear que la anterior.
+El sistema de trampas es la mecánica más importante del juego, y su parte más esencial. Las trampas se dividen en 3 categorías, cada una más moderna, sofisticada y difícil de sortear que la anterior. Por cada categoría/zona se podrán poner un máximo de 10 trampas, así que elige con cabeza.
 
 @float Table,trap-categories
 @shortcaption{Categorías de las trampas}
 @caption{Categorías de las trampas}
 @table @samp
 @item @i{Tier I}: DOGE
-(...)
+Estas trampas son las más antiguas y fáciles de sortear, pero mejor no infravalorarlas. Tienen un precio que oscila entre 150 y 400 monedas de @i{sky gold}, y suelen estar fabricadas en madera y acero forjado por los @i{NFTs}, o @b{N}ativos @b{F}orzosamente @b{T}rabajadores. Tienen una cadencia de acción baja (0.25 - 1 acciones/s) y un alcance y rango de activación limitados.
 @item @i{Tier II}: Ethereum
-(...)
+Estas trampas son una clara evolución respecto a las @i{DOGE}, ya que aprovechan los diseños originales con el añadido de utilizar la electricidad, el magnetismo, y diversas tecnologías mucho más modernas y eficientes. Tienen una cadencia de acción media (1 - 1.75 acciones/s) y un alcance y rango de activación generosos.
 @item @i{Tier III}: Bitcoin
-(...)
+La cúspide de la creación terrestre. Tecnología puntera, cara e inaccesible para (casi) cualquiera. Tienen una cadencia de acción alta (2 - @samp{inf} acciones/s) y un alcance y rango de activación altísimos. @i{Recomendamos precaución al usar estas trampas, son altamente experimentales y peligrosas. Utilizar bajo su propia responsabilidad.}
 @end table
 @end float
 
@@ -140,8 +140,8 @@ El sistema de trampas es la mecánica más importante del juego, y su parte más
 Estas son todas las trampas de @b{@i{tier I (DOGE)}} disponibles durante el juego, con sus datos y estadísticas.
 
 @float Table,trap-list-1
-@shortcaption{Tabla de trampas con @i{stats} (I)}
-@caption{Tabla de trampas con @i{stats} (I)}
+@shortcaption{Tabla de trampas (I)}
+@caption{Tabla de trampas (I)}
 @multitable @columnfractions .2 .2 .2 .2 .2
 @c Column Names
 @headitem Nombre @tab IMG @tab Categoría @tab Disponibilidad @tab Valor
@@ -180,6 +180,62 @@ Estas son todas las trampas de @b{@i{tier I (DOGE)}} disponibles durante el jueg
 
 @page
 
+@b{Descripciones}
+
+@float Table,trap-descriptions-1
+@shortcaption{Tabla de descripciones de trampas (I)}
+@caption{Tabla de descripciones de trampas (I)}
+@table @samp
+@item @i{Sierra cortadora}
+@itemize @bullet
+@item @b{Detalles:}
+Sierra mecánica que rota sobre su propia eje a @i{7200 RPM} y, además, gira sobre un eje en el soporte a un ritmo de 1 giro en 2 segundos. No querrás estar cerca, ¿verdad?
+@item @b{Cadencia:}
+0.5 acciones/s
+@item @b{Alcance:}
+Nulo, necesita contacto directo con la sierra para provocar daño.
+@end itemize
+@item @i{Ballesta}
+@itemize @bullet
+@item @b{Detalles:}
+Ballesta con soporte de suelo, la cual lanza 1 flecha de madera por segundo. Poco más, una ballesta normal y corriente.
+@item @b{Cadencia:}
+1 acciones/s
+@item @b{Alcance:}
+Medio.
+@end itemize
+@item @i{Cañón}
+@itemize @bullet
+@item @b{Detalles:}
+Cañón antiguo y lento, pero robusto. Lanza potentes proyectiles que son capaces de desplazar al jugador y desorientarlo. Cuidado con caerte de las plataformas, quién avisa no es traidor.
+@item @b{Cadencia:}
+0.25 acciones/s
+@item @b{Alcance:}
+Medio.
+@end itemize
+@item @i{Mortero}
+@itemize @bullet
+@item @b{Detalles:}
+Mortero que dispara proyectiles explosivos o incendiarios con gran poder destructivo (más que las granadas de mano). Quién juega con fuego, se acaba quemando.
+@item @b{Cadencia:}
+0.75 acciones/s
+@item @b{Alcance:}
+Alto.
+@end itemize
+@item @i{Torre bombardera}
+@itemize @bullet
+@item @b{Detalles:}
+Gran torre robusta y alta construida en madera y metal revestido con una gran estabilidad. Desde ella, un NFT renegado lanza pequeñas bombas explosivas... ¡Cuidado con la onda expansiva!
+@item @b{Cadencia:}
+1 acciones/s
+@item @b{Alcance:}
+Bajo.
+@end itemize
+@end table
+@end float
+
+@page
+
 @c Subsubsection 2.4.3.3: Compendio de trampas de tier II
 @node Compendio de trampas de @i{tier II}
 @subsubsection Compendio de trampas de @i{tier II}
@@ -187,8 +243,8 @@ Estas son todas las trampas de @b{@i{tier I (DOGE)}} disponibles durante el jueg
 Estas son todas las trampas de @b{@i{tier II (Ethereum)}} disponibles durante el juego, con sus datos y estadísticas.
 
 @float Table,trap-list-2
-@shortcaption{Tabla de trampas con @i{stats} (II)}
-@caption{Tabla de trampas con @i{stats} (II)}
+@shortcaption{Tabla de trampas (II)}
+@caption{Tabla de trampas (II)}
 @multitable @columnfractions .2 .2 .2 .2 .2
 @c Column Names
 @headitem Nombre @tab IMG @tab Categoría @tab Disponibilidad @tab Valor
@@ -213,6 +269,42 @@ Estas son todas las trampas de @b{@i{tier II (Ethereum)}} disponibles durante el
 @end multitable
 @end float
 
+@b{Descripciones}
+
+@float Table,trap-descriptions-2
+@shortcaption{Tabla de descripciones de trampas (II)}
+@caption{Tabla de descripciones de trampas (II)}
+@table @samp
+@item @i{Torre Tesla}
+@itemize @bullet
+@item @b{Detalles:}
+Estación de carga la cual genera arcos eléctrico de altisimo voltaje, ¡cuidado que te dejan frito!
+@item @b{Cadencia:}
+1 acciones/s
+@item @b{Alcance:}
+Alto.
+@end itemize
+@item @i{Torreta de electrochoque}
+@itemize @bullet
+@item @b{Detalles:}
+Torreta semiautomática la cual dispara haces de electrones a muy alta energía. Cuidado con la radiación ionizante.
+@item @b{Cadencia:}
+1.25 acciones/s
+@item @b{Alcance:}
+Altísimo.
+@end itemize
+@item @i{Pistola Láser}
+@itemize @bullet
+@item @b{Detalles:}
+Pistola con soporte de suelo, la cual dispara muy rápido rayos láser altamente peligrosos. ¡Hasta el infinito y más allá!
+@item @b{Cadencia:}
+1.75 acciones/s
+@item @b{Alcance:}
+Medio
+@end itemize
+@end table
+@end float
+
 @page
 
 @c Subsubsection 2.4.3.4: Compendio de trampas de tier III
@@ -222,8 +314,8 @@ Estas son todas las trampas de @b{@i{tier II (Ethereum)}} disponibles durante el
 Estas son todas las trampas de @b{@i{tier III (Bitcoin)}} disponibles durante el juego, con sus datos y estadísticas.
 
 @float Table,trap-list-3
-@shortcaption{Tabla de trampas con @i{stats} (III)}
-@caption{Tabla de trampas con @i{stats} (III)}
+@shortcaption{Tabla de trampas (III)}
+@caption{Tabla de trampas (III)}
 @multitable @columnfractions .2 .2 .2 .2 .2
 @c Column Names
 @headitem Nombre @tab IMG @tab Categoría @tab Disponibilidad @tab Valor
@@ -242,13 +334,40 @@ Estas son todas las trampas de @b{@i{tier III (Bitcoin)}} disponibles durante el
 @end multitable
 @end float
 
+@b{Descripciones}
+
+@float Table,trap-descriptions-3
+@shortcaption{Tabla de descripciones de trampas (III)}
+@caption{Tabla de descripciones de trampas (III)}
+@table @samp
+@item @i{Torre de rayos infernales}
+@itemize @bullet
+@item @b{Detalles:}
+Estructura en forma de torre, similar a la @i{torre bombardera}, la cual está equipada con un haz de energía infernal que desmaterializa todo cuanto toque. Terrorífico.
+@item @b{Cadencia:}
+0.5 acciones/s
+@item @b{Alcance:}
+@samp{inf} (infinito).
+@end itemize
+@item @i{Agujero Negro}
+@itemize @bullet
+@item @b{Detalles:}
+Singularidad espacio-temporal generada por alterar el continuo espacio-tiempo. Es tan masivo que es capaz de atraer al jugador y... bueno, para sorpresa de todos no mueres al caer en él, que interesante, ¿verdad? Solo te quitará un corazón y volverás al punto inicial.
+@item @b{Cadencia:}
+@samp{inf} acciones/s
+@item @b{Alcance:}
+Medio.
+@end itemize
+@end table
+@end float
+
 @page
 
 @c Subsection 2.4.4: Recesiones
 @node Recesiones
 @subsection Recesiones
 
-Las @b{recesiones} son eventos de ronda aleatorios, los cuales afectan de manera directa y negativa al jugador (en el turno del presente). Puede aparecer una de las 3 recesiones en la ronda con una probabilidad
+Las @b{recesiones} son eventos de ronda aleatorios, los cuales afectan de manera directa y negativa al jugador (en el turno del presente). Puede aparecer una de las 3 recesiones en la ronda con una probabilidad de @math{1/6}.
 
 @float Table,recession
 @shortcaption{Recesiones y sus efectos}
@@ -267,6 +386,43 @@ Ha llegado de nuevo una glaciación, el hielo continental de los casquetes polar
 @node Multiplicadores
 @subsection Multiplicadores
 
-(...)
+Una de las partes más interesantes de la jugabilidad y la estrategia/gestión del dinero son las recompensas obtenidas por cada ronda finalizada. Al acabar una ronda, se le muestra al usuario un resumen de las ganancias obtenidas.
+
+Cada entrada en el resumen tiene la forma:
+
+@center @samp{(<Nombre de trampa> x MZ (<MZ>) x MP (<MP>) = <Total>)}
+
+e.g.
+
+@center @samp{(Ballesta x MZ (1) x MP (1.5))}
+
+Como vemos, hay dos tipos de multiplicadores, cada uno con significado determinado y una recompensa al jugador específica. En general, podemos decir que los multiplicadores se basan de forma exclusiva en la colocación de trampas.
+
+@node Multiplicador de zona (MZ)
+@subsubsection Multiplicador de zona (MZ)
+
+Este multiplicador establece una relación o vínculo entre la zona inherente a la categoría de la trampa, y la zona donde se haya colocado dicha trampa; e.g. se compra una ballesta (@i{tier 1}) y se coloca en la segunda zona del mapa (propia de trampas de @i{tier 2}).
+
+Por cada zona de distancia que esté la trampa respecto a su zona original, este multiplicador se dividirá por 2, siendo @samp{1} su valor máximo y @samp{0.25} su valor mínimo.
+
+@itemize
+@item @b{Trampa de @i{tier 1}}
+@samp{x1} (al colocarse en zona 1)@*
+@samp{x0.5} (al colocarse en zona 2)@*
+@samp{x0.25} (al colocarse en zona 3)
+@item @b{Trampa de @i{tier 2}}
+@samp{x0.5} (al colocarse en zona 1)@*
+@samp{x1} (al colocarse en zona 2)@*
+@samp{x0.5} (al colocarse en zona 3)
+@item @b{Trampa de @i{tier 3}}
+@samp{x0.25} (al colocarse en zona 1)@*
+@samp{x0.5} (al colocarse en zona 2)@*
+@samp{x1} (al colocarse en zona 3)
+@end itemize
+
+@node Multiplicador de precisión o @i{hotspot} (MP)
+@subsubsection Multiplicador de precisión o @i{hotspot} (MP)
+
+Este segundo multiplicador premia la colocación de trampas en sitios determinados de su zona, los cuales están ocultos para el usuario durante el turno del futuro, aumentando la rejugabilidad y premiando los múltiples intentos de colocación de trampas.
 
 @page
