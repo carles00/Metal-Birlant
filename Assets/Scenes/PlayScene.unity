@@ -407,12 +407,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 1655247520}
   offset: 0
-  folowPlayer: 0
-  lerpStep: 0.2
-  cameraTarget: {x: 0, y: 0, z: 0}
+  lerpPositionStep: 0.2
   scrollDistance: 5
   maxHeight: 0
   minHeight: -140
+  lerpFovStep: 0.02
+  presentFov: 60
+  futureFov: 90
 --- !u!1 &538794395
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,8 +669,6 @@ MonoBehaviour:
   round: 0
   currentTurn: 0
   mainCamera: {fileID: 519420031}
-  presentFov: 60
-  futurePov: 90
   futureInterface: {fileID: 543502575}
 --- !u!114 &681985851
 MonoBehaviour:

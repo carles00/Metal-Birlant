@@ -26,8 +26,6 @@ public class GameController : MonoBehaviour
 
     [Header("Camera")]
     [SerializeField] private Camera mainCamera;
-    [SerializeField] private int presentFov = 60;
-    [SerializeField] private int futurePov = 90;
     private CameraController cameraController;
 
     [Header("Future")]
@@ -41,8 +39,10 @@ public class GameController : MonoBehaviour
         cameraController = mainCamera.GetComponent<CameraController>();
         input = GetComponent<PlayerInput>();
         presentPlayer.transform.position = playerSpawn.position;
+
         futureInterface.SetActive(false);
         futurePlayer.SetActive(false);
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -66,8 +66,7 @@ public class GameController : MonoBehaviour
         presentPlayer.SetActive(false);
         futurePlayer.SetActive(true);
         futureInterface.SetActive(true);
-
-        mainCamera.fieldOfView = futurePov;
+        Cursor.visible = true;
 
         cameraController.SwitchPlayerFollowing();
         input.SwitchCurrentActionMap("UI");
@@ -75,13 +74,15 @@ public class GameController : MonoBehaviour
 
     private void ChangeToPresent()
     {
-        cameraController.SwitchPlayerFollowing();
         presentPlayer.transform.position = playerSpawn.position;
-        mainCamera.fieldOfView = presentFov;
-        input.SwitchCurrentActionMap("Player");
+        
         presentPlayer.SetActive(true);
         futurePlayer.SetActive(false);
         futureInterface.SetActive(false);
+        Cursor.visible = false;
         
+        cameraController.SwitchPlayerFollowing();
+        input.SwitchCurrentActionMap("Player");
+
     }
 }
