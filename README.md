@@ -1,6 +1,6 @@
 [//]: # (Title of the project)
 
-![logo](https://raw.githubusercontent.com/carles00/Metal-Birlant/main/Asstes/Branding/simple-logo.png)
+![logo](https://raw.githubusercontent.com/carles00/Metal-Birlant/main/Assets/Branding/simple-logo.png)
 # Metal Birlant: The PC Videogame
 
 [//]: # (GPLv3 License indicator)
