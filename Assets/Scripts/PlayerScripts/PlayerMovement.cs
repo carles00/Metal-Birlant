@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +11,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private LayerMask colliderMask;
-    [SerializeField] private Transform groundCheckLeft,groundCheckRight;
+    [SerializeField] private Transform groundCheckLeft, groundCheckRight;
     [SerializeField] private Animator animator;
 
     [Header("Run")]
@@ -28,13 +27,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float fallGravityMultiplier = 2f;
     [SerializeField] private float jumpBufferTime = 0.1f;
     [SerializeField] private float coyoteTime = 0.1f;
-    [SerializeField] private float jumpCutMultiplier = 1.0f;
+    [SerializeField] [Range(0,1)] private float jumpCutMultiplier = 1.0f;
     [Space(10)]
     [SerializeField] private float lastGroundedTime = 0;
     [SerializeField] private float lastJumpTime = 0;
     [SerializeField] private bool isJumping = false;
     [SerializeField] private bool jumpImputReleased = false;
-    
+    [SerializeField] private float maxVerticalSpeed = 20f;
+
     [Header("Dash")]
     [SerializeField] private TrailRenderer TR;
     [SerializeField] private float dashPower;
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     private bool grounded;
     private float move;
     private int facing = 1;
-  
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -70,21 +70,25 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //----------------------------- Movement Calculations --------------------------------//
-    private void Movement(){
-        
+    private void Movement()
+    {
+
         SetFallGravity();
 
         SetTimers();
 
-        if(lastGroundedTime> 0 && lastJumpTime > 0 && !isJumping) 
-        {           
+        if (lastGroundedTime > 0 && lastJumpTime > 0 && !isJumping)
+        {
             Jump();
         }
 
         Run();
 
         ApplyFriction();
-        
+
+        Mathf.Clamp(rigidBody.velocity.y, -maxVerticalSpeed, 10000);
+
+        animator.SetFloat("VerticalSpeed", rigidBody.velocity.y);
     }
 
     private void SetTimers()
@@ -98,13 +102,13 @@ public class PlayerMovement : MonoBehaviour
         rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         lastGroundedTime = 0;
         lastJumpTime = 0;
-        isJumping= true;
+        isJumping = true;
         jumpImputReleased = false;
     }
 
     private void SetFallGravity()
     {
-        if(rigidBody.velocity.y < 0)
+        if (rigidBody.velocity.y < 0)
         {
             rigidBody.gravityScale = gravityScale * fallGravityMultiplier;
         }
@@ -122,30 +126,31 @@ public class PlayerMovement : MonoBehaviour
 
             amount *= Mathf.Sign(rigidBody.velocity.x);
 
-            rigidBody.AddForce(Vector2.right* -amount, ForceMode2D.Impulse);
+            rigidBody.AddForce(Vector2.right * -amount, ForceMode2D.Impulse);
         }
     }
 
     private void Run()
     {
         float targetSpeed = move * runSpeed;
-        
-        float speedDiff = targetSpeed- rigidBody.velocity.x;
+
+        float speedDiff = targetSpeed - rigidBody.velocity.x;
 
         float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? acceleration : deceleration;
 
-        float movement = Mathf.Pow(Mathf.Abs(speedDiff)*accelRate, power) * Mathf.Sign(speedDiff);
+        float movement = Mathf.Pow(Mathf.Abs(speedDiff) * accelRate, power) * Mathf.Sign(speedDiff);
 
         rigidBody.AddForce(movement * Vector2.right);
     }
 
-    private void CheckGround(){
+    private void CheckGround()
+    {
         bool groundedA = Physics2D.Raycast(groundCheckLeft.position, Vector2.down, .1f, colliderMask);
         bool groundedB = Physics2D.Raycast(groundCheckRight.position, Vector2.down, .1f, colliderMask);
-        if(groundedA || groundedB)
+        if (groundedA || groundedB)
         {
             grounded = true;
-            isJumping= false;
+            isJumping = false;
             lastGroundedTime = coyoteTime;
         }
         else
@@ -153,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
             grounded = false;
         }
         Color rayColor = grounded ? Color.red : Color.green;
-        Debug.DrawRay(groundCheckLeft.position, Vector2.down * .1f, rayColor,.2f);
+        Debug.DrawRay(groundCheckLeft.position, Vector2.down * .1f, rayColor, .2f);
         Debug.DrawRay(groundCheckRight.position, Vector2.down * .1f, rayColor, .2f);
 
     }
@@ -161,16 +166,17 @@ public class PlayerMovement : MonoBehaviour
     //----------------------------- Animations --------------------------------//
     private void FlipSprite()
     {
-        if(move < 0)
+        if (move < 0)
         {
             facing = -1;
             sprite.flipX = true;
-        }else if(move > 0)
+        }
+        else if (move > 0)
         {
             facing = 1;
             sprite.flipX = false;
         }
-        animator.SetFloat("Speed",Mathf.Abs(move));
+        animator.SetFloat("Speed", Mathf.Abs(move));
     }
 
     //----------------------------- Callbacks --------------------------------//
@@ -185,16 +191,14 @@ public class PlayerMovement : MonoBehaviour
             }
             if (context.performed || context.canceled)
             {
-                if(rigidBody.velocity.y > 0 && isJumping) {
-                    rigidBody.AddForce(Vector2.down* rigidBody.velocity.y * (1-jumpCutMultiplier),ForceMode2D.Impulse);
+                if (rigidBody.velocity.y > 0 && isJumping)
+                {
+                    rigidBody.AddForce(Vector2.down * rigidBody.velocity.y * (1 - jumpCutMultiplier), ForceMode2D.Impulse);
                 }
                 jumpImputReleased = true;
                 lastJumpTime = 0;
             }
-
-            
         }
-        
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -202,6 +206,14 @@ public class PlayerMovement : MonoBehaviour
         if (!dashing)
         {
             move = context.ReadValue<Single>();
+            if (move > 0)
+            {
+                move = 1;
+            }
+            else if (move < 0)
+            {
+                move = -1;
+            }
         }
     }
 

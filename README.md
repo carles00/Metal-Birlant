@@ -1,6 +1,6 @@
 [//]: # (Title of the project)
 
-![logo](https://raw.githubusercontent.com/carles00/Metal-Birlant/main/Asstes/Branding/simple-logo.png)
+![logo](https://raw.githubusercontent.com/carles00/Metal-Birlant/main/Assets/Branding/simple-logo.png)
 # Metal Birlant: The PC Videogame
 
 [//]: # (GPLv3 License indicator)
@@ -17,7 +17,7 @@ A PC videogame adaptation of the original Metal Birlant comicbook.
 
 ### Debug
 1. Abrir Metal Birlant como proyecto de Unity
-2. La escena se encuentra en el directorio Scenes/MainScene
+2. La escena se encuentra en el directorio Scenes/PlayScene
 
 **DISCLAIMER:** Las fisicas del juego no funcionan correctamente en el modo preview de Unity.
 
