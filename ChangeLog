@@ -1,0 +1,18 @@
+2023-03-08 -> Metal Birlant v1.0.0-rc1
+--------------------------------------
+Base game skeleton, including:
+		- Base Unity Engine directory structure.
+		- Main menu scene (Assets/Scenes/MenuScene.unity).
+		- Game scene (Assets/Scenes/PlayScene.unity).
+		- End scene (Assets/Scenes/GameOver.unity).
+		- Metal Birlant branding (Assets/Branding/*).
+		- In-game backgrounds (Assets/Backgrounds/*).
+		- Tilesets used to build the world's environment (Assets/Tilesets/*).
+		- Basic game logic scripts (Assets/Scripts/GameControllerScripts/*).
+		- Player movement and its triggers (Assets/Scripts/PlayerScripts/*).
+		- Scripts handling all trap's behaviour and its complements (Assets/Scripts/TrapScripts/*).
+		- Main character's spritesheets (Assets/PlayerAssets/*).
+		- Animations built and ready to use (Assets/Animations/*).
+		- Finally, some important pieces of the game that need to be spawned on
+		demand as a whole, like the traps (Assets/Prefabs/*).
+
