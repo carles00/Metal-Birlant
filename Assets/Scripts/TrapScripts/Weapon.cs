@@ -19,26 +19,18 @@ public class Weapon : MonoBehaviour {
   void Update() {
     Vector2 TargetPos = Target.position;
     Direction = TargetPos - (Vector2) transform.position;
-
     RaycastHit2D RayInfo = Physics2D.Raycast(transform.position, Direction, Range);
 
+    // Player detection
     if (RayInfo) {
       if (RayInfo.collider.gameObject.tag == "Player") {
-        if (Detected == false) {
-          Detected = true;
-          AlarmLight.GetComponent<SpriteRenderer>().color = Color.red;
-        }
+        if (Detected == false) Detected = true;
       }
-      else {
-        if (Detected == true) {
-          Detected = false;
-          AlarmLight.GetComponent<SpriteRenderer>().color = Color.green;
-        }
-      }
+      else if (Detected == true) Detected = false;
     }
 
+    // Shoot if detected
     if (Detected) {
-      Gun.transform.up = Direction;
       if (Time.time > NextTimeToFire) {
         NextTimeToFire = Time.time + 1 / FireRate;
         Shoot();
@@ -51,6 +43,7 @@ public class Weapon : MonoBehaviour {
     BulletIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
   }
 
+  // Range debug indicator
   void OnDrawGizmosSelected() {
     Gizmos.DrawWireSphere(transform.position, Range);
   }
