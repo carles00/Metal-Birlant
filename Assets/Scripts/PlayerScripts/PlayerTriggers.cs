@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class PlayerTriggers : MonoBehaviour
 {
-    [SerializeField] private UnityEvent treasureEvent;
+    [SerializeField] private GameController gc;
     
     void Start()
     {
@@ -19,6 +19,9 @@ public class PlayerTriggers : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("entered on trigger");
+        if(collision.tag == "treasure")
+        {
+            gc.TreasureReached();
+        }
     }
 }

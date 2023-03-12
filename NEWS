@@ -1,0 +1,11 @@
+Metal Birlant: The PC Videogame
+
+Noteworthy changes in release v1.0.0-rc1
+----------------------------------------
+This is the first preliminar release of the game. Although is not near finished, already contemplates many mechanics that make it a good skeleton from which to continue building the project.
+
+One of the features we have put a lot of love into is the character and its movement. We wanted to represent the essence of the character we found in the comic, in a charismatic and funny way, which is pleasant to play with. We wanted his movement to be as smooth as possible, not jerky at all. Subsequent releases from now on will continue to add key features to the game, based on this skeleton.
+
+;; Local Variables:
+;; coding: utf-8
+;; End:

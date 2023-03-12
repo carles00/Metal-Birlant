@@ -1,6 +1,6 @@
 [//]: # (Title of the project)
 
-![logo](https://raw.githubusercontent.com/carles00/Metal-Birlant/main/Asstes/Branding/simple-logo.png)
+![logo](https://raw.githubusercontent.com/carles00/Metal-Birlant/main/Assets/Branding/simple-logo.png)
 # Metal Birlant: The PC Videogame
 
 [//]: # (GPLv3 License indicator)
@@ -12,14 +12,25 @@
 A PC videogame adaptation of the original Metal Birlant comicbook.
 
 ### Controls: 
-- Movimiento: Flechas / WASD 
-- Dash: LeftShift
+| **Action**        | **Input**                            |
+|-------------------|--------------------------------------|
+| _Player movement_ | Arrows / WASD-keys / Gamepad L-stick |
+| _Jump_            | Spacebar                             |
+| _Dash_            | Left Shift                           |
 
-### Debug
-1. Abrir Metal Birlant como proyecto de Unity
-2. La escena se encuentra en el directorio Scenes/MainScene
+### Debugging
+```shell
+git clone https://github.com/carles00/Metal-Birlant
+```
+1. Open up the cloned repository in the Unity Editor.
+2. Load the scene to debug (main playable one is `Assets/Scenes/PlayScene.unity`).
 
-**DISCLAIMER:** Las fisicas del juego no funcionan correctamente en el modo preview de Unity.
+**DISCLAIMER:** Game physics (such as jumping) do not work properly when debugging. To test the gameplay properly it is best to build to the desired target.
 
 ### Build
-(...)
+1. Within the Unity Editor, go to `File > Build...`.
+2. In the pop-up window, select the target architecture to build (Windows, Linux, macOS).
+3. Click the build button and wait for it to finish compiling.
+
+**NOTE:** Global project's `Makefile` to build both the game and its documentation is still in development.
+
