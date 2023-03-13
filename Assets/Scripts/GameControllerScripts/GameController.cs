@@ -90,6 +90,22 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public int getLives()
+    {
+        return playerLive;
+    }
+
+    public int getMoney()
+    {
+        return money;
+    }
+
+
+    public void setLives(int lives)
+    {
+        playerLive = lives;
+    }
+
     public void TreasureReached()
     {
         //Give money to player
