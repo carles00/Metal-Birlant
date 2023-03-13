@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gun: {fileID: 4564960236591022575}
   Bullet: {fileID: 7585716935336661353, guid: fd8fe0e6a3861a64685e46569214949f, type: 3}
-  Target: {fileID: 0}
+  Target: {fileID: 1760046706224343823, guid: 98f6b7b3c24471e4fabd0c03aac90cf3, type: 3}
   ShootPoint: {fileID: 4622856945377830214}
   Range: 3
   Force: 100

@@ -30,7 +30,6 @@ public class Weapon : MonoBehaviour {
 
     // Shoot if detected
     if (Detected) {
-      Debug.Log("Player detected!");
       if (Time.time > NextTimeToFire) {
         NextTimeToFire = Time.time + 1 / FireRate;
         Shoot();
