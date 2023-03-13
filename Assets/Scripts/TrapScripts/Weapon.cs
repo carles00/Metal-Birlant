@@ -24,9 +24,9 @@ public class Weapon : MonoBehaviour {
     // Player detection
     if (RayInfo) {
       if (RayInfo.collider.gameObject.tag == "Player") {
-        if (Detected == false) Detected = true;
+        if (!Detected) Detected = true;
       }
-      else if (Detected == true) Detected = false;
+      else if (Detected) Detected = false;
     }
 
     // Shoot if detected
@@ -48,4 +48,3 @@ public class Weapon : MonoBehaviour {
     Gizmos.DrawWireSphere(transform.position, Range);
   }
 }
-
