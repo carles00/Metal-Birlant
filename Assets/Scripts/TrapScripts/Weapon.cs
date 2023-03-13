@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class Weapon : MonoBehaviour {
   public GameObject Gun;
   public GameObject Bullet;
-  public GameObject AlarmLight;
   public Transform Target;
   public Transform ShootPoint;
   public float Range;
@@ -31,6 +30,7 @@ public class Weapon : MonoBehaviour {
 
     // Shoot if detected
     if (Detected) {
+      Debug.Log("Player detected!");
       if (Time.time > NextTimeToFire) {
         NextTimeToFire = Time.time + 1 / FireRate;
         Shoot();
