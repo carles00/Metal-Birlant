@@ -6,6 +6,10 @@ This is the first preliminar release of the game. Although is not near finished,
 
 One of the features we have put a lot of love into is the character and its movement. We wanted to represent the essence of the character we found in the comic, in a charismatic and funny way, which is pleasant to play with. We wanted his movement to be as smooth as possible, not jerky at all. Subsequent releases from now on will continue to add key features to the game, based on this skeleton.
 
+Noteworthy changes in release v1.0.0-rc2
+----------------------------------------
+Not a massive improvement since the last release candidate, but some interesant changes have been made. The details are in the ChangeLog, but this RC is aimed towards preparing the terrain to the next one (rc3), which will be demo-ready.
+
 ;; Local Variables:
 ;; coding: utf-8
 ;; End:
