@@ -32,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float lastGroundedTime = 0;
     [SerializeField] private float lastJumpTime = 0;
     [SerializeField] private bool isJumping = false;
-    [SerializeField] private bool jumpImputReleased = false;
     [SerializeField] private float maxVerticalSpeed = 20f;
 
     [Header("Dash")]
@@ -103,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
         lastGroundedTime = 0;
         lastJumpTime = 0;
         isJumping = true;
-        jumpImputReleased = false;
     }
 
     private void SetFallGravity()
@@ -195,7 +193,6 @@ public class PlayerMovement : MonoBehaviour
                 {
                     rigidBody.AddForce(Vector2.down * rigidBody.velocity.y * (1 - jumpCutMultiplier), ForceMode2D.Impulse);
                 }
-                jumpImputReleased = true;
                 lastJumpTime = 0;
             }
         }
