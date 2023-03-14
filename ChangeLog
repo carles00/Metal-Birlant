@@ -16,3 +16,8 @@ Base game skeleton, including:
 		- Finally, some important pieces of the game that need to be spawned on
 		demand as a whole, like the traps (Assets/Prefabs/*).
 
+2023-03-14 -> Metal Birlant v1.0.0-rc2
+		- Improved Game scene (Assets/Scenes/PlayScene.unity).
+		- Added music.
+		- Added moving platforms.
+		- Better character animations.
