@@ -23,5 +23,8 @@ public class PlayerTriggers : MonoBehaviour
         {
             gc.TreasureReached();
         }
+        if (collision.tag == "Bullet") {
+            Destroy(collision.gameObject);
+        }
     }
 }

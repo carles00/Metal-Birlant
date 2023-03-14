@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Weapon : MonoBehaviour {
   public GameObject Gun;
   public GameObject Bullet;
-  public Transform Target;
+  public GameObject Target;
   public Transform ShootPoint;
   public float Range;
   public float Force;
@@ -14,9 +14,11 @@ public class Weapon : MonoBehaviour {
   Vector2 Direction;
   bool Detected = false;
   float NextTimeToFire = 0;
-  
+
   void Update() {
-    Vector2 TargetPos = Target.position;
+    Target = GameObject.Find("PresentPlayer");
+    if (!Target) return;
+    Vector2 TargetPos = Target.transform.position;
     Direction = TargetPos - (Vector2) transform.position;
     RaycastHit2D RayInfo = Physics2D.Raycast(transform.position, Direction, Range);
 
@@ -39,7 +41,7 @@ public class Weapon : MonoBehaviour {
   
   void Shoot() {
     GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, Quaternion.identity);
-    BulletIns.GetComponent<Rigidbody2D>().AddForce(Direction * Force);
+    BulletIns.GetComponent<Rigidbody2D>().AddForce(Direction.normalized * Force);
   }
 
   // Range debug indicator
