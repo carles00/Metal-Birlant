@@ -6,6 +6,8 @@ TagManager:
   tags:
   - treasure
   - bullet
+  - void
+  - platform
   layers:
   - Default
   - TransparentFX
