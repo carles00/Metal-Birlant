@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
 
     [Header("Rounds")]
     [SerializeField] private int round = 0;
-    [SerializeField] private int currentTurn = 0; //0 = pesent | 1 = future
+    [SerializeField] private int currentTurn = 0; //0 = present | 1 = future
 
     [Header("Camera")]
     [SerializeField] private Camera mainCamera;
@@ -70,6 +70,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        currentTurn = 0;
         cameraController = mainCamera.GetComponent<CameraController>();
         sceneControl = GetComponent<SceneControl>();
         input = GetComponent<PlayerInput>();
@@ -209,6 +210,11 @@ public class GameController : MonoBehaviour
         {
             Destroy(trap);
         });
+    }
+
+    public int GetCurrentTurn()
+    {
+        return currentTurn;
     }
 
     public void OnClick(InputAction.CallbackContext ctx)
