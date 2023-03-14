@@ -68,6 +68,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        canDash = true;
+        dashing = false;
+    }
+
     //----------------------------- Movement Calculations --------------------------------//
     private void Movement()
     {
@@ -211,6 +217,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 move = -1;
             }
+        }
+        else
+        {
+            move = 0;
         }
     }
 

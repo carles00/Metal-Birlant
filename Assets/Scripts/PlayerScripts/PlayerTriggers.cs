@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class PlayerTriggers : MonoBehaviour
 {
     [SerializeField] private GameController gc;
+    [SerializeField] private Transform voidSpawn;
     
     void Start()
     {
@@ -25,6 +26,13 @@ public class PlayerTriggers : MonoBehaviour
         }
         if(collision.tag == "bullet")
         {
+            gc.OnLoseLive();
+        }
+        if(collision.tag == "void")
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.position = voidSpawn.position;
+            
             gc.OnLoseLive();
         }
     }
