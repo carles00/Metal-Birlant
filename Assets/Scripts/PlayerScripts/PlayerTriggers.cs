@@ -23,5 +23,9 @@ public class PlayerTriggers : MonoBehaviour
         {
             gc.TreasureReached();
         }
+        if(collision.tag == "bullet")
+        {
+            gc.OnLoseLive();
+        }
     }
 }

@@ -9,7 +9,6 @@ public class CameraController : MonoBehaviour
 {
     [Header("Position")]
     [SerializeField] private Transform playerPosition;
-    [Range(-5f, 5f)] [SerializeField] float offset = 0;
     [SerializeField][Range(0,0.5f)] private float lerpPositionStep = 0.05f;
     
     [Header("Scrolling")]
