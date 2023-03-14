@@ -33,6 +33,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float lastJumpTime = 0;
     [SerializeField] private bool isJumping = false;
     [SerializeField] private float maxVerticalSpeed = 20f;
+    [Header("Jumping on platform")]
+    [SerializeField] private float jumpOnPlatformMultiplier = 2f;
+    [SerializeField] private bool jumpOnPlatform = false;
+    [SerializeField] private GameObject platform = null;
+    [SerializeField] private bool platformGoingUp = false;
 
     [Header("Dash")]
     [SerializeField] private TrailRenderer TR;
@@ -58,6 +63,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (platform)
+        {
+            platformGoingUp = platform.GetComponent<PlatformMovement>().IsGoingUp();
+        }
+        else
+        {
+            platformGoingUp = false;
+        }
+
         if (!dashing)
         {
             CheckGround();
@@ -66,6 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
             FlipSprite();
         }
+       
     }
 
     private void OnEnable()
@@ -104,7 +119,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        float force = jumpForce;
+        if (jumpOnPlatform && platformGoingUp)
+        {
+            Debug.Log("yeah");
+            force *= jumpOnPlatformMultiplier;
+            jumpOnPlatform= false;
+        }
+        rigidBody.AddForce(Vector2.up * force, ForceMode2D.Impulse);
         lastGroundedTime = 0;
         lastJumpTime = 0;
         isJumping = true;
@@ -230,6 +252,18 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
+    }
+
+    public void JumpOnPlatform(GameObject obj)
+    {  
+        jumpOnPlatform = true;
+        platform = obj;
+    }
+    public void ResetPlatform()
+    {
+        jumpOnPlatform = false;
+        platform = null;
+        
     }
 
     private IEnumerator Dash()

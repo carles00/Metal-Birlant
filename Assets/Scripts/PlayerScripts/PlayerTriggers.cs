@@ -7,10 +7,11 @@ public class PlayerTriggers : MonoBehaviour
 {
     [SerializeField] private GameController gc;
     [SerializeField] private Transform voidSpawn;
+    [SerializeField] private PlayerMovement pm;
     
     void Start()
     {
-        
+        pm = GetComponent<PlayerMovement>(); 
     }
 
     void Update()
@@ -36,4 +37,24 @@ public class PlayerTriggers : MonoBehaviour
             gc.OnLoseLive();
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "platform")
+        {
+            gameObject.transform.SetParent(collision.gameObject.transform);
+            pm.JumpOnPlatform(collision.gameObject);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "platform")
+        {
+            gameObject.transform.SetParent(null);
+            pm.ResetPlatform();
+        }
+    }
+
+
 }

@@ -31,7 +31,7 @@ public class PlatformMovement : MonoBehaviour
     {
         if (goDown)
         {
-            fract += speed;
+            fract += speed * Time.deltaTime;
             transform.position = Vector3.Lerp(start, end, fract);
             if (fract >= 1)
             {
@@ -42,7 +42,7 @@ public class PlatformMovement : MonoBehaviour
         }
         if (goUp)
         {
-            fract += speed;
+            fract += speed * Time.deltaTime;
             transform.position = Vector3.Lerp(end, start, fract);
             if (fract >= 1)
             {
@@ -51,8 +51,10 @@ public class PlatformMovement : MonoBehaviour
                 goDown = true;
             }
         }
+    }
 
-
-
+    public bool IsGoingUp()
+    {
+        return goUp;
     }
 }
