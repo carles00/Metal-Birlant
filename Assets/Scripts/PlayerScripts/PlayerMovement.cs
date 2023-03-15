@@ -122,7 +122,6 @@ public class PlayerMovement : MonoBehaviour
         float force = jumpForce;
         if (jumpOnPlatform && platformGoingUp)
         {
-            Debug.Log("yeah");
             force *= jumpOnPlatformMultiplier;
             jumpOnPlatform= false;
         }

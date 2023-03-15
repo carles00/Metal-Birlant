@@ -123,9 +123,10 @@ MonoBehaviour:
   Bullet: {fileID: 1468512324677532997, guid: 359fb69b304c1d74aa1677bade9fad6a, type: 3}
   Target: {fileID: 1760046706224343823, guid: 98f6b7b3c24471e4fabd0c03aac90cf3, type: 3}
   ShootPoint: {fileID: 2710754750231699605}
-  Range: 5
+  horizontal: 0
+  Range: 20
   Force: 100
-  FireRate: 1
+  FireRate: 20
 --- !u!1 &8784224778809483322
 GameObject:
   m_ObjectHideFlags: 0
