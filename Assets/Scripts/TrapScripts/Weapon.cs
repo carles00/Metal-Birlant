@@ -41,6 +41,8 @@ public class Weapon : MonoBehaviour {
   
   void Shoot() {
     GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, Quaternion.identity);
+    // TODO: Rotate bullet with 'Direction'
+    BulletIns.transform.rotation = Quaternion.Euler(Direction);
     BulletIns.GetComponent<Rigidbody2D>().AddForce(Direction.normalized * Force);
   }
 

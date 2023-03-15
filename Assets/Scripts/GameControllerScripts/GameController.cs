@@ -185,6 +185,10 @@ public class GameController : MonoBehaviour
         });
     }
 
+    public Transform GetPlayerSpawn() {
+        return playerSpawn;
+    }
+
     public void OnClick(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
