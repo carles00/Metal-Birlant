@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-
+        TR.emitting = false;
     }
 
     private void FixedUpdate()
@@ -273,10 +273,12 @@ public class PlayerMovement : MonoBehaviour
         float originalGravity = rigidBody.gravityScale;
         rigidBody.gravityScale = 0;
         rigidBody.velocity = new Vector2(dashPower * facing, 0f);
-
+        TR.emitting = true;
         yield return new WaitForSeconds(dashTime);
+        TR.emitting = false;
         dashing = false;
         rigidBody.gravityScale = originalGravity;
+        // Do not preserve the character's momentum
         rigidBody.velocity = new Vector2(0f, 0f);
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;

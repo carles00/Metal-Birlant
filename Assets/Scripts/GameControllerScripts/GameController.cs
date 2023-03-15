@@ -212,6 +212,10 @@ public class GameController : MonoBehaviour
         });
     }
 
+    public Transform GetPlayerSpawn() {
+        return playerSpawn;
+    }
+    
     public int GetCurrentTurn()
     {
         return currentTurn;

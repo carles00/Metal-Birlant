@@ -8,6 +8,9 @@ TagManager:
   - bullet
   - void
   - platform
+  - Bullet
+  - DarkHole
+  - Destroyer
   layers:
   - Default
   - TransparentFX
