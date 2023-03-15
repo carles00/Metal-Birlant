@@ -32,8 +32,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float lastGroundedTime = 0;
     [SerializeField] private float lastJumpTime = 0;
     [SerializeField] private bool isJumping = false;
-    [SerializeField] private bool jumpImputReleased = false;
     [SerializeField] private float maxVerticalSpeed = 20f;
+    [Header("Jumping on platform")]
+    [SerializeField] private float jumpOnPlatformMultiplier = 2f;
+    [SerializeField] private bool jumpOnPlatform = false;
+    [SerializeField] private GameObject platform = null;
+    [SerializeField] private bool platformGoingUp = false;
 
     [Header("Dash")]
     [SerializeField] private TrailRenderer TR;
@@ -54,11 +58,20 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-
+        TR.emitting = false;
     }
 
     private void FixedUpdate()
     {
+        if (platform)
+        {
+            platformGoingUp = platform.GetComponent<PlatformMovement>().IsGoingUp();
+        }
+        else
+        {
+            platformGoingUp = false;
+        }
+
         if (!dashing)
         {
             CheckGround();
@@ -67,6 +80,13 @@ public class PlayerMovement : MonoBehaviour
 
             FlipSprite();
         }
+       
+    }
+
+    private void OnEnable()
+    {
+        canDash = true;
+        dashing = false;
     }
 
     //----------------------------- Movement Calculations --------------------------------//
@@ -99,11 +119,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        rigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        float force = jumpForce;
+        if (jumpOnPlatform && platformGoingUp)
+        {
+            Debug.Log("yeah");
+            force *= jumpOnPlatformMultiplier;
+            jumpOnPlatform= false;
+        }
+        rigidBody.AddForce(Vector2.up * force, ForceMode2D.Impulse);
         lastGroundedTime = 0;
         lastJumpTime = 0;
         isJumping = true;
-        jumpImputReleased = false;
     }
 
     private void SetFallGravity()
@@ -195,7 +221,6 @@ public class PlayerMovement : MonoBehaviour
                 {
                     rigidBody.AddForce(Vector2.down * rigidBody.velocity.y * (1 - jumpCutMultiplier), ForceMode2D.Impulse);
                 }
-                jumpImputReleased = true;
                 lastJumpTime = 0;
             }
         }
@@ -215,6 +240,10 @@ public class PlayerMovement : MonoBehaviour
                 move = -1;
             }
         }
+        else
+        {
+            move = 0;
+        }
     }
 
     public void OnDash(InputAction.CallbackContext context)
@@ -223,6 +252,18 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
+    }
+
+    public void JumpOnPlatform(GameObject obj)
+    {  
+        jumpOnPlatform = true;
+        platform = obj;
+    }
+    public void ResetPlatform()
+    {
+        jumpOnPlatform = false;
+        platform = null;
+        
     }
 
     private IEnumerator Dash()
@@ -238,7 +279,7 @@ public class PlayerMovement : MonoBehaviour
         dashing = false;
         rigidBody.gravityScale = originalGravity;
         // Do not preserve the character's momentum
-        // rigidBody.velocity = new Vector2(0f, 0f);
+        rigidBody.velocity = new Vector2(0f, 0f);
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }

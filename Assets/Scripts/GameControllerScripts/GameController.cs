@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject presentPlayer;
 
     
-    [SerializeField] private int playerLive = 3;
+    [SerializeField] private int playerLives = 3;
     [SerializeField] private int money = 0;
 
     [Header("Money")]
@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour
 
     [Header("Rounds")]
     [SerializeField] private int round = 0;
-    [SerializeField] private int currentTurn = 0; //0 = pesent | 1 = future
+    [SerializeField] private int currentTurn = 0; //0 = present | 1 = future
 
     [Header("Camera")]
     [SerializeField] private Camera mainCamera;
@@ -49,13 +49,20 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject teslaTower;
     [SerializeField] private GameObject blackHole;
     [SerializeField] private string nameOfSelectedTrap = "";
-
     [SerializeField] List<GameObject> placedTraps;
 
-    [Header("Interface")]
+    [Header("Present Interface")]
+    [SerializeField] private GameObject presentInterface;
+    [SerializeField] private List<GameObject> fullHearts;
+    [SerializeField] private List<GameObject> emptyHearts;
+    [SerializeField] private TextMeshProUGUI moneyText;
+
+    [Header("Future Interface")]
     [SerializeField] private GameObject futureInterface;
     [SerializeField] private TextMeshProUGUI availableTraps;
     [SerializeField] private TextMeshProUGUI moneyFuture;
+
+    
 
     private PlayerInput input;
     private SceneControl sceneControl;
@@ -63,14 +70,17 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        currentTurn = 0;
         cameraController = mainCamera.GetComponent<CameraController>();
         sceneControl = GetComponent<SceneControl>();
         input = GetComponent<PlayerInput>();
         presentPlayer.transform.position = playerSpawn.position;
 
+        presentInterface.SetActive(true);
         futureInterface.SetActive(false);
         Cursor.visible = false;
 
+        moneyText.text  = money.ToString();
         availableTraps.text = maxTraps.ToString();
     }
 
@@ -87,6 +97,11 @@ public class GameController : MonoBehaviour
             Vector2 screenPos = Mouse.current.position.ReadValue();
             Vector3 mousePos = mainCamera.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, mainCamera.transform.position.z));
             followingTrap.transform.position = new Vector3(-mousePos.x, -mousePos.y + 2 * mainCamera.transform.position.y, 0);
+        }
+        if(playerLives == 0)
+        {
+            Cursor.visible = true;
+            sceneControl.OnPlayerLost();
         }
     }
 
@@ -116,6 +131,7 @@ public class GameController : MonoBehaviour
         currentNumberOfTraps = 0;
         presentPlayer.SetActive(false);
         futureInterface.SetActive(true);
+        presentInterface.SetActive(false);
         Cursor.visible = true;
 
         cameraController.SwitchPlayerFollowing();
@@ -132,6 +148,7 @@ public class GameController : MonoBehaviour
 
     private void ChangeToPresent()
     {
+        playerLives = 3;
         currentTurn = 0;
         round++;
         maxTraps += 10;
@@ -140,6 +157,16 @@ public class GameController : MonoBehaviour
         
         presentPlayer.SetActive(true);
         futureInterface.SetActive(false);
+        presentInterface.SetActive(true);
+
+        for (int i = 0; i < fullHearts.Count; i++)
+        {
+            fullHearts[i].SetActive(true);
+            emptyHearts[i].SetActive(false);
+        }
+
+        moneyText.text = money.ToString();
+
         Cursor.visible = false;
         
         cameraController.SwitchPlayerFollowing();
@@ -188,6 +215,11 @@ public class GameController : MonoBehaviour
     public Transform GetPlayerSpawn() {
         return playerSpawn;
     }
+    
+    public int GetCurrentTurn()
+    {
+        return currentTurn;
+    }
 
     public void OnClick(InputAction.CallbackContext ctx)
     {
@@ -227,4 +259,22 @@ public class GameController : MonoBehaviour
         followingTrap = Instantiate(selectedTrap, Mouse.current.position.ReadValue(), Quaternion.identity);
         nameOfSelectedTrap = "blackHole";
     }
-}
+
+    public void OnLoseLive()
+    {
+        playerLives--;
+        for (int i = 0; i < fullHearts.Count; i++)
+        {
+            if (i < playerLives)
+            {
+                fullHearts[i].SetActive(true);
+                emptyHearts[i].SetActive(false);
+            }
+            else
+            {
+                fullHearts[i].SetActive(false);
+                emptyHearts[i].SetActive(true);
+            }
+        }
+    }
+}   

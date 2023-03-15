@@ -6,10 +6,12 @@ using UnityEngine.Events;
 public class PlayerTriggers : MonoBehaviour
 {
     [SerializeField] private GameController gc;
+    [SerializeField] private Transform voidSpawn;
+    [SerializeField] private PlayerMovement pm;
     
     void Start()
     {
-        
+        pm = GetComponent<PlayerMovement>(); 
     }
 
     void Update()
@@ -25,10 +27,18 @@ public class PlayerTriggers : MonoBehaviour
         }
         if (collision.tag == "Bullet") {
             Destroy(collision.gameObject);
+            gc.OnLoseLive();
         }
         if (collision.tag == "DarkHole") {
             StartCoroutine(SpawnAtStart());
-            // gc.OnLoseLive();
+            gc.OnLoseLive();
+        }
+        if(collision.tag == "void")
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.position = voidSpawn.position;
+
+            gc.OnLoseLive();
         }
     }
 
@@ -38,4 +48,24 @@ public class PlayerTriggers : MonoBehaviour
         yield return new WaitForSeconds(1f);
         rb.position = gc.GetPlayerSpawn().position;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "platform")
+        {
+            gameObject.transform.SetParent(collision.gameObject.transform);
+            pm.JumpOnPlatform(collision.gameObject);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "platform")
+        {
+            gameObject.transform.SetParent(null);
+            pm.ResetPlatform();
+        }
+    }
+
+
 }
