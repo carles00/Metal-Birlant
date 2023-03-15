@@ -18,9 +18,10 @@ public class GameController : MonoBehaviour
     [Header("Money")]
     [SerializeField] private int baseMoney = 2000;
     [SerializeField] private int roundMultiplier = 3;
+    [SerializeField] private int taxMoney = 1000;
 
     [Header("Rounds")]
-    [SerializeField] private int round = 0;
+    [SerializeField] private int round = 1;
     [SerializeField] private int currentTurn = 0; //0 = present | 1 = future
 
     [Header("Camera")]
@@ -62,7 +63,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI availableTraps;
     [SerializeField] private TextMeshProUGUI moneyFuture;
 
-    
+    [Header("Inital Trap Pos")]
+    [SerializeField] private List<Transform> initialCrosbowPositions;
+    [SerializeField] private List<Transform> initialTeslaPositions;
+    [SerializeField] private List<Transform> initialBHPositions;
 
     private PlayerInput input;
     private SceneControl sceneControl;
@@ -82,6 +86,8 @@ public class GameController : MonoBehaviour
 
         moneyText.text  = money.ToString();
         availableTraps.text = maxTraps.ToString();
+
+        CreateInitialTraps();
     }
 
     // Update is called once per frame
@@ -105,6 +111,28 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void CreateInitialTraps()
+    {
+        foreach(Transform t in initialCrosbowPositions)
+        {
+            GameObject cb = Instantiate(crossbow,t.position, Quaternion.identity);
+            placedTraps.Add(cb);
+            placedMoney += crossbowValue;
+        }
+        foreach (Transform t in initialTeslaPositions)
+        {
+            GameObject tt = Instantiate(teslaTower, t.position, Quaternion.identity);
+            placedTraps.Add(tt);
+            placedMoney += teslaValue;
+        }
+        foreach (Transform t in initialBHPositions)
+        {
+            GameObject bh = Instantiate(blackHole, t.position, Quaternion.identity);
+            placedTraps.Add(bh);
+            placedMoney += blackHoleValue;
+        }
+    }
+
     public void TreasureReached()
     {
         //Give money to player
@@ -122,7 +150,7 @@ public class GameController : MonoBehaviour
     private void CalculateMoney()
     {
         money += baseMoney + placedMoney;
-        money -= baseMoney * (roundMultiplier * round);
+        money -= taxMoney * (roundMultiplier * round);
     }
 
     private void ChangeToFuture()
