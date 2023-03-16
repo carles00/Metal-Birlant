@@ -4,7 +4,7 @@
 VERSION := 1
 PATCHLEVEL := 0
 SUBLEVEL := 0
-EXTRAVERSION := -rc2
+EXTRAVERSION := -rc3
 
 COVER := $(shell find . -type f -name "cover.ps")
 SRC := $(shell find . -type f -iname "*.texi")

@@ -10,6 +10,10 @@ Noteworthy changes in release v1.0.0-rc2
 ----------------------------------------
 Not a massive improvement since the last release candidate, but some interesant changes have been made. The details are in the ChangeLog, but this RC is aimed towards preparing the terrain to the next one (rc3), which will be demo-ready.
 
+Noteworthy changes in release v1.0.0-rc3
+----------------------------------------
+All small tweaks, fixes and additions have been made to produce a proper demo-ready version.
+
 ;; Local Variables:
 ;; coding: utf-8
 ;; End:
