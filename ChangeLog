@@ -21,3 +21,9 @@ Base game skeleton, including:
 		- Added music.
 		- Added moving platforms.
 		- Better character animations.
+
+2023-03-16 -> Metal Birlant v1.0.0-rc3
+		- Modified game to be demo-ready.
+		- 3 traps functional (Crossbow, Tesla Tower, Black Hole).
+		- Better scripts and GameObject's behaviours.
+		- Predefined traps in first round.
