@@ -270,6 +270,10 @@ public class GameController : MonoBehaviour
 
     public void OnSelectTesla()
     {
+        if (followingTrap)
+        {
+            Destroy(followingTrap);
+        }
         selectedTrap = teslaTower;
         followingTrap = Instantiate(selectedTrap, Mouse.current.position.ReadValue(), Quaternion.identity);
         nameOfSelectedTrap = "tesla";
@@ -277,12 +281,20 @@ public class GameController : MonoBehaviour
 
     public void OnSelectCrossbow()
     {
+        if (followingTrap)
+        {
+            Destroy(followingTrap);
+        }
         selectedTrap = crossbow;
         followingTrap = Instantiate(selectedTrap, Mouse.current.position.ReadValue(), Quaternion.identity);
         nameOfSelectedTrap = "crossbow";
     }
     public void OnSelectBlackHole()
     {
+        if (followingTrap)
+        {
+            Destroy(followingTrap);
+        }
         selectedTrap = blackHole;
         followingTrap = Instantiate(selectedTrap, Mouse.current.position.ReadValue(), Quaternion.identity);
         nameOfSelectedTrap = "blackHole";

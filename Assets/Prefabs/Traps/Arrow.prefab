@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4841268673304891454}
   - component: {fileID: 2439492352111562671}
   - component: {fileID: -3079280097002083993}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arrow
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

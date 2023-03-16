@@ -150,11 +150,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13539f8d6a8f6474e93607b3de8651e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Gun: {fileID: 4564960236591022575}
-  Bullet: {fileID: 7585716935336661353, guid: fd8fe0e6a3861a64685e46569214949f, type: 3}
-  Target: {fileID: 1760046706224343823, guid: 98f6b7b3c24471e4fabd0c03aac90cf3, type: 3}
-  ShootPoint: {fileID: 4622856945377830214}
+  gun: {fileID: 4564960236591022575}
+  bullet: {fileID: 7585716935336661353, guid: fd8fe0e6a3861a64685e46569214949f, type: 3}
+  target: {fileID: 0}
+  shootPoint: {fileID: 4622856945377830214}
   horizontal: 1
-  Range: 10
-  Force: 500
-  FireRate: 1
+  range: 5
+  force: 500
+  fireRate: 1.5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  direction: {x: 0, y: 0}
+  detected: 0
+  firstDetection: 0
