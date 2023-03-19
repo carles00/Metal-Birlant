@@ -14,15 +14,23 @@
 @float Figure,map-draft
 @shortcaption{Esbozo del mapa}
 @caption{Esbozo del mapa}
-@center @image{img/mapa,10cm,,Mapa,}
+@center @image{img/mapa,12cm,,Mapa,}
 @end float
 
 @page
 
-@float Figure,pixel-map
-@shortcaption{Mapa en @i{pixel art}}
-@caption{Mapa en @i{pixel art}}
-@center @image{img/pixel-map,3cm,,Mapa en @i{pixel art},}
+@float Figure,pixel-map-1
+@shortcaption{Mapa en @i{pixel art} (I)}
+@caption{Mapa en @i{pixel art} (I)}
+@center @image{img/pixel-map-1,6cm,,Mapa en @i{pixel art} (I),}
+@end float
+
+@page
+
+@float Figure,pixel-map-2
+@shortcaption{Mapa en @i{pixel art} (II)}
+@caption{Mapa en @i{pixel art} (II)}
+@center @image{img/pixel-map-2,6cm,,Mapa en @i{pixel art} (II),}
 @end float
 
 @page

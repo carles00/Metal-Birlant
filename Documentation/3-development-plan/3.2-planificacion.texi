@@ -1,0 +1,70 @@
+@c Section 3.2: Planificación
+@node Planificación
+@section Planificación
+
+Mediante el uso de la aplicación de Trello, creamos un tablero Kanban donde nos dividimos el trabajo, optimizando el avance del proyecto y asegurando que la asignación de tarea se entregue a quien más interés tenga.
+
+Para repartirnos el trabajo utilizamos un tablero o @i{dashboard} en @i{Trello} con 5 columnas:
+
+@itemize @bullet
+@item @b{Tasks:} Tareas a completar.
+@item @b{Proxima Entrega:} Tareas a completar antes de la proxima entrega.
+@item @b{In Progress:} Tareas que se estan empezadas.
+@item @b{Review:} Tareas para revisar.
+@item @b{Done:} Tareas acabadas.
+@end itemize
+
+En las primeras semanas del desarrollo nos centramos principalmente en la elaboración del GDD sobre todo, con alguna idea de futuro en cuanto al uso del motor se trate.
+
+@float Figure,trello-dashboard
+@shortcaption{Trello @i{dashboard screenshot} 1}
+@caption{Trello @i{dashboard screenshot} 1}
+@center @image{img/trello,13cm,,Trello 1,}
+@end float
+
+@page
+
+En las siguientes semanas, con el @i{GDD} prácticamente acabado, empezamos a trabajar en la demo principalmente, con alguna puntualización a corregir del GDD o implementar alguna mecánica o tabla de valores nueva.
+
+@float Figure,trello-dashboard-2
+@shortcaption{Trello @i{dashboard screenshot} 2}
+@caption{Trello @i{dashboard screenshot} 2}
+@center @image{img/trello-2,13cm,,Trello 2,}
+@end float
+
+Finalmente, en las últimas semanas, conseguimos terminar las tareas que nos habíamos marcado como necesarias de incluir en la @i{demo}.
+Asimismo, todas las otras características, funcionalidades, etc. que están diseñadas en este documento no se han implementado por falta de tiempo. En la siguiente figura se puede ver el tablero @i{Trello} después de acabar la implementación de la demo.
+
+@float Figure,trello-dashboard-3
+@shortcaption{Trello @i{dashboard screenshot} 3}
+@caption{Trello @i{dashboard screenshot} 3}
+@center @image{img/trello-3,13cm,,Trello 3,}
+@end float
+
+@page
+
+A continuación se muestran todas las tareas que se han incluido en el desarrollo de la demo, junto con su coste aproximado.
+
+@float Figure,trello-dashboard-final-tasks
+@shortcaption{Tareas terminadas para la @i{demo}}
+@caption{Tareas terminadas para la @i{demo}}
+@noindent @image{img/trello-final-tasks-1,4cm,,Trello final tasks 1,}
+@image{img/trello-final-tasks-2,4cm,,Trello final tasks 2,}
+@image{img/trello-final-tasks-3,4cm,,Trello final tasks 3,}
+@image{img/trello-final-tasks-4,3.75cm,,Trello final tasks 4,}
+@image{img/trello-final-tasks-5,3.75cm,,Trello final tasks 5,}
+@image{img/trello-final-tasks-6,3.75cm,,Trello final tasks 6,}
+@image{img/trello-final-tasks-7,3.75cm,,Trello final tasks 7,}
+@end float
+
+@page
+
+A continuación se muestran todas las tareas las cuales se excluyeron de la implementación final de la demo, también con sus costes estimados.
+
+@float Figure,trello-dashboard-remaining-tasks
+@shortcaption{Tareas pendientes de implementar}
+@caption{Tareas pendientes de implementar}
+@noindent @image{img/trello-remaining-tasks-1,4cm,,Trello remaining tasks 1,}
+@image{img/trello-remaining-tasks-2,4cm,,Trello remaining tasks 2,}
+@image{img/trello-remaining-tasks-3,4cm,,Trello remaining tasks 3,}
+@end float
