@@ -14,7 +14,7 @@ jobs:
     container: texlive/texlive
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install GNU Texinfo support
         run: |
           apt update && apt install -y texinfo
@@ -22,7 +22,7 @@ jobs:
         run: |
           cd Documentation && make
       - name: Archive Documentation Manual
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Metal Birlant GDD (preview)
           path: Documentation/metal-birlant-gdd-*.pdf
